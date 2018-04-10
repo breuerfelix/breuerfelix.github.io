@@ -13,8 +13,7 @@ Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 
 ## Skills
 
-- C#, Java
-- C, C++
+- C#, Java, C++, C, GO
 - Virtual Machines
 - Networking
-- Adobe Photoshop, Sketch
+- Server Architecture
