@@ -15,10 +15,10 @@ text_color_theme: dark #eg: default | dark | forest | ocean | chocolate | orange
 ## Base settings ##
 # url:  #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /
-url: http://scriptworld.net
+url: https://scriptworld.net
 title: ScriptWorld's Blog
 description: > #this means to ignore newlines until "nav_lists:"
-  Learn all about Coding!
+  My Journey of Coding!
 
 nav_lists:
   - titles:
