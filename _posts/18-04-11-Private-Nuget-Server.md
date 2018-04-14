@@ -1,7 +1,9 @@
 ---
 layout: post
-title: NugGet Handling with .bat File
-tags: nuget bat tutorial win c#
+title: NugGet Package Handling with .bat File
+date: 2018-04-11 22:15:00 +01:00
+modify_date: 2018-04-14 15:00:00 +01:00
+tags: nuget batch tutorial windows package
 category: tutorial
 ---
 
@@ -9,6 +11,15 @@ A while ago I set up a private NuGet Server in our Company because we wanted to 
 After happily finished setting up the Server _(tutorial coming soon...)_ I wanted to publish our first private NuGet.<br /><br />
 Creating your own NuGet was getting more difficult than I thought.<!--more--><br /><br />
 You have to download the `nuget.exe`, deploy it in every Project Folder you wanna turn into a NuGet and run several bash Commands to finally deploy your Package.<br />
+This simple File is an all-in-one Tool for handling all that stuff.<br /><br />
+####How to use<br />
+- Create a .bat File and copy the Code below
+- Deploy the File into your Project Folder
+- Change `http://localhost:64591/nuget` to the NuGet Feed you wanna push your Package to
+- - Additional add the api key to that line
+- Execute the Script 
+- - `nuget.exe` getting downloaded and .nuspec File will be created
+- 
 More explanation coming soon...<br />
 
 {% highlight powershell %}
