@@ -9,7 +9,7 @@ category: tutorial
 
 A while ago I set up a private NuGet Server in our Company because we wanted to escape the 'DLL-Hell'.<br />
 After happily finished setting up the Server _(tutorial coming soon...)_ I wanted to publish our first private NuGet.<br /><br />
-__Creating your own NuGet Package was getting more difficult than I thought.__<br /><br /><!--more-->
+__Creating your own NuGet Package was getting more difficult than I thought.__<!--more--><br /><br />
 You have to download the `nuget.exe`, deploy it in every Project Folder you wanna turn into a NuGet and run several bash Commands to finally deploy your Package.<br />
 This simple File is an all-in-one Tool for handling all that stuff.
 ## How to use
