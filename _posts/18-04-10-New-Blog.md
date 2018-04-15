@@ -6,9 +6,9 @@ tags: info
 category: blog
 ---
 
-Hello and Welcome to my new Blog.
+Hello and welcome to my new blog.
 
-I made this Blog with the Jekyll Software which deploys static Pages. <!--more-->
-99% of the People using Jekyll are serving their Pages via GitHub Pages but I'll host it on my own Server.
+I made this blog with the Jekyll Software which deploys static pages. <!--more-->
+99% of the people using Jekyll are serving their pages via [GitHub-Pages](https://pages.github.com) but I'll host it on my own Linux Server.
 
-In the Future you are going to read some Tutorials on this Page.
+In the future you are going to read some tutorials on this page.
