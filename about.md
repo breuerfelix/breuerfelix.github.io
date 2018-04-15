@@ -4,13 +4,12 @@ titles:
   en: About Me
 key: page-about
 ---
-
-{% highlight c++ %}
+```c++
 cout << "Hello, I am Felix !";
-{% endhighlight %}
-{% highlight java %}
+```
+```java
 System.out.println("Happy to know that you found my Blog :)");
-{% endhighlight %}
+```
 
 I'm an 23 years old Software Engineering Student living in Cologne, Germany.<br />
 After Highschool I finished an apprenticeship in Mechatronics at [Schwarze-Robitec](https://www.schwarze-robitec.com).<br />
