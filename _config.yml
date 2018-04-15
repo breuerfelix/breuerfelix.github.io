@@ -1,6 +1,6 @@
 # Welcome to Jekyll!
 
-text_color_theme: dark #eg: default | dark | forest | ocean | chocolate | orange
+text_color_theme: default #eg: default | dark | forest | ocean | chocolate | orange
 
 ## Base settings ##
 
