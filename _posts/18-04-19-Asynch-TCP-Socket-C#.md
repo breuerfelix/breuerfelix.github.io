@@ -9,7 +9,7 @@ category: tutorial
 
 I wanted to program a server which can handle alot of clients at the same time just like [MMORP](https://de.wikipedia.org/wiki/Massively_Multiplayer_Online_Role-Playing_Game)-Servers do.  
 Many Languages are capable of doing this, but most of them are optimized for Web-Servers.  
-Another important aspect is the amount of data being sent over the stream. There should'nt be any limit of package size.<!--more-->
+Another important aspect is the amount of data being sent over the stream. There shouldn't be any limit for the package size.<!--more-->
 
 ##  Client
 _coming soon_

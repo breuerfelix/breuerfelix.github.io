@@ -3,7 +3,7 @@ layout: post
 title: Create custom Linux Commands
 date: 2018-04-15 09:00:00 +01:00
 modify_date: 2018-04-16 22:00:00 +01:00
-tags: linux bash customcommands
+tags: linux bash customcommands shellscripts alias
 category: tutorial
 ---
 
@@ -14,12 +14,12 @@ It's also possible to pass parameters to these custom commands. For example: `ap
 
 ## Create a Script Directory
 First of all we need to find a good location to store all of our scripts.  
-I usually create a folder named `shell-scripts` in the `/var` Directory.
+I usually create a folder named `shell-scripts` in the `/var` Directory:
 ```bash
 $ cd /var
 $ sudo mkdir shell-scripts
 ```
-All files in this folder need to be execute- and editable (we dont always wanna `sudo` to edit our scripts).
+All files in this folder need to be execute- and editable (we dont always wanna `sudo` to edit our scripts):
 ```bash
 $ sudo chmod -R 777 /shell-scripts
 ```
@@ -28,7 +28,7 @@ __Everybody__ is able to execute __everything__ in the folder `/var/shell-script
 ## Customize PATH Locations
 After creating the Directory we have to make sure our system knows the location of these scripts.  
 That allows us to execute these in any Directory we are currently in.  
-Open `.bashrc` file with any editor you like (I use the __Vi-Editor__ - [Tutorial here](http://www.openvim.com)).
+Open `.bashrc` file with any editor you like (I use the __Vi-Editor__ - [Tutorial here](http://www.openvim.com)):
 ```bash
 $ sudo vi ~/.bashrc
 ```
@@ -50,7 +50,7 @@ This step is optional if you want to create only non-root commands.
 ```bash
 $ sudo visudo
 ```
-Search `secure-path=` and append our folder.
+Search `secure-path=` and append our folder:
 ```bash
 Defaults secure-path="... :/var/shell-scripts"
 ```
@@ -67,12 +67,12 @@ $ cd /var/shell-scripts
 $ touch pullgit
 $ sudo chmod 777 pullgit
 ```
-Open the file with your preferred editor.
+Open the file with your preferred editor:
 ```bash
 $ vi pullgit
 ```
 Write everything down that should be executed with your custom command.  
-In our example this will be a really short script.
+In our example this will be a really short script:
 ```bash
 #!/bin/bash
 cd /etc/gitrepo

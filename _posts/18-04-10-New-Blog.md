@@ -2,7 +2,7 @@
 layout: post
 title: New Blog - Jekyll
 date: 2018-04-10 18:00:00 +01:00
-tags: info
+tags: info newblog jekyll
 category: blog
 ---
 
