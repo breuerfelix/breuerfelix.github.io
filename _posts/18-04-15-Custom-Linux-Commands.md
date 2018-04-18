@@ -7,7 +7,7 @@ tags: linux bash customcommands shellscripts alias
 category: tutorial
 ---
 
-Sometimes I am really bored of typing the same commands all over again for example when building my Jekyll Blog into a certain folder (`bundle exec jekyll build --destination /var/www --watch &`) or moving to a specific folder just to perfom a `git pull` request.
+Sometimes I am really bored of typing the same commands all over again for example when building my Jekyll Blog into a certain folder (`bundle exec jekyll build --destination /var/www --watch &`) or moving to a specific folder just to perform a `git pull` request.
 
 A really good way of handling that problem is to create your own Shell Scripts, which can be executed from any location, just like `apt-get`.<!--more-->  
 It's also possible to pass parameters to these custom commands. For example: `apt-get install ruby`
