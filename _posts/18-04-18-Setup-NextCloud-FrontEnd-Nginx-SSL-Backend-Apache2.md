@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Setup NextCloud Server with Nginx SSL Reverse-Proxy and Apache2 Backend
-date: 2018-04-17 09:00:00 +01:00
-modify_date: 2018-04-17 10:00:00 +01:00
+date: 2018-04-18 17:00:00 +01:00
+modify_date: 2018-04-18 18:00:00 +01:00
 tags: nextcloud server ubuntu setup apache2 nginx reverseproxy ssl
 category: tutorial
 ---

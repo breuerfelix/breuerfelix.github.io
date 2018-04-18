@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Async Tcp Socket Server/Client in C#
-date: 2018-04-16 22:15:00 +01:00
-modify_date: 2018-04-16 23:50:00 +01:00
+date: 2018-04-17 22:15:00 +01:00
+modify_date: 2018-04-18 12:50:00 +01:00
 tags: asynch socket tcp server client c#
 category: tutorial
 ---
