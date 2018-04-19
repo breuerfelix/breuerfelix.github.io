@@ -3,7 +3,7 @@ layout: post
 title: NugGet Package Handling with .bat File
 date: 2018-04-11 22:15:00 +01:00
 modify_date: 2018-04-14 15:00:00 +01:00
-tags: nuget batch tutorial windows package
+tags: nuget batch tutorial windows package c#
 category: tutorial
 ---
 
