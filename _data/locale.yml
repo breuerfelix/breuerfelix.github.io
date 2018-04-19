@@ -1,10 +1,10 @@
 NAV:
   HOME:
-    en:      "Home"
+    en:      "home"
   ALL:
-    en:      "Archive"
+    en:      "archive"
   RSS:
-    en:      "RSS"
+    en:      "rss"
 
 READMORE:
   en:      "Click to read more ..."
