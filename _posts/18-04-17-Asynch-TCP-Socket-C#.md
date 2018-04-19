@@ -11,10 +11,7 @@ I wanted to program a server which can handle alot of clients at the same time j
 Many Languages are capable of doing this, but most of them are optimized for Web-Servers.  
 Another important aspect is the amount of data being sent over the stream. There shouldn't be any limit for the package size.<!--more-->
 
-##  Client
-_coming soon_
-
-## Server
+## Tutorial
 _coming soon_
 
 ## Final Code
