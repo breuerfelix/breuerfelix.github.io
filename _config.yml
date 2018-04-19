@@ -6,16 +6,16 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 
 baseurl: /
 url: https://scriptworld.net
-title: ScriptWorld's Blog
+title: scriptworld.net
 description: > #this means to ignore newlines until "nav_lists:"
   My Journey of Coding!
 
 nav_lists:
   - titles:
-      en: Tutorials
+      en: tutorials
     url: /tutorials.html
   - titles:
-      en: About
+      en: about
     url: /about.html
 
 paths:
