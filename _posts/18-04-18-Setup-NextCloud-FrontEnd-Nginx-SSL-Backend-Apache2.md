@@ -2,7 +2,7 @@
 layout: post
 title: Setup NextCloud Server with Nginx SSL Reverse-Proxy and Apache2 Backend
 date: 2018-04-18 17:00:00 +01:00
-modify_date: 2018-04-18 18:00:00 +01:00
+modify_date: 2018-04-19 12:00:00 +01:00
 tags: nextcloud server ubuntu setup apache2 nginx reverseproxy ssl
 category: tutorial
 ---
@@ -182,6 +182,7 @@ server {
         proxy_set_header X-Forwarded-Proto https;
         add_header Front-End-Https on;
         
+        proxy_buffering off;
         proxy_redirect off;
         proxy_pass http://127.0.0.1:8080;
     }
@@ -195,6 +196,15 @@ Test the configuration file.
 If the output doesn't display that the files are okay, check if you made a syntax or spelling mistake.
 ```bash
 $ sudo nginx -t
+```
+
+_Optional:_ If you want to upload large files you should also increase the proxy-timeout settings in __/etc/nginx/nginx.conf__.  
+Add the following lines anywhere in the `http {}` block:
+```nginx
+proxy_connect_timeout 1000;
+proxy_send_timeout 1000;
+proxy_read_timeout 1000;
+send_timeout 1000;
 ```
 Restart Nginx service:
 ```bash
