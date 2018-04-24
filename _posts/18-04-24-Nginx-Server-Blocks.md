@@ -1,5 +1,6 @@
 ---
-layout: Useful Nginx Server Blocks
+layout: post
+title: Useful Nginx Server Blocks
 date: 2018-04-24 11:00:00 +01:00
 modify_date: 2018-04-24 11:00:00 +01:00
 tags: linux nginx serverblocks server http https proxy ssl certificates reverseproxy
