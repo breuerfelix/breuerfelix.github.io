@@ -2,7 +2,7 @@
 layout: post
 title: Setup NextCloud Server with Nginx SSL Reverse-Proxy and Apache2 Backend
 date: 2018-04-18 17:00:00 +01:00
-modify_date: 2018-04-19 12:00:00 +01:00
+modify_date: 2018-04-24 11:00:00 +01:00
 tags: nextcloud server ubuntu setup apache2 nginx reverseproxy ssl linux
 category: tutorial
 ---
@@ -148,7 +148,7 @@ $ sudo service apache2 restart
 ## Nginx
 Nginx will be our 'Connection-Resolver'. Whenever an http or https request is made to our server, Nginx will decide what to do with it.  
 We are going to set up a Server-Block, listening on port 443 and url "https://cloud.example.com/", for the https-reverse-proxy to our NextCloud Apache service.  
-If you want to see some more useful Server-Block examples, [Click Here !](https://scriptworld.net) (_coming soon_)!
+If you want to see some more useful Server-Block examples, [Click Here!](https://scriptworld.net) (_coming soon_)!
 
 Install Nginx:
 ```bash
@@ -173,17 +173,22 @@ server {
 
     server_name cloud.example.com;
 
-    client_max_body_size 10G;
+    client_max_body_size 0;
+    underscores_in_headers on;
 
     location ~ {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-Proto $scheme;
         add_header Front-End-Https on;
-        
+
+        proxy_headers_hash_max_size 512;
+        proxy_headers_hash_bucket_size 64;
+
         proxy_buffering off;
         proxy_redirect off;
+        proxy_max_temp_file_size 0;
         proxy_pass http://127.0.0.1:8080;
     }
 }
@@ -268,6 +273,7 @@ array (
 'overwritewebroot' => '/',
 'overwrite.cli.url' => 'https://cloud.example.com/',
 'htaccess.RewriteBase' => '/',
+'trusted_proxies' => ['127.0.0.1'],
 ```
 Save and close the file.
 
