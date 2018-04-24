@@ -148,7 +148,7 @@ $ sudo service apache2 restart
 ## Nginx
 Nginx will be our 'Connection-Resolver'. Whenever an http or https request is made to our server, Nginx will decide what to do with it.  
 We are going to set up a Server-Block, listening on port 443 and url "https://cloud.example.com/", for the https-reverse-proxy to our NextCloud Apache service.  
-If you want to see some more useful Server-Block examples, [Click Here!](https://scriptworld.net) (_coming soon_)!
+If you want to see some more useful Server-Block examples, [Click Here!](/tutorial/Nginx-Server-Blocks.html)
 
 Install Nginx:
 ```bash
@@ -249,7 +249,8 @@ As a lazy person I would highly suggest to set up a `crontab job' which runs thi
 
 There is a really good guide how to customize your Nginx SSL-Settings to score an 'A+' on several Testsites.  
 This step is optional and can be done later on if you are interested in that kind of stuff.  
-[Click Here!](https://bjornjohansen.no/optimizing-https-nginx)
+[Useful Server-Blocks](/tutorial/Nginx-Server-Blocks.html)  
+[External Arcticle](https://bjornjohansen.no/optimizing-https-nginx)
 
 ## Nextcloud
 You can already access NextCloud via your domain, but it will be a little bit buggy.  
