@@ -9,7 +9,7 @@ category: tutorial
 
 In the past weeks I set up some different webservers with [Nginx](http://nginx.org). Nginx is more leightweight and easy to handle than [Apache2](https://httpd.apache.org).
 
-There are alot of different usages for webservers. Some are reverse proxy, https, static sites, clouds or php. In this article I wanna share my experiences with different server blocks for some of these cases. It's basically more a little wiki.
+There are alot of different usages for webservers. Some are reverse proxy, https, static sites, clouds or php. In this article I wanna share my experiences with different server blocks for some of these cases. It's basically more a little wiki.<!--more-->
 
 ## Redirect www to non-www Traffic
 
