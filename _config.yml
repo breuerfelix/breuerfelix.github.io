@@ -15,6 +15,9 @@ nav_lists:
       en: tutorials
     url: /tutorials.html
   - titles:
+      en: projects
+    url: /projects/
+  - titles:
       en: about
     url: /about.html
 
@@ -77,7 +80,7 @@ leancloud:
 # chart: true
 
 ## Paginate ##
-paginate: 7
+paginate: 5
 paginate_path: /page:num
 
 ## Post excerpts ##
@@ -91,6 +94,9 @@ excerpt_type: html # text | html
 markdown: kramdown
 highlighter: pygments
 permalink: none
+
+include:
+  - projects
 
 exclude:
   - README-*.md
