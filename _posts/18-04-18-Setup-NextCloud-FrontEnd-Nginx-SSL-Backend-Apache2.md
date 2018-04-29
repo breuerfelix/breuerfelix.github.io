@@ -3,7 +3,7 @@ layout: post
 title: Setup NextCloud Server with Nginx SSL Reverse-Proxy and Apache2 Backend
 date: 2018-04-18 17:00:00 +01:00
 modify_date: 2018-04-24 11:00:00 +01:00
-tags: nextcloud server ubuntu setup apache2 nginx reverseproxy ssl linux
+tags: nextcloud server ubuntu16.04 setup apache2 nginx reverseproxy ssl linux
 category: tutorial
 ---
 
@@ -11,6 +11,7 @@ In the next few chapters we gonna setup a [NextCloud](https://nextcloud.com) Ser
 There are alot of tutorials out there already covering this topic, but in our case we gonna use [Nginx](http://nginx.org) to serve the SSL-Certificates and proxy the connection to an [Apache2](https://httpd.apache.org) service which is serving NextCloud.  
 You can either use an existing Nginx configuration or follow the guide and deploy a new one.<!--more-->
 
+The Linux-Distribution doesn't really matter if you are a little familiar with it, but we going to use Ubuntu Server 16.04 LTS.  
 For the purposes of this tutorial we gonna set up NextCloud under the Domain __"https://cloud.example.com/"__.  
 Even though this is a step by step tutorial, it is always possible to skip some parts if you already configured them.
 
