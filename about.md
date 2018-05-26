@@ -8,6 +8,7 @@ key: page-about
 ```c++
 cout << "Hello, I am Felix !";
 ```
+
 ```java
 System.out.println("Happy to know that you found my Blog :)");
 ```
@@ -18,10 +19,16 @@ While studying at the [TH-Köln](https://www.th-koeln.de) University I work as a
 
 ### Skills
 
-- C#, Java, C++, C, GO
-- SQL, XML
-- Server Deployment
-  - Virtual Machines
-  - Architecture
-  - Administration
-- Networking
+*   C#, JavaScript, Java, C++, Python, C, GO
+*   Full-Stack-Developer
+    *   ReactJs / MobX
+    *   ExpressJs
+    *   GraphQL / Axios
+*   SQL, XML
+*   Basic HTML, CSS
+*   Automated testing / WebScraping with Selenium
+*   Server Deployment
+    *   Virtual Machines
+    *   Architecture
+    *   Administration
+*   Networking
