@@ -4,7 +4,7 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 
 ## Base settings ##
 
-baseurl: /
+baseurl: 
 url: https://scriptworld.net
 title: scriptworld.net
 description: > #this means to ignore newlines until "nav_lists:"

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Projects
+title: My Projects
 titles:
-  en: Projects
+  en: My Projects
 ---
 
-[Series-Monitor](series-monitor/)
+[Series-Monitor](series-monitor/) - JavaFX project to track your series progression and informing for latest episodes
