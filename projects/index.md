@@ -6,7 +6,7 @@ titles:
 ---
 
 <br />
-[King-Bot](king/) - Selenium Bot for Travian Kingdoms Browsergame in Python
+[King-Bot](king-bot/) - Selenium Bot for Travian Kingdoms Browsergame in Python
 
 [ReactJs-GraphQL-Authentication](react-graphql-auth/) - Authentication system with JsonWebTokens and ReactJS client communicating with an Express / GraphQL server
 
