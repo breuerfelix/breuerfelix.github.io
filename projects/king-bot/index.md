@@ -7,77 +7,89 @@ tags: selenium bot automation travian kingdoms python
 category: project
 ---
 
-## installation
+Welcome to my personal documentation site for [king-bot](https://github.com/scriptworld-git/king-bot).
 
-1.  install python3 for your system
-    1.  [get python](https://www.python.org/downloads/)
-2.  install selenium package
-    1.  open console as administrator
-    2.  `pip3 install selenium`
-3.  clone this repository
-4.  download chromedriver for your system
-    1.  [get chromederiver](http://chromedriver.chromium.org)
-    2.  edit chromedriver path in `start.py` line 7
-        1.  `chromedriverPath = 'enter path here'`
-5.  store your login credentials
-    1.  create `credentials.txt` file
-    2.  write your email and password like following
-    3.  `test@gmail.com;my_password`
-    4.  save the file
-6.  edit `start.py`
-    1.  edit your gameworld in line 8 `world = 'COM4'`
-        1.  make sure to use uppercase!
-    2.  place the actions your bot have to do at the end
-        1.  read documentation for this
-7.  execute in console:
-    1.  `python3 start.py`
-    2.  read documentation for options like remote browser or headless browsing
+Since I already wrote a really good documentation on the original GitHub repository, it would be kinda dumb to copy and paste the readme.md onto this website.  
+That's why I decided to talk more about the 'why' on this project page.
 
-## documentation
+## general
 
-### specify the bot
+The project is written in [Python 3](https://www.python.org) with the [Selenium](http://selenium-python.readthedocs.io) package. Selenium is a tool for automating your tasks.  
+It opens a new browser instance which can be controlled by code.  
+My project [Series-Monitor](/projects/series-monitor) was also writte with the help of selenium, but I wrote it in Java so there is way more overhead than a project written in python.  
+That was acceptable because it also had a GUI, king-bot was originally planned without a gui. At least the core of it.
 
-#### adventures
+Another good reason to write this project in python was the fact that I never ever written even one line in python and really wanted to learn this language, since it is really popular in the automated testing industry.
+
+#### why travian kingdoms ?
+
+Good question.  
+I played that game some years ago, the old and new version, and had alot of fun doing so.  
+The community is really friendly and I had the pleasure to meet plenty of nice people.
+
+There is one bad factor about this game. You need to be online **alot** to be a successful player.  
+Seems fair right ? No. You only have to click once every 10 min, send your farmlists and leave the game again...  
+That was really boring and frustrating cause no one wants to get up in the middle of the game just for a little browsergame.
+
+In the past I solved this problem with a little 'auto-clicker' tool, running the whole night, pressing one single button.  
+This was okay but I wanted more features like adding new farms and removing red farms from the farmlist.
+
+The idea of king-bot was born !
+
+Unfortunately I had no spare time programming the bot because of other projects. I wanted to learn web development instead.  
+Now, some months later I finally started this project with it's basic features in hope that many other people will join and help me improving this bot.
+
+## classes
+
+In general I choosed one class for every component in the game.  
+That helped alot because once you initialized all villages for example, you just have to call one function `openVillage(2)` on the gameworld class and you opened it.  
+There is no need for defining every possible state of the game in functions because a class always knows its state and can handle accordingly to it.
+
+This helps alot when programming new features because it's really easy to associate them with one of those gameobjects.
+
+I got classes for:
+
+-   account
+-   gameworld
+-   village
+-   (resource/building) slot
+
+## custom driver
+
+Seleniums base driver class is really good in general, but I am a huge fan of short function names and deep class structures.  
+That allows me to make easier changes on general tasks like finding and element.
+
+There is one example I wanna mention to explain myself a little bit better.  
+If I want to wait after clicking on a button for the page to load, you can simply put a `time.sleep(2)` statement after your click.  
+I decided to make a function on my custom browser class like the following:
 
 ```python
-game.enableAdventures()
+def sleep(self, seconds):
+    time.sleep(seconds)
 ```
 
-this enables auto sending the hero on adventures.  
-be careful if the hero in low on health! there is no stopping mechanism for now.
+At first many people might say:
 
-#### upgrade resource fields
+> uhm that is really ridiculous !
+
+A few days later I implemented the headless mode and this function saved my life.
+
+After a while I thought:
+
+> well, the browser is alot faster because it doesn't have to load all the images... now I have to adjust all my sleep times to be shorter, or no one will ever notice the bot being faster in headless mode'.
+
+Having the function 2 lines of code later I was done adjusting the sleep times in headless mode.  
+After setting a class attribute called `self.headless = True` I edited my function:
 
 ```python
-game.upgradeSlot(0, 5)
+def sleep(self, seconds):
+    if self.headless:
+        seconds = seconds / 2
+
+    time.sleep(seconds)
 ```
 
-this function will upgrade the resource field with id 5 one level in your first village.
+Done.
 
-on the picture below you can see all field id's. these stay the same no matter what kind of village you have (even in 15er crop villages).
-
-![resource-fields](/assets/king-bot/resourceFields.png)
-
-### start options
-
-#### remote browser
-
-if the script exists because of an exception, it's possible to re-use the browser session so you don't have to go through the whole login process again.  
-just don't exit the browser window and make sure to remove the functions in the script, which the bot already completed in last session.
-
-start the script with the following command:
-
-```bash
-$ python3 start.py -r
-```
-
-#### headless browsing
-
-if you don't wont a browser window to pop up, or using the script on a dedicated server with no gui, it is possible to run the script in headless mode.  
-the console window will inform you about important actions the bot will do.
-
-start the script with the following command:
-
-```bash
-$ python3 start.py -h
-```
+Life can be really easy sometimes, just think a little into the future when planning your project.  
+Make things like that your habit, and your are good to go.
