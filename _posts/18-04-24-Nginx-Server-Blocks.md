@@ -2,7 +2,7 @@
 layout: post
 title: Useful Nginx Server Blocks
 date: 2018-04-24 11:00:00 +01:00
-modify_date: 2018-04-24 11:00:00 +01:00
+modify_date: 2018-06-22 11:00:00 +01:00
 tags: linux nginx serverblocks server http https proxy ssl certificates reverseproxy
 category: tutorial
 ---
@@ -131,7 +131,13 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $http_connection;
+        proxy_set_header Accept-Encoding "";
+        proxy_set_header Proxy_Connection $http_connection;
+        
+        resolver 8.8.8.8;
+        
         proxy_headers_hash_max_size 512;
         proxy_headers_hash_bucket_size 64;
 
