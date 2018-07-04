@@ -5,7 +5,7 @@ titles:
   en: Tutorials
 ---
 
-### C\#
+### C\
 
 {% include search-tags.html posts=site.posts category='tutorial' tag='c#' %}
 
@@ -16,3 +16,7 @@ titles:
 ### Linux
 
 {% include search-tags.html posts=site.posts category='tutorial' tag='linux' %}
+
+### Windows
+
+{% include search-tags.html posts=site.posts category='tutorial' tag='windows' %}
