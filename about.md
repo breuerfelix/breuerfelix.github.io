@@ -19,16 +19,17 @@ While studying at the [TH-Köln](https://www.th-koeln.de) University I work as a
 
 ### Skills
 
-*   C#, JavaScript, Java, C++, Python, C, GO
-*   Full-Stack-Developer
-    *   ReactJs / MobX
-    *   ExpressJs
-    *   GraphQL / Axios
-*   SQL, XML
-*   Basic HTML, CSS
-*   Automated testing / WebScraping with Selenium
-*   Server Deployment
-    *   Virtual Machines
-    *   Architecture
-    *   Administration
-*   Networking
+-   **C#**, JavaScript, Java, Python, C++, C, GO
+-   Full-Stack-Developer
+    -   ReactJs / MobX
+    -   ExpressJs
+    -   GraphQL / Axios
+-   SQL, XML
+-   Basic HTML, CSS
+-   Automated testing / WebScraping with Selenium
+-   Server Deployment
+    -   Virtual Machines
+    -   Architecture
+    -   Administration
+-   Networking
+-   Customer Contact
