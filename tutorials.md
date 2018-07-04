@@ -5,7 +5,7 @@ titles:
   en: Tutorials
 ---
 
-### C\
+### C\#\
 
 {% include search-tags.html posts=site.posts category='tutorial' tag='c#' %}
 
