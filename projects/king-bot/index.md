@@ -54,6 +54,8 @@ I got classes for:
 -   village
 -   (resource/building) slot
 
+---
+
 **update:** _25.07.18_
 
 I decided to move all logic out of these classes.  
