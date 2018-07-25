@@ -2,7 +2,7 @@
 layout: project
 title: KingBot - Automate Travian Kingdoms
 date: 2018-06-18 22:15:00 +01:00
-modify_date: 2018-06-19 07:50:00 +01:00
+modify_date: 2018-07-25 07:50:00 +01:00
 tags: selenium bot automation travian kingdoms python
 category: project
 ---
@@ -53,6 +53,17 @@ I got classes for:
 -   gameworld
 -   village
 -   (resource/building) slot
+
+__update:__ _25.07.18_
+ 
+I decided to move all logic out of these classes.  
+In nearly every function I had to use some functions from the parent class so I thought a little bit longer about the structure.  
+The whole project is more like a functional process. Every 'command' has it's own, independent structure.  
+For example, the farming thread doesn't care if slot xy is upgradeable or not.  
+
+Because the plan for a GUI is in my head, I moved all gamestate out of the functional process.  
+The above structure represents the whole gamestate now, and the classes only contain functions which load the game state.  
+For now they are not implemented, but they will be really usefull when showing the state in a GUI.
 
 ## custom driver
 
