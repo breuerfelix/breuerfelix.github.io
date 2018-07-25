@@ -54,12 +54,12 @@ I got classes for:
 -   village
 -   (resource/building) slot
 
-__update:__ _25.07.18_
- 
+**update:** _25.07.18_
+
 I decided to move all logic out of these classes.  
 In nearly every function I had to use some functions from the parent class so I thought a little bit longer about the structure.  
 The whole project is more like a functional process. Every 'command' has it's own, independent structure.  
-For example, the farming thread doesn't care if slot xy is upgradeable or not.  
+For example, the farming thread doesn't care if slot xy is upgradeable or not.
 
 Because the plan for a GUI is in my head, I moved all gamestate out of the functional process.  
 The above structure represents the whole gamestate now, and the classes only contain functions which load the game state.  
@@ -104,3 +104,58 @@ Done.
 
 Life can be really easy sometimes, just think a little into the future when planning your project.  
 Make things like that your habit, and your are good to go.
+
+### use_browser decorator
+
+If any Thread wants to access the browser, it needs to call `browser.use()` and when finished `browser.done()` method.  
+This prevents many Threads from clicking in the browser at the same time. It would be a complete mess !
+
+All code using the browser, was also always in an `try-catch` block, so it releases the browser even though an exception occured.  
+In the future I want to reload the startpage after an exception occured, so there won't be any window open, which may confuse the next Thread.
+
+```python
+def use_browser(org_func: Any):
+    def wrapper(*args, **kwargs):
+        browser = None
+        for arg in args:
+            if type(arg) is client:
+                browser = arg
+                break
+
+        for _, value in kwargs.items():
+            if type(value) is client:
+                browser = value
+                break
+
+        if browser != None:
+            rv = None
+            browser.use()
+
+            try:
+                rv = org_func(*args, **kwargs)
+            except Exception as e:
+                rv = None
+                log("exception in function: {} exception: {}".format(
+                    org_func.__name__, str(e)))
+            finally:
+                browser.done()
+
+                return rv
+
+        else:
+            return org_func(*args, **kwargs)
+
+return wrapper
+```
+
+This decorator can be used liked this:
+
+```python
+@use_browser
+def start_farming(browser:client, ...):
+    pass
+```
+
+Writing this function is now kinda easy. No Try-Catch, no `browser.use()`.
+
+Also, if I want to implement refreshing the page after an error occured, there is only one place I need to insert the new code in. Damn handy.
