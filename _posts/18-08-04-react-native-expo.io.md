@@ -3,7 +3,7 @@ layout: post
 title: react-native-app with expo.io on coder.com
 date: 2018-08-04 11:00:00 +01:00
 modify_date: 2018-08-05 11:00:00 +01:00
-tags: expo.io react-native coder.com javascript
+tags: expo.io react-native coder.com js
 category: tutorial
 ---
 
