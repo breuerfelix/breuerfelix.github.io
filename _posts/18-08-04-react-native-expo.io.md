@@ -123,8 +123,8 @@ We should see two links right now. They should be similar to this one:
 These are our new addresses. All we have to do now, is to tell node, that it should proxy our connections to this link and we are done.
 
 ```bash
-$ export EXPO_MANIFEST_PROXY_URL="https://your-public-url-for-xdl.example.com"
-$ export EXPO_PACKAGER_PROXY_URL="https://your-public-url-for-metro.example.com"
+$ export EXPO_MANIFEST_PROXY_URL="https://8000-interestmisshapenseal.cdr.co"
+$ export EXPO_PACKAGER_PROXY_URL="https://8080-interestmisshapenseal.cdr.co"
 ```
 
 If you start your server again, you should see something like this at the bottom of the QR-Code:  
