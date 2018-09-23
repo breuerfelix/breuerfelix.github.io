@@ -4,28 +4,31 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 
 ## Base settings ##
 
-baseurl: 
+? baseurl
 url: https://scriptworld.net
 title: scriptworld.net
 description: > #this means to ignore newlines until "nav_lists:"
-  My Journey of Coding!
+    My Journey of Coding!
 
 nav_lists:
-  - titles:
-      en: tutorials
-    url: /tutorials.html
-  - titles:
-      en: projects
-    url: /projects/
-  - titles:
-      en: about
-    url: /about.html
+    - titles:
+          en: tutorials
+      url: /tutorials.html
+    - titles:
+          en: projects
+      url: /projects/
+    - titles:
+          en: tools
+      url: /tools/
+    - titles:
+          en: about
+      url: /about.html
 
 paths:
-  base: /
-  home: /
-  all:  /all.html
-  rss:  /feed.xml
+    base: /
+    home: /
+    all: /all.html
+    rss: /feed.xml
 
 ## GitHub repository (if the site is hosted by GitHub) ##
 # repository:  #e.g. someone/someone.github.io
@@ -37,32 +40,32 @@ timezone: Europe/Berlin #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ## Author & social ##
 author:
-  name: Felix
-  email:  webmaster@scriptworld.net
-  # facebook:  #your Facebook username
-  # twitter:  #your Twitter username
-  github:  ScriptWorld-git
-  # googleplus:  #your Google+ username
-  # weibo:  #your Weibo username
-  # douban:  #your Douban username
-  # linkedin:  #your Linkedin username
+    name: felix
+    email: felix@scriptworld.net
+    # facebook:  #your Facebook username
+    # twitter:  #your Twitter username
+    github: scriptworld-git
+    # googleplus:  #your Google+ username
+    # weibo:  #your Weibo username
+    # douban:  #your Douban username
+    # linkedin:  #your Linkedin username
 
 ## TOC
 toc:
-  # selectors: 'h1,h2,h3'
+    # selectors: 'h1,h2,h3'
 
 ## Comment system (Disqus) ##
 disqus:
-  # shortname:  #the Disqus shortname for the site
+    # shortname:  #the Disqus shortname for the site
 
 ## Comment system (gitalk) ##
 # please refer to https://github.com/gitalk/gitalk for more info.
 gitalk:
-  # clientID:  #Github Application Client ID
-  # clientSecret:  #Github Application Client Secret
-  # repository:  #Github repo
-  # owner:  #Github repo owner
-  # admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+    # clientID:  #Github Application Client ID
+    # clientSecret:  #Github Application Client Secret
+    # repository:  #Github repo
+    # owner:  #Github repo owner
+    # admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
     # - owner
 
 ## Google Analytics ##
@@ -70,9 +73,9 @@ ga_tracking_id: UA-117436835-1 #Google analytics id for the site
 
 ## Reading quantity (LeanCloud) ##
 leancloud:
-  # app_id:  #LeanCloud App id
-  # app_key:  #LeanCloud App key
-  # app_class:  #LeanCloud App class
+    # app_id:  #LeanCloud App id
+    # app_key:  #LeanCloud App key
+    # app_class:  #LeanCloud App class
 
 # mathjax: true
 # mathjax_autoNumber: true
@@ -96,19 +99,20 @@ highlighter: rouge
 permalink: none
 
 include:
-  - projects
+    - projects
+    - tools
 
 exclude:
-  - README-*.md
-  - README.md
+    - README-*.md
+    - README.md
 
 ## Plugins ##
 plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jemoji
+    - jekyll-sitemap
+    - jekyll-feed
+    - jekyll-paginate
+    - jemoji
 
 ## Server ##
-host: "127.0.0.1"
+host: '127.0.0.1'
 port: 4000
