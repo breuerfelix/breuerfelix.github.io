@@ -9,7 +9,7 @@ cout << "Hello, I am Felix !";
 ```
 
 ```js
-console.log("Happy to know that you found my Website :)");
+console.log('Happy to know that you found my Website :)');
 ```
 
 I am a 25 years old [Software Engineering Student](https://www.th-koeln.de) living in Cologne, Germany.
