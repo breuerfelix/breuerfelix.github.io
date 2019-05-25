@@ -8,27 +8,33 @@ key: page-about
 cout << "Hello, I am Felix !";
 ```
 
-```java
-System.out.println("Happy to know that you found my Website :)");
+```js
+console.log("Happy to know that you found my Website :)");
 ```
 
-I'm an 25 years old Software Engineering Student living in Cologne, Germany.<br />
-After Highschool I finished an apprenticeship in Mechatronics at [Schwarze-Robitec](https://www.schwarze-robitec.com).<br />
-While studying at the [TH-Köln](https://www.th-koeln.de) University I work as a Software Developer in a small Company called [Richrath-Elektronik](http://www.richrath-elektronik.de).
+I am a 25 years old [Software Engineering Student](https://www.th-koeln.de) living in Cologne, Germany.
+
+After finishing my apprenticeship in Mechatronics at [Schwarze-Robitec](https://www.schwarze-robitec.com), I spend some time working as a Software Engineer in companies like [Richrath-Elektronik](http://www.richrath-elektronik.de) and [Gipfelstürmer-Kommunikation](https://www.gipfelstuermer-kommunikation.com) while studying.
+
+Trying out new technologies is one thing I love the most doing in my spare time.  
+I also enjoy solving difficult boulder problems and strumming the guitar.  
+If you are not already doing, try it out yourself! It's worth it :)
 
 ### Skills
 
--   **C#**, JavaScript, Java, Python, C++, C, GO
--   Full-Stack-Developer
-    -   ReactJs / MobX
-    -   ExpressJs
-    -   GraphQL / Axios
--   SQL, XML
--   Basic HTML, CSS
--   Automated testing / WebScraping with Selenium
--   Server Deployment
-    -   Virtual Machines
-    -   Architecture
-    -   Administration
--   Networking
--   Customer Contact
+- Customer Contact
+- C#, JavaScript, TypeScript, Python, Java, C++, C, Golang
+- Full-Stack-Developer
+  - ReactJs, Next.js, Svelte
+  - Mithril, Angular
+  - GraphQL, REST
+  - NodeJS, ExpressJS
+  - MongoDB, CouchDB, SQL
+  - Webpack, Sapper, Npm
+  - HTML, CSS, SASS
+- DevOps
+  - Docker, Git
+  - Unix, Virtual Machines
+  - TravisCI, GitLab CI
+- Automated testing / WebScraping with Selenium
+- Reverse Engineering API's
