@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Tips and Tricks
-titles:
-    en: Tips and Tricks
 ---
 
 #### Terminal

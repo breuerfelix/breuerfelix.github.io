@@ -1,8 +1,6 @@
 ---
 layout: page
 title: TypeScript CheatSheet
-titles:
-    en: TypeScript CheatSheet
 ---
 
 ```typescript

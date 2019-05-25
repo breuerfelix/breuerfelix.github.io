@@ -1,8 +1,6 @@
 ---
 layout: page
 title: SSH - shortcut
-titles:
-    en: SSH - shortcut
 ---
 
 Open `~/.ssh/config` on your computer.  

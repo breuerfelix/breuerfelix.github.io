@@ -1,8 +1,6 @@
 ---
 layout: page
 title: goLang CheatSheet
-titles:
-    en: goLang CheatSheet
 ---
 
 ```go
