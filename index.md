@@ -12,7 +12,7 @@ cout << "Hello, I am Felix !";
 System.out.println("Happy to know that you found my Website :)");
 ```
 
-I'm an 23 years old Software Engineering Student living in Cologne, Germany.<br />
+I'm an 25 years old Software Engineering Student living in Cologne, Germany.<br />
 After Highschool I finished an apprenticeship in Mechatronics at [Schwarze-Robitec](https://www.schwarze-robitec.com).<br />
 While studying at the [TH-Köln](https://www.th-koeln.de) University I work as a Software Developer in a small Company called [Richrath-Elektronik](http://www.richrath-elektronik.de).
 
