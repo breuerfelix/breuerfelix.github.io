@@ -1,8 +1,6 @@
 ---
 layout: page
 title: My Projects
-titles:
-  en: My Projects
 ---
 
 <br />
