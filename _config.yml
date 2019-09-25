@@ -11,12 +11,12 @@ description: > #this means to ignore newlines until "nav_lists:"
     learning by doing
 
 nav_lists:
-    - title: projects
-      url: /projects/
-    - title: guides
-      url: /guides/
+    - title: blog
+      url: /blog/
     - title: tools
       url: /tools/
+    - title: resume
+      url: /assets/resume.pdf
 
 paths:
     base: /
@@ -37,7 +37,7 @@ author:
     name: felix
     email: hi@felixbreuer.me
     # facebook:  #your Facebook username
-    # twitter:  #your Twitter username
+    twitter: felix_breuer
     github: breuerfelix
     # googleplus:  #your Google+ username
     # weibo:  #your Weibo username
@@ -78,7 +78,7 @@ leancloud:
 
 ## Paginate ##
 paginate: 10
-paginate_path: /guides/page:num
+paginate_path: /blog/page:num
 
 ## Post excerpts ##
 excerpt_separator: <!--more-->
@@ -95,6 +95,7 @@ permalink: none
 include:
     - projects
     - tools
+    - blog
 
 exclude:
     - README-*.md
