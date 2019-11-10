@@ -15,8 +15,6 @@ nav_lists:
       url: /blog/
     - title: tools
       url: /tools/
-    - title: resume
-      url: /assets/resume.pdf
 
 paths:
     base: /
@@ -35,7 +33,7 @@ timezone: Europe/Berlin #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 ## Author & social ##
 author:
     name: felix
-    email: hi@felixbreuer.me
+    email: contact@felixbreuer.me
     # facebook:  #your Facebook username
     twitter: felix_breuer
     github: breuerfelix
