@@ -5,8 +5,8 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 ## Base settings ##
 
 ? baseurl
-url: https://felixbreuer.me
-title: felixbreuer.me
+url: https://breuer.dev
+title: breuer.dev
 description: > #this means to ignore newlines until "nav_lists:"
     learning by doing
 
@@ -33,7 +33,7 @@ timezone: Europe/Berlin #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 ## Author & social ##
 author:
     name: felix
-    email: contact@felixbreuer.me
+    email: felix@breuer.dev
     # facebook:  #your Facebook username
     twitter: felix_breuer
     github: breuerfelix

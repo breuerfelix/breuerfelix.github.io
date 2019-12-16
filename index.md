@@ -26,17 +26,19 @@ Now take a step back, relax and have fun reading!
 
 ### Projects
 
-[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Web Frontend with PreactJS which manages an Instagram Automation tool, Architecture made with Docker-Compose _(only github link)_
+[Elo-Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system built with Svelte and Sapper _(only github link)_
 
-[King-Bot-Api](https://github.com/breuerfelix/king-bot-api) - Reversed Engineered the API of Travian Kingdoms, made a Bot in NodeJS and a Web Frontend with PreactJS _(only github link)_
+[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend _(only github link)_
+
+[King-Bot-Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend _(only github link)_
 
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js _(only github link)_
 
 [King-Bot](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python
 
-[ReactJs-GraphQL-Authentication](projects/react-graphql-auth) - Authentication system with JsonWebTokens and ReactJS client communicating with an Express / GraphQL server
+[ReactJs-GraphQL-Authentication](projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL
 
-[Async-Socket-TCP](projects/async-tcp) - TCP client and server written in Csharp for Web- or MMORPG-Server
+[Async-Socket-TCP](projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server
 
 [Series-Monitor](projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes
 
