@@ -26,7 +26,7 @@ Now take a step back, relax and have fun reading!
 
 ### Projects
 
-[Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system built with Svelte and Sapper _(only github link)_
+[Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper _(only github link)_
 
 [InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend _(only github link)_
 
