@@ -26,13 +26,13 @@ Now take a step back, relax and have fun exploring!
 
 ### Projects
 
-[Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper _(only github link)_
+[Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper
 
-[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend _(only github link)_
+[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend
 
-[King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend _(only github link)_
+[King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend
 
-[AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js _(only github link)_
+[AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js
 
 [King Bot](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python
 
