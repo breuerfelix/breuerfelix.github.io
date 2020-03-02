@@ -26,21 +26,14 @@ Now take a step back, relax and have fun exploring!
 
 ### Projects
 
-[Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper
-
-[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend
-
-[King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend
-
-[AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js
-
-[King Bot](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python
-
-[ReactJs GraphQL Authentication](projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL
-
-[Async Socket TCP](projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server
-
-[Series Monitor](projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes
+[Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper  
+[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend  
+[King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
+[AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
+[King Bot](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
+[ReactJs GraphQL Authentication](projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
+[Async Socket TCP](projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
+[Series Monitor](projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
 
 ### Skills
 
