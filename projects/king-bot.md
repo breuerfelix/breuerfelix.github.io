@@ -129,23 +129,22 @@ def use_browser(org_func: Any):
                 browser = value
                 break
 
-        if browser != None:
-            rv = None
-            browser.use()
-
-            try:
-                rv = org_func(*args, **kwargs)
-            except Exception as e:
-                rv = None
-                log("exception in function: {} exception: {}".format(
-                    org_func.__name__, str(e)))
-            finally:
-                browser.done()
-
-                return rv
-
-        else:
+        if browser == None:
             return org_func(*args, **kwargs)
+
+        rv = None
+        browser.use()
+
+        try:
+            rv = org_func(*args, **kwargs)
+        except Exception as e:
+            rv = None
+            log("exception in function: {} exception: {}".format(
+                org_func.__name__, str(e)))
+        finally:
+            browser.done()
+
+            return rv
 
 return wrapper
 ```
