@@ -80,7 +80,7 @@ At the bottom you will see a `weak account key`. Grab this one, we need it!
 ```bash
 # run
 docker run --restart always -d --name boinc --net=host --pid=host \
-    -e BOINC_CMD_LINE_OPTIONS="--project_attach http://boinc.bakerlab.org/rosetta/ <weak_account_key>" boinc/client
+    -e BOINC_CMD_LINE_OPTIONS="--attach_project http://boinc.bakerlab.org/rosetta/ <weak_account_key>" boinc/client
 
 # stop and remove
 docker stop boinc && docker rm boinc
