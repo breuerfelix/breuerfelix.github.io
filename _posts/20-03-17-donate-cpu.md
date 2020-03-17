@@ -16,6 +16,8 @@ So what should you do with all that idle compute power?? <!--more-->
 I stumbled across [folding@home](https://foldingathome.org/) but all the setup guides doesn't fit my needs since in a dockerized world I do not want to install anything (except docker).  
 I also found [Boinc](https://boinc.berkeley.edu/) which got native docker support but it is a little weird to get started at first.
 
+__Important:__ These programs run as 'low priority' threads. If your other programs need more CPU power, they will get it!
+
 ## folding@home
 
 ### Docker
