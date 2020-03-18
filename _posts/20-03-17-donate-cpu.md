@@ -2,7 +2,7 @@
 layout: post
 title: Donate CPU for Cancer, COVID-19 and co.
 date: 2020-03-17 11:00:00 +01:00
-modify_date: 2020-03-17 11:00:00 +01:00
+modify_date: 2020-03-18 11:00:00 +01:00
 tags: foldingathome corona cancer covid19 rosetta boinc donate cpu
 category: blog
 ---
@@ -17,6 +17,8 @@ I stumbled across [folding@home](https://foldingathome.org/) but all the setup g
 I also found [Boinc](https://boinc.berkeley.edu/) which got native docker support but it is a little weird to get started at first.
 
 __Important:__ These programs run as 'low priority' threads. If your other programs need more CPU power, they will get it!
+
+__[Docker? What the heck?](https://www.ibm.com/cloud/learn/docker)__
 
 ## folding@home
 
