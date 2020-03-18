@@ -9,11 +9,11 @@ category: blog
 
 __TL;DR:__ Run `docker run -d johnktims/folding-at-home` to donate your spare CPU power!
 
-As a software developer you probably rent some sweet little servers to host all your wonderful awesome services.  
-You probably also realised that there are not that many people using your services so the server is always running at `0.01` load.  
+As a software developer, you probably rent some sweet little servers to host all your wonderful awesome services.  
+You probably also realized that there are not that many people using your services so the server is always running at `0.01` load.  
 So what should you do with all that idle compute power?? <!--more-->
 
-I stumbled across [folding@home](https://foldingathome.org/) but all the setup guides doesn't fit my needs since in a dockerized world I do not want to install anything (except docker).  
+I stumbled across [folding@home](https://foldingathome.org/) but all the setup guides don't fit my needs since in a dockerized world I do not want to install anything (except docker).  
 I also found [Boinc](https://boinc.berkeley.edu/) which got native docker support but it is a little weird to get started at first.
 
 __Important:__ These programs run as 'low priority' threads. If your other programs need more CPU power, they will get it!
@@ -44,7 +44,7 @@ Available `--power` settings are `light`, `medium` and `full`.
 
 ### Windows / Mac
 
-I highly recommend to only run this program on a desktop computer or when connected to a powersource because it will drain your battery since it is using all the available CPU power on your system.  
+I highly recommend to only run this program on a desktop computer or when connected to a power source because it will drain your battery since it is using all the available CPU power on your system.  
 You can, of course, also use docker here, but why not have a nice gui?
 
 Since this is well documented already, I won't go into detail here.
@@ -64,18 +64,18 @@ You will get a passkey and username via email.
 ```
 
 If you see this 'error' log, don't worry, there is just nothing to do right now. It will try again later and maybe pick up some work!  
-That means there are alot of people donating right now. Keep it up!
+That means there are a lot of people donating right now. Keep it up!
 
 ## Boinc
 
-First you have to pick a project. One client can only participate for one project at a given time.  
+First, you have to pick a project. One client can only participate in one project at a given time.  
 [Click here](https://boinc.berkeley.edu/projects.php) for a list of all projects.
 
 I pick [Rosetta@home](http://boinc.bakerlab.org/rosetta/) for this guide because they are currently working on COVID-19.
 
-First you have to create an account at the [Rosetta Project Page](https://boinc.bakerlab.org/rosetta/create_account_form.php).  
-Once you are logged in go to the secion `Account Information` and click on `show` to see the `Account key`.  
-At the bottom you will see a `weak account key`. Grab this one, we need it!
+First, you have to create an account at the [Rosetta Project Page](https://boinc.bakerlab.org/rosetta/create_account_form.php).  
+Once you are logged in go to the section `Account Information` and click on `show` to see the `Account key`.  
+At the bottom, you will see a `weak account key`. Grab this one, we need it!
 
 ### Docker
 
@@ -93,7 +93,7 @@ If you need more configuration just have a look [here](https://hub.docker.com/r/
 
 ### Desktop
 
-[Click here](http://boinc.bakerlab.org/rosetta/join.php) to setup the desktop version or even an Android app.
+[Click here](http://boinc.bakerlab.org/rosetta/join.php) to set up the desktop version or even an Android app.
 
 ### Errors
 
@@ -102,4 +102,4 @@ No protocol specified
 ```
 
 If this will be spammed in the docker logs... don't worry about it! It is just a warning.  
-I still have to figure out how to surpress this.
+I still have to figure out how to suppress this.
