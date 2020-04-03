@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Donate CPU for Cancer, COVID-19 and co.
+title: Donate CPU / GPU for Cancer, COVID-19 and co.
 date: 2020-03-17 11:00:00 +01:00
 modify_date: 2020-03-18 11:00:00 +01:00
 tags: foldingathome corona cancer covid19 rosetta boinc donate cpu
@@ -41,6 +41,9 @@ If you have an account you can also add the `--passkey=<insert_key>` parameter a
 There is a neat web ui at `http://localhost:7396` to see what you are currently doing.  
 Available `--power` settings are `light`, `medium` and `full`.  
 `--user=Anonymous` and `--team=0` basically means: help anybody who needs help and do not add credits to an account.
+
+If you got a dedicated graphics card it is also possible to donate this power! It is way more effective than the CPU.  
+You need Docker 19.03+ and `nvidia-docker-toolkit` installed on your host system. Just add the parameter `--gpu all` to your container. Simple as that!
 
 ### Windows / Mac
 
