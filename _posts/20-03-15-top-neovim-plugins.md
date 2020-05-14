@@ -119,7 +119,7 @@ nnoremap <silent> <C-l> :call WinMove('l')<CR>
 It is using vim keys (for sure): `j - down / k - up / ...`  
 Quick example:  
 If you press `ctrl + j` and there is a pane below your pane, switch to it.  
-Otherwhise create a new split pane below.
+Otherwhise create a new split pane below and switch to it.
 
 ## #5 - Auto Pairs
 
@@ -153,6 +153,11 @@ After using these two plugins you don't always have to adjust your `.vimrc` each
 ```vim
 Plug 'tpope/vim-sleuth'
 Plug 'editorconfig/editorconfig-vim'
+
+"example defaults for new projects
+set expandtab
+set tabstop=2
+set shiftwidth=2
 ```
 
 ## #8 - gitgutter
