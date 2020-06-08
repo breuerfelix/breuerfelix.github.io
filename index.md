@@ -24,32 +24,43 @@ If you are not already doing, try it out yourself! It's worth it :)
 
 Now take a step back, relax and have fun exploring!
 
-### Projects
+### Open Source Projects
 
 [Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper  
 [InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend  
 [King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
-[King Bot](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
-[ReactJs GraphQL Authentication](projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
-[Async Socket TCP](projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
-[Series Monitor](projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
+[_King Bot_](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
+[_ReactJs GraphQL Authentication_](projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
+[_Async Socket TCP_](projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
+[_Series Monitor_](projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
+
+_**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a link to GitHub.
+
+### Reference Projects
+
+[DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify Web Shop
 
 ### Skills
 
 - Customer Contact
-- C#, JavaScript, TypeScript, Python, Java, C++, C, Golang
+- Programming Languages
+  - JavaScript, TypeScript, Python, Bash
+  - C#, Java, C++, C, Golang
 - Full-Stack-Developer
-  - ReactJs, Next.js, Svelte
+  - ReactJs, Next.js
+  - Svelte, Sapper
   - Mithril, Angular
   - GraphQL, REST
   - NodeJS, ExpressJS
   - MongoDB, CouchDB, SQL
-  - Webpack, Sapper, Npm
+  - Webpack, npm
   - HTML, CSS, SASS
 - DevOps
   - Git, Docker, Docker-Compose
   - Unix, Virtual Machines
   - TravisCI, GitLab CI
+- IoT
+  - Yocto, Bitbake
 - Automated testing / WebScraping with Selenium
 - Reverse Engineering API's
