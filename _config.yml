@@ -4,7 +4,7 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 
 ## Base settings ##
 
-? baseurl
+# baseurl:
 url: https://breuer.dev
 title: breuer.dev
 description: > #this means to ignore newlines until "nav_lists:"
@@ -40,7 +40,7 @@ author:
     # googleplus:  #your Google+ username
     # weibo:  #your Weibo username
     # douban:  #your Douban username
-    # linkedin:  #your Linkedin username
+    linkedin: felix-breuer-5b70b3179
 
 ## TOC
 toc:
@@ -53,12 +53,12 @@ disqus:
 ## Comment system (gitalk) ##
 # please refer to https://github.com/gitalk/gitalk for more info.
 gitalk:
-    # clientID:  #Github Application Client ID
-    # clientSecret:  #Github Application Client Secret
-    # repository:  #Github repo
-    # owner:  #Github repo owner
-    # admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
-    # - owner
+    clientID: 825db415b2ec7a891274
+    clientSecret: 4204bbd65a8dc347d5f94b5f0f33dbf43543efdf
+    repository: breuerfelix.github.io
+    owner: breuerfelix
+    admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+    - owner
 
 ## Google Analytics ##
 ga_tracking_id: UA-117436835-1 #Google analytics id for the site
