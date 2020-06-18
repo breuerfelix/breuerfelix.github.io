@@ -1,4 +1,4 @@
-{%- if site.disqus.shortname == nil and site.gitalk.clientID and site.gitalk.clientSecret and site.gitalk.repository and site.gitalk.owner and site.gitalk.admin and page.key -%}
+{%- if site.disqus.shortname == nil and site.gitalk.clientID and site.gitalk.clientSecret and site.gitalk.repository and site.gitalk.owner and site.gitalk.admin and page.id -%}
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
 <div id="js-gitalk-container"></div>
@@ -17,7 +17,7 @@
 			repo: '{{ site.gitalk.repository }}',
 			owner: '{{ site.gitalk.owner }}',
 			admin: [{{ admin }}],
-			id: '{{ page.key }}'
+			id: '{{ page.id }}'
 		});
 		gitalk.render('js-gitalk-container');
 	});

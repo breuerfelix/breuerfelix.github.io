@@ -135,14 +135,14 @@
     }, 1000);
   });
 
-  {%- if page.key and site.leancloud.app_id and site.leancloud.app_key and site.leancloud.app_class and jekyll.environment != "development" -%}
+  {%- if page.id and site.leancloud.app_id and site.leancloud.app_key and site.leancloud.app_class and jekyll.environment != "development" -%}
   window.Lazyload.js(['{{ _sources.jquery }}', '{{ _sources.leancloud_js_sdk }}'], function() {
     AV.init({
       appId: '{{ site.leancloud.app_id }}',
       appKey: '{{ site.leancloud.app_key }}'
     });
     var query = new AV.Query('{{ site.leancloud.app_class }}');
-    query.equalTo('key', '{{ page.key }}');
+    query.equalTo('key', '{{ page.id }}');
     query.first().then(function(result) {
       if (result) {
         addOne(result)
@@ -150,7 +150,7 @@
         var Blog = AV.Object.extend('{{ site.leancloud.app_class }}');
         var blog = new Blog();
         blog.set('title', '{{ page.title }}');
-        blog.set('key', '{{ page.key }}');
+        blog.set('key', '{{ page.id }}');
         blog.set('views', 0);
         blog.save().then(function(page) {
           addOne(page)
@@ -166,7 +166,7 @@
         page.save(null, {
           fetchWhenSave: true
         }).then(function(page) {
-          $("#post-key-{{ page.key }}").text(page.attributes.views);
+          $("#post-key-{{ page.id }}").text(page.attributes.views);
         }, function(error) {
           if (error) {
             throw error;

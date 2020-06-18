@@ -57,8 +57,8 @@ gitalk:
     clientSecret: 4204bbd65a8dc347d5f94b5f0f33dbf43543efdf
     repository: breuerfelix.github.io
     owner: breuerfelix
-    admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
-    - owner
+    admin:
+      - breuerfelix
 
 ## Google Analytics ##
 ga_tracking_id: UA-117436835-1 #Google analytics id for the site
