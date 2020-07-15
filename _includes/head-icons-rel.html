@@ -36,4 +36,7 @@
 {%- include snippets/prepend-baseurl.html -%}
 <meta name="msapplication-square70x70logo" content="{{ __return }}">
 <meta name="msapplication-TileColor" content="#eeeeee">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="preload" as="style">
+<!-- https://csswizardry.com/2020/05/the-fastest-google-fonts/ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" media="print" onload="this.media='all'" />
