@@ -30,7 +30,7 @@ Modify the paths to fit your system.
 
 Content of `hotplug.sh`:
 ```bash
-#! /usr/bin/bash
+#!/usr/bin/bash
 
 export DISPLAY=:0
 export XAUTHORITY=/home/felix/.Xauthority
