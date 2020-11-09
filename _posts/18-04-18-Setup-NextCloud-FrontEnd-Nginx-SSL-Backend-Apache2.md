@@ -2,23 +2,23 @@
 layout: post
 title: Setup NextCloud Server with Nginx SSL Reverse-Proxy and Apache2 Backend
 date: 2018-04-18 17:00:00 +01:00
-modify_date: 2018-04-24 11:00:00 +01:00
+modify_date: 2020-11-08 11:00:00 +01:00
 tags: nextcloud server ubuntu16.04 setup apache2 nginx reverseproxy ssl linux
 category: tutorial
 ---
 
 In the next few chapters we gonna setup a [NextCloud](https://nextcloud.com) Server from scratch.  
-There are alot of tutorials out there already covering this topic, but in our case we gonna use [Nginx](http://nginx.org) to serve the SSL-Certificates and proxy the connection to an [Apache2](https://httpd.apache.org) service which is serving NextCloud.  
+There are a lot of tutorials out there already covering this topic, but in our case we gonna use [Nginx](http://nginx.org) to serve the SSL-Certificates and proxy the connection to an [Apache2](https://httpd.apache.org) service which is serving NextCloud.  
 You can either use an existing Nginx configuration or follow the guide and deploy a new one.<!--more-->
 
-The Linux-Distribution doesn't really matter if you are a little familiar with it, but we going to use Ubuntu Server 16.04 LTS.  
+The Linux-Distribution doesn't really matter if you are a little familiar with it, but we going to use [Ubuntu Server 16.04 LTS](https://ubuntu.com/download/server).  
 For the purposes of this tutorial we gonna set up NextCloud under the Domain __"https://cloud.example.com/"__.  
 Even though this is a step by step tutorial, it is always possible to skip some parts if you already configured them.
 
 # Installing NextCloud
 There are two ways of installing NextCloud.  
 The first one is the fully automated option using 'snap' packages.  
-I don't recommend doing it this way because you dont have control over everything you wanna do.  
+I don't recommend doing it this way because you don't have control over everything you wanna do.  
 Especially in a custom setup like ours, it is always better to do everything by yourself.
 
 ## 'snap' Install
@@ -38,7 +38,7 @@ $ sudo nextcloud.manual-install replace_with_admin_username replace_with_admin_p
 
 ## Manual Install
 In this chapter we are going through the installation step by step.  
-First of all we need to install all dependencies. Don't be scared... these are alot but only small ones.
+First of all we need to install all dependencies. Don't be scared... these are a lot but only small ones.
 ```bash
 $ sudo apt-get update
 $ sudo apt-get upgrade
@@ -51,7 +51,7 @@ NextCloud is recommending [MariaDB](https://mariadb.org) as the database softwar
 ```bash
 $ sudo apt-get install mariadb-server php-mysql
 ```
-MariaDB won't set up any password for the `root` user. Even though it's only possible to access the database via `sudo` command so it doesn't really matter.  
+MariaDB won't set up any password for the `root` user. It is only possible to access the database via `sudo` command so we gonna ignore that for this tutorial.  
 Enter the database:
 ```bash
 $ sudo mysql -u root
@@ -93,7 +93,7 @@ The order in configuring all parts is irrelevant but if we do it in my way, we c
 
 ## Apache2
 We will configure Apache to handle only localhost connections via http traffic.  
-It will serve NextCloud on the backend. This is really comfortable because we dont have to worry about Https-Traffic or SSL-Certs over here.
+It will serve NextCloud on the backend. This is really comfortable because we don't have to worry about Https-Traffic or SSL-Certs over here.
 
 First of all we have to make sure the Apache service isn't listening on port 80 or 443. Nginx will do that in the future.  
 We will change these ports to 8080 or 4443.
@@ -155,8 +155,8 @@ Install Nginx:
 ```bash
 $ sudo apt-get install nginx
 ```
-_Optional:_ I recommend setting up a firewall. [Click Here!](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04)  
-Modify the Firewall (if installed):
+_Optional:_ I recommend setting up a firewall. [Click Here for a Digital Ocean Guide!](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04)  
+Modify the Firewall to allow Nginx traffic (if installed):
 ```bash
 $ sudo ufw allow 'Nginx Full'
 ```
@@ -218,7 +218,7 @@ $ sudo service nginx restart
 ```
 
 ### SSL-Certificates
-There are alot of tutorials out there covering that topic.  
+There are a lot of tutorials out there covering that topic.  
 You can either use self-signed certificates or let Let's Enctypt handle that for you.
 We will roughly go through this chapter but if you want to have more overview just look at [Digital Ocean's Article](https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04) about setting up Nginx with Let's Encrypt.
 
@@ -236,7 +236,7 @@ Obtaining cerificates:
 $ sudo certbot --nginx -d cloud.example.com
 ```
 During this process we will be asked if Certbot should also redirect all Http traffic to Https.  
-I recommend doing it on your own for example by checking out my Server-Block Examples (_coming soon_).  
+I recommend doing it on your own for example by checking out my [Server-Block Examples](/tutorial/Nginx-Server-Blocks.html).  
 Otherwise just press '2' and Certbot will handle that for us.
 
 #### Renewing Certificates
@@ -244,7 +244,7 @@ To renew the certificates when they are expired we can simply type:
 ```bash
 $ sudo certbot renew
 ```
-As a lazy person I would highly suggest to set up a `crontab job' which runs this command every month.
+As a lazy person I would highly suggest to set up a `crontab job` which runs this command every month.
 
 ### Optimizing SSL Nginx Settings
 
@@ -280,5 +280,5 @@ array (
 Save and close the file.
 
 Browse to __https://cloud.example.com/__ and finish the guided setup.  
-You have to enter the admin account details you want to use and the SQL user. password and database name we created in the tutorial.  
+You have to enter the admin account details you want to use and the SQL user, password and database name we created in the tutorial.  
 After submitting these infos NextCloud is ready to use.
