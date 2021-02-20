@@ -6,4 +6,9 @@ pkgs.mkShell {
     ruby
     jekyll
   ];
+  shellHook = ''
+    alias install="bundle install"
+    alias update="bundle update"
+    alias run="bundle exec jekyll serve"
+  '';
 }
