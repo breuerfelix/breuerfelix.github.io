@@ -1,62 +1,94 @@
 ---
-layout: base
+layout: compress
 ---
-<div class="m-post">
-	<div class="main clearfix js-main">
-		<div class="col-2 js-col-2">
-			<aside class="js-article-aside"><div class="m-toc js-toc"></div></aside>
-		</div>
-		<div class="col-1">
-			<article class="js-article" itemscope itemtype="http://schema.org/BlogPosting">
-				<meta itemprop="mainEntityOfPage" itemscope itemType="https://schema.org/WebPage"/>
-				<header class="main-header">
-					{%- include snippets/page-title.html -%}
-					<h1 itemprop="headline" itemprop="name headline">{{ __return }}</h1>
-					{%- include components/article-data.html -%}
-				</header>
-				<div class="m-article-content js-article-content" itemprop="articleBody">{{ content }}</div>
-				<footer>
-					{%- if page.modify_date -%}
-						{%- assign __locale = site.data.locale.ARTICLE_DATE_FORMAT -%}
-						{%- include snippets/locale-to-string.html -%}
-						{%- assign date_format = __return -%}
-						{%- assign __locale = site.data.locale.LAST_UPDATED -%}
-						{%- include snippets/locale-to-string.html -%}
-						<span>{{ __return }}
-							<time datetime="{{ page.modify_date | date_to_xmlschema }}" itemprop="dateModified">{{ page.modify_date | date: date_format }}</time>
-						</span>
-					{%- else -%}
-						<meta itemprop="dateModified" content="{{ page.date | date_to_xmlschema }}">
-					{%- endif -%}
-					<!--
-					<div class="article-license">
-						{%- include components/license.html -%}
-					</div>
-					-->
-				</footer>
-			</article>
-			<div class="article-previous-next clearfix">
-				{%- if page.next -%}
-					{%- assign __path = page.next.url -%}
-					{%- include snippets/prepend-baseurl.html -%}
-					{%- assign href = __return -%}
-					{%- assign __locale = site.data.locale.PREVIOUS -%}
-					{%- include snippets/locale-to-string.html -%}
-					<div class="article-previous"><span>{{ __return }}</span><a href="{{ href }}">{{ page.next.title }}</a></div>
-				{%- endif -%}
-				{%- if page.previous -%}
-					{%- assign __path = page.previous.url -%}
-					{%- include snippets/prepend-baseurl.html -%}
-					{%- assign href = __return -%}
-					{%- assign __locale = site.data.locale.NEXT -%}
-					{%- include snippets/locale-to-string.html -%}
-					<div class="article-next"><span>{{ __return }}</span><a href="{{ href }}">{{ page.previous.title }}</a></div>
-				{%- endif -%}
-			</div>
-			{%- if jekyll.environment != "development" and page.comment != false -%}
-				<section>{%- include utils/comment-disqus.html -%}</section>
-				<section>{%- include utils/comment-gitalk.html -%}</section>
-			{%- endif -%}
-		</div>
-	</div>
-</div>
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{% include header.html %}
+
+<body data-theme="{{ site.mode }}" class="notransition">
+
+  <script>
+    const body = document.body;
+    const data = body.getAttribute("data-theme");
+
+    const initTheme = (state) => {
+      if (state === "dark") {
+        body.setAttribute("data-theme", "dark");
+      } else if (state === "light") {
+        body.removeAttribute("data-theme");
+      } else {
+        localStorage.setItem("theme", data);
+      }
+    };
+ 
+    initTheme(localStorage.getItem("theme"));
+    
+    setTimeout(() => body.classList.remove("notransition"), 75);
+  </script>
+
+  {% include navbar.html %}
+  <div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+      <article itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="header">
+          {% if page.tags and page.tags != empty %}
+          <div class="tags">
+            {% assign tags = page.tags %}
+            <span itemprop="keywords">
+              {% for tag in tags %}
+              <a class="tag"
+                href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            </span>
+          </div>
+          {% endif %}
+          <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
+          {% if page.date %}
+          <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: "%b %d, %Y" }}
+            </time>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span itemprop="name">{{ site.author.name }}</span>
+            </span>
+            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
+              {{ page.date | date: "%b %d, %Y" }}
+            </time>
+            <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
+            <span hidden itemprop="image">{{ page.image }}</span>
+            <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
+          </div>
+          {% endif %}
+        </header>
+
+        <div class="page-content" itemprop="articleBody">
+          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
+          {% if page.tweet %}
+          <p>Comments this article on 
+            <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
+          </p>
+          {% endif %}
+        </div>
+      </article>
+    
+      {% if page.comments %}
+        {% include comments.html %}
+      {% endif %}
+
+    </main>
+
+    {% if page.modified %}
+      <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
+    {% endif %}
+    {% if page.next or page.previous %}
+      {% include navigation.html %}
+    {% endif %}
+
+    {% include footer.html %}
+  </div>
+</body>
+
+</html>
