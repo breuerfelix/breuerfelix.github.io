@@ -81,6 +81,7 @@ exclude:
   - CONTRIBUTING.md
   - klise-*.gem
   - klise.gemspec
+  - default.nix
 
 # Plugins
 plugins:
