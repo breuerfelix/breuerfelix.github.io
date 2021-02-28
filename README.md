@@ -15,3 +15,4 @@
 - make comment about how to enable commenting with utterance
 - resolve all todos in the code
 - maybe add a gap after every 5 posts
+- lightmode for syntax highlighting
