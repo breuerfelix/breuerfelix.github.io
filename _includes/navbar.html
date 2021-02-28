@@ -159,11 +159,14 @@
         />
       </svg>
     </a>
+    <div class="title">
+      <a class="menu-link active" href="{{ site.url }}">{{ site.title }}</a>
+    </div>
     <div class="trigger">
       <div class="trigger-container">
         {%- assign url = page.url -%}
         {%- assign menus = site.data.menus -%}
-        {%- if menus %}
+        {%- if menus -%}
           {%- for menu in menus -%}
             {%- if url == menu.url -%}
               <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>

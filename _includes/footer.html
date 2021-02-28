@@ -1,11 +1,25 @@
 <footer class="footer">
-  <!-- TODO insert footer based on social media -->
+  {%- if site.author.email -%}
+    <a class="footer_item" href="mailto:{{ site.author.email }}">contact</a>
+  {%- endif -%}
+  {%- if site.author.github -%}
+    <a class="footer_item" href="https://github.com/{{ site.author.github }}" target="_blank">github</a>
+  {%- endif -%}
+  {%- if site.author.twitter -%}
+    <a class="footer_item" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">twitter</a>
+  {%- endif -%}
+  {%- if site.author.youtube -%}
+    <a class="footer_item" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank">youtube</a>
+  {%- endif -%}
+  {%- if site.author.patreon -%}
+    <a class="footer_item" href="https://www.patreon.com/{{ site.author.patreon }}" target="_blank">patreon</a>
+  {%- endif -%}
   <a class="footer_item" href="/feed.xml">rss</a>
   <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
 </footer>
 <script src="/assets/js/main.js" defer="defer"></script>
 
-{%- if page.google_analytics -%}
+{%- if site.google_analytics -%}
   <script src="/assets/js/galite.js"></script>
   <script>
     const galite = galite || {};

@@ -234,7 +234,7 @@ body[data-theme="dark"] {
     .solution:hover {
       color: $dark-text-link-blue-active;
     }
-  }  
+  }
 
   .search-article {
     input[type="search"] {
@@ -243,5 +243,10 @@ body[data-theme="dark"] {
         color: rgba(128,128,128,0.8);
       }
     }
+  }
+
+  // Avatar Wrapper
+  .author-avatar-wrapper {
+    border-color: $dark-white;
   }
 }

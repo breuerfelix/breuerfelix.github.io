@@ -4,25 +4,30 @@ description: >- # site description
   learning by doing
 lang: en-US # default lang
 timezone: Europe/Berlin # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: https://github.com/breuerfelix/breuerfelix.github.io # site repo [optional]
+#image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 mode: dark # default theme "dark" | "light"
+# used for utterance
+repo: breuerfelix/breuerfelix.github.io
+
 
 # Profile settings
 author:
   name: Felix Breuer # author name
   bio: >- # tell to the world
     learning by doing
-  username: scriptworld # general username
+  username: felixbreuer # general username
   github: breuerfelix # github username
   twitter: felix_breuer # twitter username
-  facebook: faze # facebook username
+  facebook: # facebook username
+  patreon: scriptworld
+  youtube: scriptworld
   email: felix@breuer.dev # email adress
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
+  # displayed in the footer
+
 # URL settings
 url: "https://breuer.dev" #
-baseurl:
 permalink: /blog/:title.html
 google_analytics: UA-117436835-1 # leave it blank if not wish
 fb_appid:

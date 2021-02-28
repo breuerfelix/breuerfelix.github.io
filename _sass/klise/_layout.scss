@@ -60,6 +60,14 @@
     }
   }
 
+  .title {
+    position: relative;
+    text-align: left;
+    float: left;
+    // title will be aligned with site content
+    left: calc((#{$wide-size} - #{$narrow-size}) / 2 - #{$spacing-full});
+  }
+
   .trigger {
     float: right;
   }
@@ -114,6 +122,16 @@
     height: 50px;
     background-color: $white;
     border-bottom: 1px solid $light;
+
+    // centers title on mobile
+    .title {
+      position: fixed;
+      text-align: center;
+
+      // TODO fix this if the title is larger
+      width: 200px;
+      left: calc(50% - 100px);
+    }
 
     a#mode {
       left: 10px;
@@ -195,8 +213,8 @@
   .author-avatar-wrapper {
     // used for zoom transition
     border-style: solid;
-    border-width: 1px;
-    border-color: $dark-white;
+    border-width: 2px;
+    border-color: $dark-gray;
     overflow: hidden;
 
     width: 70px;

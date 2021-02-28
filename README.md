@@ -13,7 +13,6 @@
 - copy over klise readme
 - make comment about how to enable commenting with utterance
 - resolve all todos in the code
-- add favicon
 - add image
 - add social media links to bottom
 	- include patreon

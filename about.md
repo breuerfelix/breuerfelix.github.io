@@ -6,15 +6,7 @@ excerpt: Hello, i am Felix! Welcome to my personal space :)
 comments: false
 ---
 
-```c++
-cout << "Hey there, I am Felix !";
-```
-
-```js
-console.log('Happy to know that you stumbled across my website :)');
-```
-
-I am a 25 years old [Computer Science Student](https://www.th-koeln.de) living in Cologne, Germany.
+I am Felix, a [Computer Science Student](https://www.th-koeln.de) living in Cologne _(Germany)_, born in 1994 and tired of updating my age.
 
 After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com), 
 I spend some time working as a Software Developer in different companies. 
@@ -32,10 +24,10 @@ Now take a step back, relax and have fun exploring!
 [InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend  
 [King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
-[_King Bot_](projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
-[_ReactJs GraphQL Authentication_](projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
-[_Async Socket TCP_](projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
-[_Series Monitor_](projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
+[_King Bot_](/projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
+[_ReactJs GraphQL Authentication_](/projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
+[_Async Socket TCP_](/projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
+[_Series Monitor_](/projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
 
 _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a link to GitHub.
 
