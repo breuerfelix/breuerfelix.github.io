@@ -1,10 +1,9 @@
 ---
-layout: project
+layout: post
 title: Async Tcp Socket Server/Client in C#
 date: 2018-04-17 22:15:00 +01:00
 modify_date: 2018-04-18 12:50:00 +01:00
-tags: asynch socket tcp server client c#
-category: project
+comments: false
 ---
 
 I wanted to program a server which can handle alot of clients at the same time just like [MMORP](https://de.wikipedia.org/wiki/Massively_Multiplayer_Online_Role-Playing_Game)-Servers do.

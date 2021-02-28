@@ -1,10 +1,9 @@
 ---
-layout: project
+layout: post
 title: Authentication with ReactJS and GraphQL via JsonWebToken
 date: 2018-06-08 22:15:00 +01:00
 modify_date: 2018-06-09 12:50:00 +01:00
-tags: reactjs graphql express authentication bulma jsonwebtoken
-category: project
+comments: false
 ---
 
 This project is about me learning a Javascript framework called [React](https://reactjs.org) and [GraphQL](https://graphql.org). Like always, it's easier to learn new stuff when applying it to a project.  

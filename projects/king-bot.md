@@ -1,10 +1,9 @@
 ---
-layout: project
+layout: post
 title: KingBot - Automate Travian Kingdoms
 date: 2018-06-18 22:15:00 +01:00
 modify_date: 2018-07-25 07:50:00 +01:00
-tags: selenium bot automation travian kingdoms python
-category: project
+comments: false
 ---
 
 Welcome to my personal documentation site for [king-bot](https://github.com/scriptworld-git/king-bot).

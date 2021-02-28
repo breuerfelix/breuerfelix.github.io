@@ -1,7 +1,0 @@
-{% for post in include.posts %}
-{% if post.categories contains include.category %}
-{% if post.tags contains include.tag %}
-{% include snippets/cus-title.html post=post %}
-{% endif %}
-{% endif %}
-{% endfor %}

@@ -1,10 +1,9 @@
 ---
-layout: project
+layout: post
 title: Series-Monitor
 date: 2018-05-25 09:00:00 +01:00
 modify_date: 2018-06-03 10:00:00 +01:00
-tags: java series monitor status bs.to javafx
-category: project
+comments: false
 ---
 
 I needed to learn Java for my university, so I decided to build a small gui-application for practical experience.
