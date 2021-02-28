@@ -10,10 +10,8 @@
 
 ## TODO
 
+- implement open graph
 - copy over klise readme
 - make comment about how to enable commenting with utterance
 - resolve all todos in the code
-- add image
-- add social media links to bottom
-	- include patreon
 - maybe add a gap after every 5 posts
