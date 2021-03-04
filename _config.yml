@@ -28,7 +28,7 @@ author:
 
 # URL settings
 url: "https://breuer.dev" #
-permalink: /blog/:title.html
+permalink: /:categories/:title.html
 google_analytics: UA-117436835-1 # leave it blank if not wish
 fb_appid:
 
