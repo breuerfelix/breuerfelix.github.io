@@ -1,8 +1,8 @@
 ---
 layout: post
 title: How to automate a YouTube Channel
-date: 2021-03-07 17:00:00 +01:00
-modify_date: 2021-01-08 11:00:00 +01:00
+date: 2021-03-07 11:00:00 +01:00
+modify_date: 2021-01-07 14:00:00 +01:00
 tags: automated youtube channel twitch highlights clips
 category: blog
 ---
