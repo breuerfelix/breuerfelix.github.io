@@ -19,14 +19,10 @@ Create a file called `minted.tex` with the following content:
 %\usepackage[utf8]{inputenc}
 
 \makeatletter
-\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax
-    \let\PY@ul=\relax \let\PY@tc=\relax
-    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax\let\PY@ul=\relax \let\PY@tc=\relax\let\PY@bc=\relax \let\PY@ff=\relax}
 \def\PY@tok#1{\csname PY@tok@#1\endcsname}
-\def\PY@toks#1+{\ifx\relax#1\empty\else
-    \PY@tok{#1}\expandafter\PY@toks\fi}
-\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{
-    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY@toks#1+{\ifx\relax#1\empty\else\PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{\PY@it{\PY@bf{\PY@ff{#1}}}}}}}
 \def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
 
 \expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
