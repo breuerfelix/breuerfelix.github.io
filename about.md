@@ -33,7 +33,8 @@ _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a
 
 ### Reference Projects
 
-[DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify Web Shop
+[danielkueffler.de](https://danielkueffler.de/) - Bootstrap and Hosting personal Influencer Website with Ghost  
+[DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify Web Shop  
 
 ### Skills
 
