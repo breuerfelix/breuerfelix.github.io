@@ -66,10 +66,15 @@ in {
         EOF
       ''
     ];
+
+    # install needed binaries here
     extraPackages = with pkgs; [
+      # used to compile tree-sitter grammar
       tree-sitter
 
-      # language servers
+      # installs different langauge servers for neovim-lsp
+      # have a look on the link below to figure out the ones for your languages
+      # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
       nodePackages.pyright
