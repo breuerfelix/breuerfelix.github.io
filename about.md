@@ -21,7 +21,7 @@ Now take a step back, relax and have fun exploring!
 ### Open Source Projects
 
 [Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper  
-[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram autmation tools, Microservices Architecture with Web Frontend  
+[InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram automation tools, Microservices Architecture with Web Frontend  
 [King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
 [_King Bot_](/projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
