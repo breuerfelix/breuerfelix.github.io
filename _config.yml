@@ -16,11 +16,11 @@ author:
   bio: >- # tell to the world
     learning by doing
     <br>
-    <a href="https://www.youtube.com/scriptworld" target="_blank">@youtube</a>
-    <a href="https://www.twitch.tv/scriptworld" target="_blank">@twitch</a>
-    <a href="https://github.com/breuerfelix" target="_blank">@github</a>
-    <a href="https://twitter.com/felix_breuer" target="_blank">@twitter</a>
-    <a href="https://www.patreon.com/scriptworld" target="_blank">@patreon</a>
+    <a href="https://www.youtube.com/scriptworld" rel="noreferrer" target="_blank">@youtube</a>
+    <a href="https://www.twitch.tv/scriptworld" rel="noreferrer" target="_blank">@twitch</a>
+    <a href="https://github.com/breuerfelix" rel="noreferrer" target="_blank">@github</a>
+    <a href="https://twitter.com/felix_breuer" rel="noreferrer" target="_blank">@twitter</a>
+    <a href="https://www.patreon.com/scriptworld" rel="noreferrer" target="_blank">@patreon</a>
   username: felixbreuer # general username
   github: breuerfelix # github username
   twitter: felix_breuer # twitter username
