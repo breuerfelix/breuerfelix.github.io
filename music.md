@@ -1,5 +1,5 @@
 ---
-title: Listen to my Mixes!
+title: Listen to my Mixes
 permalink: /music
 layout: page
 comments: false

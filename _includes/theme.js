@@ -17,7 +17,7 @@ const setMixcloudTheme = theme => {
 
   iframes.forEach(iframe => {
     if (!iframe.src.match(/mixcloud/g)) {
-      continue;
+      return;
     }
 
     iframe.setAttribute('src', iframe.src.replace(oldTheme, theme));
