@@ -10,7 +10,7 @@ source 'https://rubygems.org'
 # Happy Jekylling!
 
 # Use this if you do not use Github Pages
-#gem "jekyll", "~> 4.1.0"
+#gem "jekyll", "~> 3.9.0"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.

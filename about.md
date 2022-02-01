@@ -1,6 +1,6 @@
 ---
 title: Hey, it's me
-permalink: /about/
+permalink: /about
 layout: page
 excerpt: Hello, i am Felix! Welcome to my personal space :)
 comments: false
