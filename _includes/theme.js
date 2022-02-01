@@ -11,13 +11,13 @@ const setUtterancesTheme = theme => {
 };
 
 const setMixcloudTheme = theme => {
-  const oldTheme = theme == 'light' ? 'dark' : 'light'
+  const oldTheme = theme == 'light' ? 'dark' : 'light';
   const selection = document.getElementsByTagName('iframe');
   const iframes = Array.prototype.slice.call(selection);
 
   iframes.forEach(iframe => {
     if (!iframe.src.match(/mixcloud/g)) {
-      continue
+      continue;
     }
 
     iframe.setAttribute('src', iframe.src.replace(oldTheme, theme));
