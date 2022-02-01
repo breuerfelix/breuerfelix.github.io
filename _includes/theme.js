@@ -11,7 +11,7 @@ const setUtterancesTheme = theme => {
 };
 
 const setMixcloudTheme = theme => {
-  oldTheme = theme == 'light' ? 'dark' : 'light'
+  const oldTheme = theme == 'light' ? 'dark' : 'light'
   const selection = document.getElementsByTagName('iframe');
   const iframes = Array.prototype.slice.call(selection);
 
