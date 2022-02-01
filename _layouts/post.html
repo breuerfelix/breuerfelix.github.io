@@ -13,10 +13,11 @@ layout: compress
     {% include theme.js %}
     initTheme(localStorage.getItem("theme"));
     setTimeout(() => body.classList.remove("notransition"), 75);
-    //addEventListener('message', event => {
-      //if (event.origin !== 'https://utteranc.es') return;
-      //setUtterancesTheme(localStorage.getItem("theme"));
-    //});
+
+    addEventListener('message', event => {
+      if (event.origin !== 'https://utteranc.es') return;
+      setUtterancesTheme(localStorage.getItem("theme"));
+    });
   </script>
 
   {% include navbar.html %}
@@ -79,10 +80,6 @@ layout: compress
 
     {% include footer.html %}
   </div>
-
-  <script>
-    initTheme(localStorage.getItem("theme"));
-  </script>
 </body>
 
 </html>
