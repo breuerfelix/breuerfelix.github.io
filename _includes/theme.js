@@ -22,7 +22,7 @@ const setMixcloudTheme = theme => {
 
     iframe.setAttribute('src', iframe.src.replace(oldTheme, theme));
   });
-}
+};
 
 const initTheme = theme => {
   if (!theme) theme = body.getAttribute('data-theme');
