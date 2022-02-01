@@ -10,11 +10,26 @@ const setUtterancesTheme = theme => {
   );
 };
 
+const setMixcloudTheme = theme => {
+  oldTheme = theme == 'light' ? 'dark' : 'light'
+  const selection = document.getElementsByTagName('iframe');
+  const iframes = Array.prototype.slice.call(selection);
+
+  iframes.forEach(iframe => {
+    if (!iframe.src.match(/mixcloud/g)) {
+      continue
+    }
+
+    iframe.setAttribute('src', iframe.src.replace(oldTheme, theme));
+  });
+}
+
 const initTheme = theme => {
   if (!theme) theme = body.getAttribute('data-theme');
   localStorage.setItem('theme', theme);
   body.setAttribute('data-theme', theme);
   setUtterancesTheme(theme);
+  setMixcloudTheme(theme);
 };
 
 
