@@ -1,18 +1,36 @@
 ---
 layout: post
 title: Why every programmer should use a split Keyboard
-date: 2021-01-06 17:00:00 +01:00
-modify_date: 2021-01-07 11:00:00 +01:00
+date: 2022-01-06 11:00:00 +01:00
 tags: split keyboard splitkb programmer
 category: blog
 ---
 
-tldr; an alpinist does not climb the mount everest in sneakers
+TLDR; An alpinist does not climb the Mount Everest in sneakers. Why should you?
 
-1. standard keyboards are optimised for the machine not for the operator
-2. your thumb is bored
-3. your keyboard is not designed for a beast like you
-- breite schultern!!
-4. you want your kids to live in a better world
-- better teach them a human friendly keyboard layout from the early on
-- its like multi lingual kids
+## Optimised for the Operator (aka. YOU)
+
+Did you ever wonder why the keyboard layout is staggered?
+It is because old mechanical typing machines couldn't be constructed with a matrix layout like most of the split keyboards have.
+
+## Your thumb is bored
+
+One key for two fingers? What the f* is this sh*? Your index finger should handle 6 keys but the thumb only .5 ... I don't know about this weird keyboard design.  
+A split keyboard has at least one or two seperate keys per thumb. I mapped backspace, enter and a layer switch to these additional keys.  
+I finally found a purpose for my thumbs (which are actually the strongest fingers on the hand)!
+
+## You are a beast and you know it
+
+The more muscular you become, the harder it gets to keep your hands tight together on your keyboard (for sure I don't have these kind of problems since I am a programmer.... but anyways).  
+Standard keyboards generate shoulder, back and wrist pain over the years. You always have to squeeze your shoulders in front of your body together, which is not a healthy position to be in for a long period of time.  
+
+## You want kids...
+
+... and you want them to life in a better world, I am sure!  
+"But Felix, if split keyboards are so nice, why haven't I seen them on any desk so far?"  
+Good question, for sure. Learning to write on a keyboard is not as easy as you might think because you learned it as a kid or over the years. It is a slow process because it is difficult.  
+Reprogramming your brain to a new keyboard or keyboard layout is even more difficult since before getting used to it, you have to forget about the old layout, so it takes even more effort.
+
+Thats why you should teach your kids a human friendly keyboard layout while growing up in order to make their lives easier in the future.
+They don't have to struggle like you will the next 3 months learning to write on a new keyboard.
+
