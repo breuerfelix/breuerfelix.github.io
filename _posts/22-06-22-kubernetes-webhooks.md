@@ -272,6 +272,9 @@ spec:
           secret:
             # IMPORTANT: has to match from Certificate
             secretName: pod-greeter-tls
+            # the pod only gets created if the secret exists
+            # so it waits until the cert-manager is done
+            optional: false
 ```
 
 As the last step we can finally create our `MutatingWebhookConfiguration` to tell Kubernetes that it should call the correct endpoint of our controller.  
