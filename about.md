@@ -9,8 +9,8 @@ comments: false
 I am Felix, a [Computer Science Student](https://www.th-koeln.de) living in Cologne _(Germany)_, born in 1994 and tired of updating my age.
 
 After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com), 
-I spend some time working as a Software Developer in different companies. 
-Currently I work as a DevOps Engineer at [inovex](https://www.inovex.de) while studying.
+I spend some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de). 
+Currently I enjoy working fulltime as a DevOps Engineer at [inovex](https://www.inovex.de).
 
 Trying out new technologies is one thing I love the most doing in my spare time.  
 I also enjoy solving difficult boulder problems and strumming the guitar.  
@@ -20,9 +20,10 @@ Now take a step back, relax and have fun exploring!
 
 ### Open Source Projects
 
+[YAWOL](https://github.com/stackitcloud/yawol) - Yet another Openstack Loadbalancer  
 [Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper  
 [InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram automation tools, Microservices Architecture with Web Frontend  
-[King Bot Api](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
+[King Bot API](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
 [_King Bot_](/projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
 [_ReactJs GraphQL Authentication_](/projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
@@ -41,7 +42,12 @@ _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a
 - Customer Contact
 - Programming Languages
   - JavaScript, TypeScript, Python, Bash
-  - C#, Java, C++, C, Golang
+  - Golang, C#, Java, C++, C
+- DevOps
+  - Kubernetes, Gardener
+  - Git, Docker, Docker-Compose
+  - Unix, Virtual Machines, Container
+  - Github Actions, GitLab CI, Concourse
 - Full-Stack-Developer
   - ReactJs, Next.js
   - Svelte, Sapper
@@ -51,10 +57,6 @@ _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a
   - MongoDB, CouchDB, SQL
   - Webpack, npm
   - HTML, CSS, SASS
-- DevOps
-  - Git, Docker, Docker-Compose
-  - Unix, Virtual Machines
-  - TravisCI, GitLab CI
 - IoT
   - Yocto, Bitbake
 - Automated testing / WebScraping with Selenium
