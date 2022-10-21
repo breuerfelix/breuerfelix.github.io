@@ -337,12 +337,119 @@ kubectl get pods
 
 ## Development
 
-So far we haven't really run and test the controller locally. And I haven't done that myself either, sadly!  
-I figured out two possible scenarios to do so:
+I figured out two possible scenarios to develop a mutating webhook:
 * start a `minikube` or `kind` locally, deploy the controller, and test it
-* use `clientConfig.url` in the `MutatingWebhookConfiguration` with `ngrok` to proxy your local instance into a remote cluster
+* use `clientConfig.url` in the `MutatingWebhookConfiguration` with `ngrok` (or alternatives) to tunnel your local instance into a remote cluster
 
-The last one is probably the easiest but it requires to run the controller without certificates and so far I haven't figured out how to do so.  
-The manager expects a tls certificate whenever you register a webhook.  
-If you got that figured out, please reach out to me! I would love to update my guide and also use this approach for my projects :)
+The second option is the easiest for me, since I don't have to redeploy the application on every change and also I don't have to clutter my computer with a local kubernetes cluster.  
+
+Currently there is no option to start the kubebuilder webhook server without tls certificates. First, let us create self signed certificates for our webhook server:
+
+```bash
+mkdir hack certs
+touch hack/gen-certs.sh
+chmod +x hack/gen-certs.sh
+vi hack/gen-certs.sh
+```
+
+Contents of `hack/gen-certs.sh`:
+
+```bash
+#!/bin/bash
+
+mkdir certs
+openssl genrsa -out certs/ca.key 2048
+
+openssl req -new -x509 -days 365 -key certs/ca.key \
+  -subj "/C=AU/CN=localhost"\
+  -out certs/ca.crt
+
+openssl req -newkey rsa:2048 -nodes -keyout certs/server.key \
+  -subj "/C=AU/CN=localhost" \
+  -out certs/server.csr
+
+openssl x509 -req \
+  -extfile <(printf "subjectAltName=DNS:localhost") \
+  -days 365 \
+  -in certs/server.csr \
+  -CA certs/ca.crt -CAkey certs/ca.key -CAcreateserial \
+  -out certs/server.crt
+```
+
+Run the following script to generate certificates into the `certs` folder. Don't forget to add that folder to your `.gitignore` file:
+
+```bash
+./hack/gen-certs.sh
+```
+
+Now add the following lines to your `main.go` in order to allow passing custom paths for your certificates into the application:
+
+```go
+// ...
+// read in command line flags
+var certDir, keyName, certName string
+flag.StringVar(&certDir, "cert-dir", "", "Folder where key-name and cert-name are located.")
+flag.StringVar(&keyName, "key-name", "", "Filename for .key file.")
+flag.StringVar(&certName, "cert-name", "", "Filename for .cert file.")
+// ...
+// Server uses default values if provided paths are empty
+server := &webhook.Server{
+  CertDir:  certDir,
+  KeyName:  keyName,
+  CertName: certName,
+}
+
+// register your webhook
+server.Register("/mutate-pod", &webhook.Admission{Handler: &podWebhook{
+  Client:         mgr.GetClient(),
+}})
+
+// register the server to the manager
+mgr.Add(server)
+// ...
+```
+
+Start the server for developing:
+
+```bash
+go run main.go --cert-dir certs --key-name server.key --cert-name server.crt
+```
+
+Now we need to tunnel the localhost server to the public. `ngrok` only tunnels tls traffic in their paid plan so I decided to use [localtunnel](https://github.com/localtunnel/localtunnel).  
+`localtunnel` tries to get the subdomain called `webhook-development` if it is available. If this is not the case, you have to substitute your subdomain in the `MutatingWebhookConfiguration`.
+
+```bash
+npx localtunnel --port 9443 --local-https --local-ca certs/ca.crt --local-cert certs/server.crt --local-key certs/server.key --subdomain webhook-development
+```
+
+Finally we can create a `MutatingWebhookConfiguration` for our development setup. Don't forget to delete it after you are done.
+
+```yaml
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: webhook-development
+webhooks:
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    # choose the correct subdomain here
+    url: "https://webhook-dev.loca.lt/mutate-pod"
+  failurePolicy: Fail
+  name: juicefs.breuer.dev
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - pods
+  sideEffects: None
+```
+
+Success! You should now get traffic on your local machine when updating or creating a new `Pod`.
 
