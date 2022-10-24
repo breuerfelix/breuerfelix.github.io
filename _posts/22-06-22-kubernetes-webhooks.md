@@ -2,6 +2,7 @@
 layout: post
 title: Simple Kubernetes Mutating Admission Webhook
 date: 2022-06-22 11:00:00 +01:00
+modify_date: 2022-10-23 11:00:00 +01:00
 tags: kubernetes admission mutating webhook simple minimal example cert-manager
 category: blog
 ---
