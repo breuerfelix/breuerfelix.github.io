@@ -37,6 +37,9 @@ author:
 url: "https://breuer.dev"
 permalink: /:categories/:title
 google_analytics: UA-117436835-1 # leave it blank if not wish
+umami:
+  url: https://stats.burban.me/umami.js
+  id: 1a5b0781-544a-4321-8a6a-dae4aa0614f1
 fb_appid:
 
 # Collection setting
