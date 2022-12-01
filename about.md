@@ -20,6 +20,8 @@ Now take a step back, relax and have fun exploring!
 
 ### Open Source Projects
 
+[JuiceFS Webhook](https://github.com/breuerfelix/juicefs-volume-hook) - Kubernetes webhook that annotates JuiceFS volumes  
+[Medusa Operator](https://github.com/breuerfelix/medusa-operator) - Manages Medusa installations on Kubernetes  
 [YAWOL](https://github.com/stackitcloud/yawol) - Yet another Openstack Loadbalancer  
 [Elo Hell](https://github.com/breuerfelix/elo-hell) - Elo ranking system build with Svelte and Sapper  
 [InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram automation tools, Microservices Architecture with Web Frontend  
@@ -34,6 +36,7 @@ _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a
 
 ### Reference Projects
 
+[Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)  
 [danielkueffler.de](https://danielkueffler.de/) - Bootstrap and Hosting personal Influencer Website with Ghost  
 [DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify Web Shop  
 
