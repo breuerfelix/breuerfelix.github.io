@@ -36,7 +36,7 @@ author:
 # URL settings
 url: "https://breuer.dev"
 permalink: /:categories/:title
-google_analytics: UA-117436835-1 # leave it blank if not wish
+google_analytics:
 umami:
   url: https://stats.tecios.de/umami.js
   id: 1a5b0781-544a-4321-8a6a-dae4aa0614f1
