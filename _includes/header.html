@@ -165,6 +165,6 @@
 
   <link rel="stylesheet" href="/assets/css/style.css" />
 {%- if site.umami and site.umami.url and site.umami.id -%}
-  <script async defer data-website-id="{{ site.umami.id }}" src="{{ site.umami.url }}"></script>
+  <script async data-website-id="{{ site.umami.id }}" src="{{ site.umami.url }}"></script>
 {%- endif -%}
 </head>
