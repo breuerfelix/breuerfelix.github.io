@@ -16,3 +16,5 @@
 - resolve all todos in the code
 - maybe add a gap after every 5 posts
 - lightmode for syntax highlighting
+
+- make a "spoiler" / hint and add the chat gpt prompt

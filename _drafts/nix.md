@@ -1,12 +1,3 @@
----
-layout: post
-title: Getting started with NixOS and Home-Manager
-date: 2021-01-06 17:00:00 +01:00
-modify_date: 2021-01-07 11:00:00 +01:00
-tags: nixos nix linux homemanager
-category: blog
----
-
 - use home-manager
 - put it in configuration -> do not let him manager himself
 

@@ -1,0 +1,2 @@
+- flux gitrepo doesnt work
+- you need clusteradmin for the operator
