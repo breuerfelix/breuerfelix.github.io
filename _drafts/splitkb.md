@@ -6,16 +6,21 @@ tags: split keyboard splitkb programmer
 category: blog
 ---
 
+ChatGPT 3.5 prompt:
+
+expand the following article to be published on a technology blog and optimize it with seo, keep the markdown formatting:
+
 TLDR; An alpinist does not climb the Mount Everest in sneakers. Why should you?
 
 ## Optimised for the Operator (aka. YOU)
 
 Did you ever wonder why the keyboard layout is staggered?
 It is because old mechanical typing machines couldn't be constructed with a matrix layout like most of the split keyboards have.
+prompt: write something about the history of keyboard layouts and why a matrix split keyboard layout is more ergonomic
 
 ## Your thumb is bored
 
-One key for two fingers? What the f* is this sh*? Your index finger should handle 6 keys but the thumb only .5 ... I don't know about this weird keyboard design.  
+One key for two fingers? What the f* is this sh*? Your index finger should handle 6 keys but the thumb only 0.5 keys ... I don't know about this weird keyboard design.  
 A split keyboard has at least one or two seperate keys per thumb. I mapped backspace, enter and a layer switch to these additional keys.  
 I finally found a purpose for my thumbs (which are actually the strongest fingers on the hand)!
 
