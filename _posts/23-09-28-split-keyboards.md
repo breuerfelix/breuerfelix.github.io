@@ -6,7 +6,7 @@ tags: split keyboard splitkb programmer ergonomic
 category: blog
 ---
 
-# The Evolution of Keyboard Layouts
+## The Evolution of Keyboard Layouts
 
 In the world of technology, advancements happen at a breakneck pace. From the early days of mechanical typing machines to the sleek and modern computer keyboards we use today, the evolution of keyboard layouts has been nothing short of remarkable. Have you ever wondered why the keys on your keyboard are staggered in the way they are? Let's delve into the history of keyboard layouts and discover why a matrix split keyboard layout might be the ergonomic solution you've been searching for.
 
