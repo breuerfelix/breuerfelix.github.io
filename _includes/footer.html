@@ -17,6 +17,9 @@
   {%- if site.author.patreon -%}
     <a class="footer_item" href="https://www.patreon.com/{{ site.author.patreon }}" rel="noreferrer" target="_blank">patreon</a>
   {%- endif -%}
+  {%- if site.author.linkedin -%}
+    <a class="footer_item" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" rel="noreferrer" target="_blank">linkedin</a>
+  {%- endif -%}
   <a class="footer_item" href="/feed.xml">rss</a>
   <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
 </footer>

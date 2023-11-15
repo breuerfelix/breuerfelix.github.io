@@ -17,21 +17,21 @@ author:
     learning by doing
     <br>
     <a href="https://www.youtube.com/scriptworld" rel="noreferrer" target="_blank">@youtube</a>
-    <a href="https://www.twitch.tv/scriptworld" rel="noreferrer" target="_blank">@twitch</a>
     <a href="https://github.com/breuerfelix" rel="noreferrer" target="_blank">@github</a>
-    <a href="https://twitter.com/felix_breuer" rel="noreferrer" target="_blank">@twitter</a>
-    <a href="https://www.patreon.com/scriptworld" rel="noreferrer" target="_blank">@patreon</a>
+    <a href="https://www.linkedin.com/in/felix-breuer-5b70b3179/" rel="noreferrer" target="_blank">@linkedin</a>
+
   username: felixbreuer # general username
-  github: breuerfelix # github username
-  twitter: felix_breuer # twitter username
-  facebook: # facebook username
-  patreon: scriptworld
-  twitch: scriptworld
-  youtube: scriptworld
-  email: felix@breuer.dev # email adress
+  email: fbreuer@pm.me
   avatar: /assets/img/avatar.jpg
 
   # displayed in the footer
+  github: breuerfelix
+  twitter: felix_breuer
+  facebook:
+  patreon: scriptworld
+  twitch: scriptworld
+  youtube: scriptworld
+  linkedin: felix-breuer-5b70b3179
 
 # URL settings
 url: "https://breuer.dev"

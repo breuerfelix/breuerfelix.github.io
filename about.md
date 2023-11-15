@@ -6,10 +6,10 @@ excerpt: Hello, i am Felix! Welcome to my personal space :)
 comments: false
 ---
 
-I am Felix, a [Computer Science Student](https://www.th-koeln.de) living in Cologne _(Germany)_, born in 1994 and tired of updating my age.
+I am Felix, a **Cloud Systems Engineer** living in Cologne _(Germany)_, born in 1994 and tired of updating my age.
 
-After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com), 
-I spend some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de). 
+After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com),
+I spend some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de).
 Currently I enjoy working fulltime as a DevOps Engineer at [inovex](https://www.inovex.de).
 
 Trying out new technologies is one thing I love the most doing in my spare time.  
@@ -36,9 +36,10 @@ _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a
 
 ### Reference Projects
 
+[yoga-mit-amelie.de](https://yoga-mit-amelie.de) - Create and host a landing page for my Girlfriend  
 [Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)  
-[danielkueffler.de](https://danielkueffler.de/) - Bootstrap and Hosting personal Influencer Website with Ghost  
-[DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify Web Shop  
+[danielkueffler.de](https://danielkueffler.de/) - Bootstrap and host a personal Influencer Website with Ghost  
+[DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify web shop  
 
 ### Skills
 
