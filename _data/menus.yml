@@ -9,3 +9,7 @@
 - title: music
   url: /music
   external: false
+
+- title: ideas
+  url: /ideas
+  external: false

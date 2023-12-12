@@ -1,0 +1,14 @@
+---
+layout: page
+---
+
+<h3 class="posts-item-note">Project Ideas</h3>
+{% assign pages = site.pages | where: 'dir', '/ideas/' %}
+{% for page in pages %}
+<article class="post-item">
+  <span class="post-item-date">{{ page.short }}</span>
+  <h4 class="post-item-title">
+    <a href="{{ page.url }}">{{ page.title | escape }}</a>
+  </h4>
+</article>
+{% endfor %}
