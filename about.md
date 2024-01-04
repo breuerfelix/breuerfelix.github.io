@@ -29,7 +29,7 @@ Now take a step back, relax and have fun exploring!
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
 [_King Bot_](/projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
 [_ReactJs GraphQL Authentication_](/projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
-[_Honey Bee_](https://github.com/breuerfelix/honey-bee) - Calculation of Homing Vectors which simulate how Bees orientate themselves  
+[Honey Bee](https://github.com/breuerfelix/honey-bee) - Calculation of Homing Vectors which simulate how Bees orientate themselves  
 [_Async Socket TCP_](/projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
 [_Series Monitor_](/projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
 
