@@ -37,7 +37,7 @@ _**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a
 
 ### Reference Projects
 
-[yoga-mit-amelie.de](https://yoga-mit-amelie.de) - Create and host a landing page for my Girlfriend  
+[yoga-amelie.de](https://yoga-amelie.de) - Create and host a landing page for my Girlfriend  
 [Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)  
 [danielkueffler.de](https://danielkueffler.de/) - Bootstrap and host a personal Influencer Website with Ghost  
 [DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify web shop  
