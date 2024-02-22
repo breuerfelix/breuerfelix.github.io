@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Authentication with ReactJS and GraphQL via JsonWebToken
-date: 2018-06-08 22:15:00 +01:00
-modify_date: 2018-06-09 12:50:00 +01:00
-comments: false
+date: 2019-02-18 12:00:00 +01:00
+tags: authentication reactjs graphql jwt jsonwebtoken
+category: blog
+redirect_from:
+  - /projects/react-graphql-auth
 ---
 
 This project is about me learning a Javascript framework called [React](https://reactjs.org) and [GraphQL](https://graphql.org). Like always, it's easier to learn new stuff when applying it to a project.  
@@ -13,7 +15,7 @@ The theme is made with [Bulma.io](https://bulma.io) because I wanted to try out 
 
 For saving the login credentials I used [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).
 
-[Click here](https://github.com/scriptworld-git/react-graphql-authentication) to see the code on GitHub.
+[Click here](https://github.com/breuerfelix/react-graphql-authentication) to see the code on GitHub.
 
 ## Database
 

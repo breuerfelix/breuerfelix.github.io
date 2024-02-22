@@ -27,20 +27,18 @@ Now take a step back, relax and have fun exploring!
 [InstaPy GUI](https://github.com/breuerfelix/instapy-gui) - Platform for managing Instagram automation tools, Microservices Architecture with Web Frontend  
 [King Bot API](https://github.com/breuerfelix/king-bot-api) - Reverse engineered Travian Kingdoms API, Bot in TypeScript with PreactJS Web Frontend  
 [AnyNews](https://github.com/breuerfelix/any-news) - HackerNews Clone in Mithril.js  
-[_King Bot_](/projects/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
-[_ReactJs GraphQL Authentication_](/projects/react-graphql-auth) - Authentication template with JWT, ReactJS and GraphQL  
+[King Bot](https://github.com/breuerfelix/king-bot) - Selenium Bot for Travian Kingdoms Browsergame in Python  
+[ReactJs GraphQL Authentication](https://github.com/breuerfelix/react-graphql-authentication) - Authentication template with JWT, ReactJS and GraphQL  
 [Honey Bee](https://github.com/breuerfelix/honey-bee) - Calculation of Homing Vectors which simulate how Bees orientate themselves  
-[_Async Socket TCP_](/projects/async-tcp) - TCP client and server written in C\# for Web- or MMORPG-Server  
-[_Series Monitor_](/projects/series-monitor) - JavaFX project to track your series progression and informing for latest episodes  
-
-_**Italic projects**_ are links to behind the scenes articles. Otherwhise it's a link to GitHub.
+[Async Socket TCP](https://github.com/breuerfelix/Async-Socket-TCP) - TCP client and server written in C\# for Web- or MMORPG-Server  
+[Series Monitor](https://github.com/breuerfelix/Series-Monitor) - JavaFX project to track your series progression and informing for latest episodes  
 
 ### Reference Projects
 
 [yoga-amelie.de](https://yoga-amelie.de) - Create and host a landing page for my Girlfriend  
 [Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)  
-[danielkueffler.de](https://danielkueffler.de/) - Bootstrap and host a personal Influencer Website with Ghost  
-[DasWerkHaus Online Shop](https://daswerkhaus.com/) - Set up a Shopify web shop  
+[danielkueffler.de](https://danielkueffler.de) - Bootstrap and host a personal Influencer Website with Ghost  
+[DasWerkHaus Online Shop](https://daswerkhaus.com) - Set up a Shopify web shop  
 
 ### Skills
 

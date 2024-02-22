@@ -1,12 +1,14 @@
 ---
 layout: post
-title: KingBot - Automate Travian Kingdoms
-date: 2018-06-18 22:15:00 +01:00
-modify_date: 2018-07-25 07:50:00 +01:00
-comments: false
+title: "Project: KingBot - Automate Travian Kingdoms"
+date: 2019-10-10 22:15:00 +01:00
+category: blog
+tags: kingbot travian kingdoms automation
+redirect_from:
+  - /projects/king-bot
 ---
 
-Welcome to my personal documentation site for [king-bot](https://github.com/scriptworld-git/king-bot).
+Welcome to my personal documentation site for [king-bot](https://github.com/breuerfelix/king-bot).
 
 Since I already wrote a really good documentation on the original GitHub repository, it would be kinda dumb to copy and paste the readme.md onto this website.  
 That's why I decided to talk more about the 'why' on this project page.

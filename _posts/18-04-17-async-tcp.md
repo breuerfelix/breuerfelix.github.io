@@ -3,7 +3,10 @@ layout: post
 title: Async Tcp Socket Server/Client in C#
 date: 2018-04-17 22:15:00 +01:00
 modify_date: 2018-04-18 12:50:00 +01:00
-comments: false
+tags: async socket tcp c#
+category: blog
+redirect_from:
+  - /projects/async-tcp
 ---
 
 I wanted to program a server which can handle alot of clients at the same time just like [MMORP](https://de.wikipedia.org/wiki/Massively_Multiplayer_Online_Role-Playing_Game)-Servers do.
@@ -17,7 +20,7 @@ Enough talking. Here are the complete codeblocks for each client- and serverside
 I implemented a little bit more code than above in the tutorial, but everything should be well explained in the comments.  
 Feel free to use this code and maybe program your own little MMORPG software.
 
-[Click here](https://github.com/scriptworld-git/Async-Socket-TCP) to see the GitHub repository.
+[Click here](https://github.com/breuerfelix/Async-Socket-TCP) to see the GitHub repository.
 
 ### Client
 

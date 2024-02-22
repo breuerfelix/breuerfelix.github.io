@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Series-Monitor
-date: 2018-05-25 09:00:00 +01:00
-modify_date: 2018-06-03 10:00:00 +01:00
-comments: false
+title: "Project: Series-Monitor - Track your Series progress"
+date: 2019-06-07 09:00:00 +01:00
+tags: seriesmonitor java track progress seasons
+category: blog
+redirect_from:
+  - /projects/series-monitor
 ---
 
 I needed to learn Java for my university, so I decided to build a small gui-application for practical experience.
@@ -20,7 +22,7 @@ To store the user progress when closing the application I used a simple json-fil
 
 ## Code
 
-[Click here](https://github.com/scriptworld-git/Series-Monitor) to see the repository and code on GitHub.com!
+[Click here](https://github.com/breuerfelix/Series-Monitor) to see the repository and code on GitHub.com!
 
 ## Screenshots
 

@@ -18,7 +18,7 @@ Many react apps are created with [create-react-app](https://github.com/facebook/
 
 If you don't wann see my config files or read any explanation, just go ahead and fork / clone my GitHub Repository to start your own react journey.
 
-[GitHub Repo](https://github.com/scriptworld-git/reactStarter-WebpackHotMiddlewareExpressJs)
+[GitHub Repo](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs)
 
 ## Starting your Server
 
@@ -31,7 +31,7 @@ $ npm start
 
 ## package.json
 
-[Click me to see the full file!](https://github.com/scriptworld-git/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/package.json)
+[Click me to see the full file!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/package.json)
 
 This is the entry point of the project. Remember: the server will compile and serve the client.
 
@@ -98,7 +98,7 @@ Build / development dependencies.
 
 ## webpack.config.js
 
-[Click me to see the full file!](https://github.com/scriptworld-git/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/webpack.config.js)
+[Click me to see the full file!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/webpack.config.js)
 
 First of all we have to define a variable so we can change the config file depending on `production` or `development` mode.
 
@@ -162,7 +162,7 @@ plugins: dev
 
 ## .babelrc
 
-[Click me to see the file on GitHub!](https://github.com/scriptworld-git/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/.babelrc)
+[Click me to see the file on GitHub!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/.babelrc)
 
 All the presets for our ES6 support are going to be set here.  
 We also enable the new decorators to use `@decorator` later in our code.
@@ -180,7 +180,7 @@ We also enable the new decorators to use `@decorator` later in our code.
 
 ## react index.js
 
-[Click me to see the full file!](https://github.com/scriptworld-git/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/client/index.js)
+[Click me to see the full file!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/client/index.js)
 
 This code snippet needs to be added after the `render()` function in our react-app.  
 It accepts hot-reload requests from the browser.
@@ -195,7 +195,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 ## express index.js
 
-[Click me to see the full file!](https://github.com/scriptworld-git/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/server/index.js)
+[Click me to see the full file!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/server/index.js)
 
 As before in our webpack config, we also have to define the `development` variable.  
 After that we can import all modules needed for our hot-reload plugin.  

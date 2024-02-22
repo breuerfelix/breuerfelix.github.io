@@ -86,16 +86,11 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - CHANGELOG.md
   - README.md
-  - node_modules
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - klise-*.gem
-  - klise.gemspec
   - default.nix
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
