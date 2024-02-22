@@ -145,7 +145,7 @@ public class ATclient
                             //clone array so the package can be disposed
                             byte[] temp = package.readBuffer.Clone() as byte[];
 
-                            //TODO IMPLEMENT
+                            //IMPLEMENT HERE
                             //TEMP IS THE RECIEVED DATA
                             //HANDLE DATA HERE
 
@@ -361,7 +361,7 @@ public class ATclient
 
         private void recievedData(int clientID, byte[] data)
         {
-            //TODO HANDLE DATA FROM THE CLIENT
+            //HANDLE DATA FROM THE CLIENT HERE
         }
         #endregion
 
