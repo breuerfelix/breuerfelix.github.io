@@ -152,7 +152,7 @@
 {%- if jekyll.environment == "production" and site.umami and site.umami.url and site.umami.id -%}
   <script async data-website-id="{{ site.umami.id }}" src="{{ site.umami.url }}"></script>
 {%- endif -%}
-{%- if jekyll.environment == "production" and site.fathom -%}
+{%- if jekyll.environment == "production" and site.fathom and site.fathom.host and site.fathom.site_id -%}
   <script>
   (function(f, a, t, h, o, m){
     a[h]=a[h]||function(){
@@ -162,8 +162,8 @@
     m=f.getElementsByTagName('script')[0];
     o.async=1; o.src=t; o.id='fathom-script';
     m.parentNode.insertBefore(o,m)
-  })(document, window, '//{{ site.fathom }}/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'MDAXJ');
+  })(document, window, '//{{ site.fathom.host }}/tracker.js', 'fathom');
+  fathom('set', 'siteId', '{{ site.fathom.site_id }}');
   fathom('trackPageview');
   </script>
 {%- endif -%}

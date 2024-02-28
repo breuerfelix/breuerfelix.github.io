@@ -38,7 +38,9 @@ url: "https://breuer.dev"
 permalink: /:categories/:title
 google_analytics:
 umami:
-fathom: stats.felixbreuer.me
+fathom:
+  host: stats.felixbreuer.me
+  site_id: MDAXJ
 
 # Collection setting
 collections:
