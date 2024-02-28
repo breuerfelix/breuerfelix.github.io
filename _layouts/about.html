@@ -4,6 +4,7 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
 {% include header.html %}
 
 <body data-theme="{{ site.mode }}" class="notransition">
@@ -18,10 +19,14 @@ layout: compress
   {% include navbar.html %}
   <div class="wrapper">
     {% include author.html %}
-    <main aria-label="Content">
-      {{ content }}
+    <main class="page-content" aria-label="Content">
+      {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
     </main>
     {% include footer.html %}
   </div>
+
+  <script>
+    initTheme(localStorage.getItem("theme"));
+  </script>
 </body>
 </html>
