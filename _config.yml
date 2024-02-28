@@ -38,8 +38,7 @@ url: "https://breuer.dev"
 permalink: /:categories/:title
 google_analytics:
 umami:
-  url: https://stats.tecios.de/script.js
-  id: 1a5b0781-544a-4321-8a6a-dae4aa0614f1
+fathom: stats.felixbreuer.me
 
 # Collection setting
 collections:
