@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Things I haven't found on the Internet
+title: Readings I haven't found on the Internet
 ---
 
 <h3 class="posts-item-note" aria-label="Recent Posts">Blog Posts</h3>
