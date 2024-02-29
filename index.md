@@ -40,6 +40,17 @@ Now take a step back, relax and have fun exploring!
 
 ### Skills
 
+<div class="skills">
+  {% for skill in site.data.skills %}
+    <div class="skill">
+      <a href="{{ skill.link }}" target="_blank" rel="noopener noreferrer" style="color: {{ skill.color }};">
+        <i class="{{ skill.icon }}"></i>
+        <span>{{ skill.name }}</span>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
 - Customer Contact
 - Programming Languages
   - JavaScript, TypeScript, Python, Bash
