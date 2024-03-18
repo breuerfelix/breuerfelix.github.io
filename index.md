@@ -1,6 +1,5 @@
 ---
 layout: about
-excerpt: Hello, i am Felix! Welcome to my personal space :)
 comments: false
 ---
 
@@ -43,14 +42,19 @@ Now take a step back, relax and have fun exploring!
 - Customer Contact
 - Programming Languages
   - JavaScript, TypeScript, Python, Bash
-  - Golang, C#, Java, C++, C
-- DevOps
-  - Kubernetes, Gardener
+  - Golang, C#, Kotlin, Java, C++, C
+- Developer Operations
+  - Kubernetes, Gardener, Kubebuilder
+  - Flux, GitOps
+  - Pulumi, Terraform
   - Git, Docker, Docker-Compose
   - Unix, Virtual Machines, Container
-  - Github Actions, GitLab CI, Concourse
-- Full-Stack-Developer
-  - ReactJs, Next.js
+  - Github Actions, GitLab CI, Concourse CI
+- Developer Experience
+  - Open Policy Agent
+  - Nix
+- Full-Stack
+  - ReactJS, Next.js
   - Svelte, Sapper
   - Mithril, Angular
   - GraphQL, REST
@@ -58,7 +62,8 @@ Now take a step back, relax and have fun exploring!
   - MongoDB, CouchDB, SQL
   - Webpack, npm
   - HTML, CSS, SASS
-- IoT
+- Internet of Things
   - Yocto, Bitbake
+  - Mender, OTA
 - Automated testing / WebScraping with Selenium
 - Reverse Engineering API's
