@@ -5,7 +5,7 @@
 ```bash
 nix-shell
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve --drafts --incremental
 ```
 
 ## TODO
