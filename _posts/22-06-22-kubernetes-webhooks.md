@@ -7,7 +7,7 @@ tags: kubernetes admission mutating webhook simple minimal example cert-manager
 category: blog
 ---
 
-TLDR; Check out [this](https://github.com/breuerfelix/juicefs-volume-hook) GitHub Repository for a minimal example.  
+__tl;dr:__ Check out [this](https://github.com/breuerfelix/juicefs-volume-hook) GitHub Repository for a minimal example.  
 
 I haven't found any minimal example for a working Kubernetes admission webhook made with kubebuilder so here is mine.  
 This example just annotates all created Pods with a nice message.  

@@ -1,4 +1,4 @@
-TLDR; just run MY NeoVim! Try this: `nix run github:breuerfelix/feovim# .`
+__tl;dr:__ just run MY NeoVim! Try this: `nix run github:breuerfelix/feovim# .`
 
 Link to my Neovim Distribution: https://github.com/breuerfelix/feovim
 I have a readme on how you can create your own config

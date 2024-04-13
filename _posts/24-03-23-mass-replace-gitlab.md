@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Search and Replace across all Repositories in a GitLab Instance
-date: 2024-05-23 09:00:00 +01:00
+date: 2024-03-23 09:00:00 +01:00
 tags: search-and-replace gitlab instance group mass-replace traverse glab
 category: blog
 ---

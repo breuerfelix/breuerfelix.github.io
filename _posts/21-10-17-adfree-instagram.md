@@ -7,7 +7,7 @@ tags: instagram remove ads adfree block adblock app
 category: blog
 ---
 
-__TL;DR:__ Use an Adblocker on your phone and install Instagram through your Browser as a PWA.
+__tl;dr:__ Use an Adblocker on your phone and install Instagram through your Browser as a PWA.
 
 I recently stumbled across [this](https://monkeymanifesto.com/how-to-block-ads-on-instagram-3801/) blog post because the Instagram Ads were getting more and more aggressive.  
 I am reporting every ad i see for almost a month now but they are still appearing on a regular basis.... pretty frustating since once you report them, you realise even more how often Instagram shows you ads.  
