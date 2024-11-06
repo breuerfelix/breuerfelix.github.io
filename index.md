@@ -7,7 +7,7 @@ I am Felix, a **Cloud Systems Engineer** living in Cologne _(Germany)_ and born 
 
 After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com),
 I spend some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de).
-Currently I enjoy working fulltime as a DevOps Engineer at [inovex](https://www.inovex.de/en).
+Currently I enjoy working fulltime as a Cloud Platform Engineer at [inovex](https://www.inovex.de/en).
 
 Trying out new technologies is one thing I love the most doing in my spare time.  
 I also enjoy solving difficult boulder problems and strumming the guitar.  
