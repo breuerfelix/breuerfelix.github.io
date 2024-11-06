@@ -3,7 +3,7 @@ layout: about
 comments: false
 ---
 
-I am Felix, a **Cloud Systems Engineer** living in Cologne _(Germany)_ and born 1994 in Aachen.
+I am Felix, a **Cloud Platform Engineer** living in Cologne _(Germany)_ and born 1994 in Aachen.
 
 After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com),
 I spend some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de).
