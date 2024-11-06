@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Neovim Treesitter Grammars with Nix with lazy.nvim
+title: Neovim Treesitter Grammars with Nix and lazy.nvim
 date: 2024-11-05 09:00:00 +01:00
 tags: nix home-manager neovim treesitter grammars lazy
 category: blog
