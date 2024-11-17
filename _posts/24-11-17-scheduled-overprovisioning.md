@@ -39,7 +39,7 @@ spec:
     spec:
       nodeSelector:
         # requests a certain type of node if you have multiple nodepools
-        "nodepool": job-executor
+        nodepool: job-executor
       containers:
       - name: overprovisioning
         # make sure to set a proper version!
