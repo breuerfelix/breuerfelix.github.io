@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Simple Kubernetes Schedulded Overprovisioning
+title: Simple Kubernetes scheduled Overprovisioning
 date: 2024-11-17 09:00:00 +01:00
 tags: kubernetes scheduled overprovisioning
 category: blog
