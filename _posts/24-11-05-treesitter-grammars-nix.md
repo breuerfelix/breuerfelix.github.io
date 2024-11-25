@@ -20,7 +20,10 @@ luaConfigSnippet = let grammarsPath = pkgs.symlinkJoin {
 }; in 
 # lua 
 ''
-    vim.opt.runtimepath:prepend("${grammarsPath}")
+    -- also make sure to append treesitter since it bundles some languages
+    vim.opt.runtimepath:append("${pkgs.vimPlugins.nvim-treesitter}")
+    -- append all *.so files
+    vim.opt.runtimepath:append("${grammarsPath}")
 ''
 ```
 
