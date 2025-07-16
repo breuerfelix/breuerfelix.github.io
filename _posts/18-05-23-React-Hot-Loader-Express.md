@@ -7,23 +7,23 @@ tags: javascript js node express server client react react-hot-loader middleware
 category: tutorial
 ---
 
-To start a tiny [react-app](https://reactjs.org) (with the new [ES6](http://es6-features.org/) features) I wanted to have a basic [hot-reload](https://github.com/gaearon/react-hot-loader) development server with an [expressJS](http://expressjs.com/) backend server, to handle API calls in the future.  
-This should be bundled with [webpack](https://webpack.js.org) because it's the most popular and kinda easy to handle react in my opinion.
+To start a tiny [react-app](https://reactjs.org) (with the new [ES6](http://es6-features.org/) features), I wanted to have a basic [hot-reload](https://github.com/gaearon/react-hot-loader) development server with an [ExpressJS](http://expressjs.com/) backend server to handle API calls in the future.  
+This should be bundled with [webpack](https://webpack.js.org) because it's the most popular and kind of easy way to handle React, in my opinion.
 
 Since I couldn't find any good documentation on the internet, I decided to put all of this together with the newest versions out there in 2018.<!--more-->
 
-Many react apps are created with [create-react-app](https://github.com/facebook/create-react-app) nowadays. This is really easy to get started, but once you want to configure the build syste just a little bit, it's time to eject the project. At this point it get's confusing because many beginners cant handle the ejected code.
+Many React apps are created with [create-react-app](https://github.com/facebook/create-react-app) nowadays. This is really easy to get started, but once you want to configure the build system just a little bit, it's time to eject the project. At this point, it gets confusing because many beginners can't handle the ejected code.
 
 ## GitHub Repository
 
-If you don't wann see my config files or read any explanation, just go ahead and fork / clone my GitHub Repository to start your own react journey.
+If you don't want to see my config files or read any explanation, just go ahead and fork/clone my GitHub repository to start your own React journey.
 
 [GitHub Repo](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs)
 
 ## Starting your Server
 
 The [NodeJs]() server will compile the client via webpack and serve it.  
-There is no need for a second console which is serving the bundle via webpack.
+There is no need for a second console to serve the bundle via webpack.
 
 ```bash
 $ npm start
@@ -41,8 +41,8 @@ This is the entry point of the project. Remember: the server will compile and se
 }
 ```
 
-The `start` script can be executed without the `run` parameter. We use [nodemon](http://nodemon.io) to watch in our `server` directory for changes so the server is able to restart every time we change a file.  
-There is no need to watch in our client directory, that's going to be done by webpack.  
+The `start` script can be executed without the `run` parameter. We use [nodemon](http://nodemon.io) to watch our `server` directory for changes so the server is able to restart every time we change a file.  
+There is no need to watch our client directory; that's going to be done by webpack.  
 To enable our `.babelrc` file (ES6 support), we have to tell nodemon to execute the index.js with `babel-node`.
 
 ```json
@@ -106,15 +106,15 @@ First of all we have to define a variable so we can change the config file depen
 var dev = process.env.NODE_ENV !== 'production';
 ```
 
-Sourc maps will make our `bundle.js` way bigger. By choosing `none` in production mode, we can reduce the bundled js file by 90%.  
-Also the webpack `mode` will do some nice predefined steps for us like uglifying the code so it becomes even more reduced.
+Source maps will make our `bundle.js` way bigger. By choosing `none` in production mode, we can reduce the bundled JS file by 90%.  
+Also, the webpack `mode` will do some nice predefined steps for us, like uglifying the code so it becomes even more reduced.
 
 ```javascript
 mode: dev ? 'development' : 'production',
 devtool: dev ? 'inline-source-map' : 'none'
 ```
 
-In developement mode we have to add the `webpack-hot-middleware/client` to our entry so react is able to accept the hot-reload.
+In development mode, we have to add the `webpack-hot-middleware/client` to our entry so React is able to accept the hot-reload.
 
 ```javascript
 entry: dev
@@ -125,7 +125,7 @@ entry: dev
     : [path.resolve(__dirname, 'client/index.js')];
 ```
 
-As our module loader we use `babel-loader` so webpack knows how to handle ES6 code.
+As our module loader, we use `babel-loader` so webpack knows how to handle ES6 code.
 
 ```javascript
 module: {
@@ -139,7 +139,7 @@ module: {
 }
 ```
 
-It's very important to set the `publicPath` to `/` because that is the path where express will server the bundle.js file.
+It's very important to set the `publicPath` to `/` because that is the path where Express will serve the bundle.js file.
 
 ```javascript
 output: {
@@ -149,7 +149,7 @@ output: {
 }
 ```
 
-We need to use these Modules to enable the Hot-Module-Replacement in development mode.
+We need to use these modules to enable Hot Module Replacement in development mode.
 
 ```javascript
 plugins: dev
@@ -182,7 +182,7 @@ We also enable the new decorators to use `@decorator` later in our code.
 
 [Click me to see the full file!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/client/index.js)
 
-This code snippet needs to be added after the `render()` function in our react-app.  
+This code snippet needs to be added after the `render()` function in our React app.  
 It accepts hot-reload requests from the browser.
 
 ```javascript
@@ -198,8 +198,8 @@ if (process.env.NODE_ENV !== 'production') {
 [Click me to see the full file!](https://github.com/breuerfelix/reactStarter-WebpackHotMiddlewareExpressJs/blob/master/server/index.js)
 
 As before in our webpack config, we also have to define the `development` variable.  
-After that we can import all modules needed for our hot-reload plugin.  
-Even though we enabled ES6 code, it's time to use the `require`, because `ìmport` statements can only be done at the top of the file.  
+After that, we can import all modules needed for our hot-reload plugin.  
+Even though we enabled ES6 code, it's time to use `require`, because `import` statements can only be done at the top of the file.  
 Since we wrap these up in the if statement, they are not at the top anymore.
 
 ```javascript
@@ -213,8 +213,8 @@ if (dev) {
 }
 ```
 
-After setting up the express app we can use another middleware depending on the mode.  
-We inject the `webpack-dev-middleware` so express will compile and serve the bundle.js file.
+After setting up the Express app, we can use another middleware depending on the mode.  
+We inject the `webpack-dev-middleware` so Express will compile and serve the bundle.js file.
 
 ```javascript
 if (dev) {
@@ -232,4 +232,4 @@ if (dev) {
 }
 ```
 
-All set up! If you have any trouble getting this started, maybe so a fresh clone of the repository or feel free to contact me.
+All set up! If you have any trouble getting this started, maybe do a fresh clone of the repository or feel free to contact me.

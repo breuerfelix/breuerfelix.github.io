@@ -7,16 +7,16 @@ tags: linux nginx serverblocks server http https proxy ssl certificates reversep
 category: tutorial
 ---
 
-In the past weeks I set up some different webservers with [Nginx](http://nginx.org). Nginx is more leightweight and easy to handle than [Apache2](https://httpd.apache.org).
+In the past weeks, I set up some different web servers with [Nginx](http://nginx.org). Nginx is more lightweight and easier to handle than [Apache2](https://httpd.apache.org).
 
-There are alot of different usages for webservers. Some are reverse proxy, https, static sites, clouds or php. In this article I wanna share my experiences with different server blocks for some of these cases. It's basically more a little wiki.<!--more-->
+There are a lot of different uses for web servers. Some are reverse proxy, HTTPS, static sites, clouds, or PHP. In this article, I want to share my experiences with different server blocks for some of these cases. It's basically more of a little wiki.<!--more-->
 
 ## Redirect www to non-www Traffic
 
-This solution works for __any__ subdomain. You can also adjust the `server_names` to redirect from non-www to www Traffic.
+This solution works for __any__ subdomain. You can also adjust the `server_name` to redirect from non-www to www traffic.
 
 ```nginx
-#redirect all www to non-www Traffic
+# redirect all www to non-www traffic
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -33,12 +33,12 @@ server {
 ## Redirect Http to Https Traffic
 
 ```nginx
-#redirect all http to https Traffic
+# redirect all http to https traffic
 server {
     listen 80;
     listen [::]:80;
 
-    #the underscore is a wildcard for every server name
+    # the underscore is a wildcard for every server name
     server_name _;
 
     return 301 https://$host$request_uri;
@@ -47,7 +47,7 @@ server {
 
 ## SSL Optimization
 
-This server block is 90% based on [this article](https://bjornjohansen.no/optimizing-https-nginx) about optimizing your https server block. It also explains what every line is doing.
+This server block is 90% based on [this article](https://bjornjohansen.no/optimizing-https-nginx) about optimizing your HTTPS server block. It also explains what every line is doing.
 
 ```nginx
 ssl on;
@@ -77,26 +77,26 @@ server {
 
     server_name example.com;
 
-    #include ssl custom settings for more safety and faster loading
-    #optional (see chapter 'SSL optimization')
+    # include SSL custom settings for more safety and faster loading
+    # optional (see chapter 'SSL optimization')
     #include /path/to/ssl/optimization.conf;
 
     ssl_certificate /path/to/certificate.pem;
     ssl_certificate_key /path/to/certificate.pem;
 
-    #path to root directory for your files
+    # path to root directory for your files
     root /var/www/homepage;
 
-    #paths for custom index and error pages. (optional)
-    #error_page 404 404.html;
-    #index index.html;
+    # paths for custom index and error pages (optional)
+    # error_page 404 404.html;
+    # index index.html;
 
-    #deny all requests for any access files
+    # deny all requests for any access files
     location ~ /\.ht {
         deny all;
     }
 
-    #try to serve files, otherwise show 404 page
+    # try to serve files, otherwise show 404 page
     location / {
         try_files $uri $uri/ =404;
     }
@@ -105,8 +105,8 @@ server {
 
 ## Reverse Proxy for large File-Transfer
 
-I struggled alot when using a reverse proxy for large file transfers for example when setting up a cloud (like [NextCloud](https://nextcloud.com)) behind a reverse proxy.  
-These are my recommended settings which caused the least problems.
+I struggled a lot when using a reverse proxy for large file transfers, for example when setting up a cloud (like [NextCloud](https://nextcloud.com)) behind a reverse proxy.  
+These are my recommended settings, which caused the least problems.
 
 ```nginx
 server {
@@ -115,14 +115,14 @@ server {
 
     server_name example.com;
 
-    #include ssl custom settings for more safety and faster loading
-    #optional (see chapter 'SSL optimization')
+    # include SSL custom settings for more safety and faster loading
+    # optional (see chapter 'SSL optimization')
     #include /path/to/ssl/optimization.conf;
 
     ssl_certificate /path/to/certificate.pem;
     ssl_certificate_key /path/to/certificate.pem;
 
-    #zero mean unlimited. you can upload any filesize you want
+    # zero means unlimited. You can upload any file size you want
     client_max_body_size 0;
     underscores_in_headers on;
 

@@ -6,7 +6,7 @@ tags: macos mono stereo convert audio interface microphone
 category: blog
 ---
 
-__tl;dr:__ Install blackhole (`brew install --cask blackhole-2ch`) and run the script below. Make sure to adjust your input device in the constants and install `sounddevice` + `numpy`.
+__tl;dr:__ Install Blackhole (`brew install --cask blackhole-2ch`) and run the script below. Make sure to adjust your input device in the constants and install `sounddevice` + `numpy`.
 
 I recently bought a fancy XLR microphone and an audio interface from Focusrite (Scarlett Duo). After plugging in everything, I wanted to hear my awesome voice via Voice Memos on Mac. I could hear myself only on the left side of my headphones.  
 Replugging everything, checking settings, turning the mic... Same output, just the left side.
@@ -14,14 +14,14 @@ Replugging everything, checking settings, turning the mic... Same output, just t
 I thought it must be broken, but after a little research I realized that microphones always produce mono output, and the computer just turns it into fake stereo. Teams, Zoom, Google Meet, etc. also provide my input as stereo. So when my coworkers heard me via Teams, all was fine. At least that worked great.
 
 But I couldn't stop messing around and wanted to figure out how to duplicate my input to a second channel. Can't be that hard, right?  
-Yes. Just buy Loopback for 99 dollars and I am fine! Wow.
+Yes. Just buy Loopback for 99 dollars and I'm fine! Wow.
 
 Nope. Not going to do that.
 
 So first of all, we need a virtual audio device we can use to route our duplicated mono input. There is a nice open-source project for this:  
 [Blackhole](https://existential.audio/blackhole/). Just install it via Homebrew: `brew install --cask blackhole-2ch`.
 
-I wrote a simple Python script to duplicate the mono stream to stereo from my Scarlett audio interface to Blackhole in real time. Just make sure you choose `blackhole` as the input device when recording audio.
+I wrote a simple Python script to duplicate the mono stream to stereo from my Scarlett audio interface to Blackhole in real time. Just make sure you choose `Blackhole` as the input device when recording audio.
 
 Here is the code with some comments:
 
@@ -48,7 +48,7 @@ def audio_callback(indata, outdata, frames, time, status):
 
 def main():
     # adjust your sample rate here
-    # do not exceed 96kHz otherwise the input gets crackling
+    # do not exceed 96kHz otherwise the input gets crackly
     samplerate = 96000
 
     devices = sd.query_devices()
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     run_main_on_core()
 ```
 
-I also wanted to make sure that when I accidentally unplug the mic, it would reconnect and reopen the stream after replugging. That was a hell of a ride.  
+I also wanted to make sure that when I accidentally unplugged the mic, it would reconnect and reopen the stream after replugging. That was a hell of a ride.  
 Turns out, you have to run the streaming code inside a new process so when it crashes and the process stops, it "releases" the input. Without multiprocessing, I was not able to reconnect the microphone, no matter how often I closed the stream.
 
 Feel free to reach out if you have any questions :)  

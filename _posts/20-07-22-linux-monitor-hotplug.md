@@ -7,13 +7,13 @@ tags: linux external monitor hotplug i3 windowmanager
 category: blog
 ---
 
-I am using i3 window manager which is automatically creating workspaces for new monitors.  
-The problem is that `xrandr` is not enabling my external monitors when i plug them in (or remove them when unplugging them).<!--more-->
+I am using the i3 window manager, which automatically creates workspaces for new monitors.  
+The problem is that `xrandr` is not enabling my external monitors when I plug them in (or removing them when unplugging them).<!--more-->
 
-`xrandr --output HDMI2 --auto --left-of eDP1` for example enables your external monitor and put it left of your internal display.  
+`xrandr --output HDMI2 --auto --left-of eDP1`, for example, enables your external monitor and puts it to the left of your internal display.  
 `eDP1` often refers to the internal laptop display.
 
-`udevadm` is a tool which fires events on hardware changes like USB or HDMI hotplug.  
+`udevadm` is a tool that fires events on hardware changes like USB or HDMI hotplug.  
 `udevadm monitor` displays these events on the console.
 
 Create a file named `95-monitor-hotplug.rules` in `/etc/udev/rules.d/` with the following content:
@@ -37,7 +37,7 @@ export XAUTHORITY=/home/felix/.Xauthority
 
 function connect() {
     xrandr --output $1 --left-of eDP1 --auto
-    # this moves the current workspace to the new created one from i3
+    # this moves the current workspace to the newly created one from i3
     i3 move workspace to output left
 }
 
@@ -46,7 +46,7 @@ function disconnect() {
 }
 
 function main() {
-    # list of all different HDMI ports on docking stations etc.
+    # list of all different HDMI ports on docking stations, etc.
     for disp in 'DP2' 'HDMI2' ;
     do
         xrandr --query | grep "$disp connected" &> /dev/null && connect $disp || disconnect $disp

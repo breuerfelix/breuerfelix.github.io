@@ -6,10 +6,10 @@ tags: kubernetes scheduled overprovisioning
 category: blog
 ---
 
-In some scenarios you need to to overprovision your kubernetes cluster only at certain times. Imagine running CI/CD jobs in your cluster. There might be more pending Jobs during work hours. Wouldn't it be nice to have some empty space in your cluster for new jobs to be scheduled immediatly and increase your developer experience?
+In some scenarios, you need to overprovision your Kubernetes cluster only at certain times. Imagine running CI/CD jobs in your cluster. There might be more pending jobs during work hours. Wouldn't it be nice to have some empty space in your cluster for new jobs to be scheduled immediately and increase your developer experience?
 
-Best part, you don't even need some fancy tools for this. Here is an implementation with some basic resources.  
-First lets create the workload that requests resouces but gets evicted for real jobs:
+Best part, you don't even need any fancy tools for this. Here is an implementation with some basic resources.  
+First, let's create the workload that requests resources but gets evicted for real jobs:
 ```yaml
 ---
 apiVersion: scheduling.k8s.io/v1
@@ -38,7 +38,7 @@ spec:
         app: overprovisioning
     spec:
       nodeSelector:
-        # requests a certain type of node if you have multiple nodepools
+        # requests a certain type of node if you have multiple node pools
         nodepool: job-executor
       containers:
       - name: overprovisioning
@@ -54,7 +54,7 @@ spec:
 ```
 
 Since one pod of the `Deployment` above requests enough resources to fill up one full node, the number of replicas is equal to the number of spare nodes you want to have.  
-Now lets get into the scheduled part. We use a simple `CronJob` with `kubectl` and some RBAC for that:
+Now let's get into the scheduled part. We use a simple `CronJob` with `kubectl` and some RBAC for that:
 ```yaml
 ---
 apiVersion: v1
@@ -97,7 +97,7 @@ roleRef:
 ```
 
 These allow our `CronJob` to access and scale the `Deployment` we just created.  
-The following resource managed the up- and downscaling of our overprovisioning workload:
+The following resources manage the up- and downscaling of our overprovisioning workload:
 ```yaml
 ---
 apiVersion: batch/v1
@@ -151,4 +151,4 @@ spec:
                   kubectl scale deployment overprovisioning --replicas=0
 ```
 
-Thats it! No Helmchart, no custom operator, just some basic Kubernetes resources.
+That's it! No Helm chart, no custom operator, just some basic Kubernetes resources.

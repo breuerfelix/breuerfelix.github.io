@@ -8,19 +8,19 @@ redirect_from:
   - /projects/react-graphql-auth
 ---
 
-This project is about me learning a Javascript framework called [React](https://reactjs.org) and [GraphQL](https://graphql.org). Like always, it's easier to learn new stuff when applying it to a project.  
+This project is about me learning a JavaScript framework called [React](https://reactjs.org) and [GraphQL](https://graphql.org). Like always, it's easier to learn new stuff when applying it to a project.  
 I decided to create a simple authentication system.
 
-The theme is made with [Bulma.io](https://bulma.io) because I wanted to try out a popular alternitive to [Bootstrap](https://getbootstrap.com). The docmentation for Bulma is also really good.
+The theme is made with [Bulma.io](https://bulma.io) because I wanted to try out a popular alternative to [Bootstrap](https://getbootstrap.com). The documentation for Bulma is also really good.
 
-For saving the login credentials I used [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).
+For saving the login credentials, I used [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).
 
 [Click here](https://github.com/breuerfelix/react-graphql-authentication) to see the code on GitHub.
 
 ## Database
 
-To store all the user data I use a simple json file based database called [lowdb](https://github.com/typicode/lowdb). I didn't want to install a local DB only for a little project.  
-Even though I implemented all database actions in a seperate class. It would be kinda easy to refactor the database to MySQL only by changing this class. All other code still behave the same.
+To store all the user data, I use a simple JSON file-based database called [lowdb](https://github.com/typicode/lowdb). I didn't want to install a local DB only for a little project.  
+Even though I implemented all database actions in a separate class, it would be kind of easy to refactor the database to MySQL only by changing this class. All other code would still behave the same.
 
 Passwords are also stored in a hashed format to increase security. This is done via [bcrypt](https://www.npmjs.com/package/bcrypt).
 
@@ -71,10 +71,10 @@ class userDB {
 
 ## API
 
-While searching the web for an alternative to Axios with Express, I learned about GraphQL. This API should fit nice into React.  
-At the beginning it was kinda hard to learn, because it works really different to other API's out there.
+While searching the web for an alternative to Axios with Express, I learned about GraphQL. This API should fit nicely into React.  
+At the beginning, it was kind of hard to learn, because it works really differently from other APIs out there.
 
-After setting my application up for handling GraphQL, the steps were gettin easier and faster along the way. Implementing more and more requests were faster after the core work was done.
+After setting my application up for handling GraphQL, the steps were getting easier and faster along the way. Implementing more and more requests was faster after the core work was done.
 
 ### GraphQL snippet
 
@@ -155,13 +155,13 @@ const resolver = {
 
 ## State Management
 
-For state management of react applications many people use [ReduxJs](https://redux.js.org). I thought this is really complex because you have to pass everything to the props of your components. Sometimes this gets really annoying when adding some functions to your state.  
-You always have to make sure to pass them correctly to every component which needs to access this function.
+For state management of React applications, many people use [ReduxJs](https://redux.js.org). I thought this was really complex because you have to pass everything to the props of your components. Sometimes this gets really annoying when adding some functions to your state.  
+You always have to make sure to pass them correctly to every component that needs to access this function.
 
-After searching the web I learned about [MobX](https://mobx.js.org). I used Webpack to write ES6 code anyways, so I added another plugin to allow decorators in my javascript files. This function is really handy because MobX comes with alot of nice and easy to handly decorators.
+After searching the web, I learned about [MobX](https://mobx.js.org). I used Webpack to write ES6 code anyway, so I added another plugin to allow decorators in my JavaScript files. This feature is really handy because MobX comes with a lot of nice and easy-to-handle decorators.
 
-Every component which needs to access one specific state, just needs to get it inserted via decorators.  
-In my opinion the code looks way cleaner and easier to read.
+Every component that needs to access one specific state just needs to get it inserted via decorators.  
+In my opinion, the code looks way cleaner and easier to read.
 
 ### User State snippet
 

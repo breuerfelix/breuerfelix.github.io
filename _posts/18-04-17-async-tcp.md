@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Async Tcp Socket Server/Client in C#
+title: Async TCP Socket Server/Client in C#
 date: 2018-04-17 22:15:00 +01:00
 modify_date: 2018-04-18 12:50:00 +01:00
 tags: async socket tcp c#
@@ -9,16 +9,17 @@ redirect_from:
   - /projects/async-tcp
 ---
 
-I wanted to program a server which can handle alot of clients at the same time just like [MMORPG](https://de.wikipedia.org/wiki/Massively_Multiplayer_Online_Role-Playing_Game)-Servers do.
+I wanted to program a server that can handle many clients at the same time, just like [MMORPG](https://de.wikipedia.org/wiki/Massively_Multiplayer_Online_Role-Playing_Game) servers do.
 
-Many Languages are capable of doing this, but most of them are optimized for Web-Servers.  
-Another important aspect is the amount of data being sent over the stream. There shouldn't be any limit for the package size.
+Many languages are capable of doing this, but most of them are optimized for web servers.  
+Another important aspect is the amount of data being sent over the stream. There shouldn't be any limit to the packet size.
 
 ## Code
 
-Enough talking. Here are the complete codeblocks for each client- and serverside.  
-I implemented a little bit more code than above in the tutorial, but everything should be well explained in the comments.  
+Enough talking. Here are the complete code blocks for both the client and server sides.  
+I implemented a bit more code than in the tutorial above, but everything should be well explained in the comments.  
 Feel free to use this code and maybe program your own little MMORPG software.
+
 
 [Click here](https://github.com/breuerfelix/Async-Socket-TCP) to see the GitHub repository.
 
@@ -61,7 +62,7 @@ public class ATclient
             }
         }
 
-        //disconnecing event
+        //disconnecting event
         public delegate void standardHandler();
         public event standardHandler disconnecting;
 
@@ -92,7 +93,7 @@ public class ATclient
         }
         #endregion
 
-        #region Recieve
+        #region Receive
         private void connectCallback(IAsyncResult ar)
         {
             try
@@ -105,7 +106,7 @@ public class ATclient
 
                 packageState package = new packageState(tempS);
 
-                tempS.BeginReceive(package.sizeBuffer, 0, package.sizeBuffer.Length, SocketFlags.None, new AsyncCallback(recieveCallback), package);
+                tempS.BeginReceive(package.sizeBuffer, 0, package.sizeBuffer.Length, SocketFlags.None, new AsyncCallback(receiveCallback), package);
             }
             catch
             {
@@ -114,7 +115,7 @@ public class ATclient
             }
         }
 
-        private void recieveCallback(IAsyncResult ar)
+        private void receiveCallback(IAsyncResult ar)
         {
             try
             {
@@ -135,7 +136,7 @@ public class ATclient
 
                     }
                     else
-                    //recieved data belongs to old package
+                    //received data belongs to old package
                     {
                         package.readOffset += bytesRead;
 
@@ -146,7 +147,7 @@ public class ATclient
                             byte[] temp = package.readBuffer.Clone() as byte[];
 
                             //IMPLEMENT HERE
-                            //TEMP IS THE RECIEVED DATA
+                            //TEMP IS THE RECEIVED DATA
                             //HANDLE DATA HERE
 
                             //free memory
@@ -170,13 +171,13 @@ public class ATclient
                 else
                 {
                     connected = false;
-                    log("Error recieving Message! ReadBytes < 0.");
+                    log("Error receiving Message! ReadBytes < 0.");
                 }
             }
             catch
             {
                 connected = false;
-                log("Error recieving Message!");
+                log("Error receiving Message!");
             }
         }
         #endregion
@@ -292,7 +293,7 @@ public class ATclient
         public event stringHandler consoleLogged;
         public delegate void stringHandler(string message);
 
-        //recieving data handler
+        //receiving data handler
         public delegate void clientByteHandler(int clientID, byte[] data);
 
         #region Connect
@@ -314,7 +315,7 @@ public class ATclient
                 Socket clientSocket = serverS.EndAccept(ar);
                 serverS.BeginAccept(new AsyncCallback(acceptCallback), serverS);
 
-                log($"Connection from {clientSocket.RemoteEndPoint.ToString()} recieved.");
+                log($"Connection from {clientSocket.RemoteEndPoint.ToString()} received.");
 
                 if (clients.Count < ATserver.MAX_CLIENTS)
                 {
@@ -323,7 +324,7 @@ public class ATclient
 
                     //connect all the events from the client
                     c.clientDisconnecting += clientDisconnected;
-                    c.recievingData += recievedData;
+                    c.receivingData += receivedData;
                     c.consoleLogging += log;
 
                     //start the client
@@ -334,7 +335,7 @@ public class ATclient
                 else
                 {
                     clientSocket.Close();
-                    log($"Max Number of Clients connected is reached. IP: {clientSocket.RemoteEndPoint.ToString()} got declined.");
+                    log($"Max number of clients connected is reached. IP: {clientSocket.RemoteEndPoint.ToString()} was declined.");
                 }
             }
             catch
@@ -354,12 +355,12 @@ public class ATclient
                 clients.Remove(client);
 
                 client.clientDisconnecting -= clientDisconnected;
-                client.recievingData -= recievedData;
+                client.receivingData -= receivedData;
                 client.consoleLogging -= log;
             }
         }
 
-        private void recievedData(int clientID, byte[] data)
+        private void receivedData(int clientID, byte[] data)
         {
             //HANDLE DATA FROM THE CLIENT HERE
         }
@@ -394,7 +395,7 @@ public class ATclient
 
         private Socket socket = null;
 
-        public event clientByteHandler recievingData;
+        public event clientByteHandler receivingData;
         public event clientHandler clientDisconnecting;
         public event stringHandler consoleLogging;
 
@@ -415,14 +416,14 @@ public class ATclient
         {
             packageState package = new packageState(this.socket);
 
-            socket.BeginReceive(package.sizeBuffer, 0, package.sizeBuffer.Length, SocketFlags.None, new AsyncCallback(recieveCallback), package);
+            socket.BeginReceive(package.sizeBuffer, 0, package.sizeBuffer.Length, SocketFlags.None, new AsyncCallback(receiveCallback), package);
 
             log($"Client: {id} is set up.");
         }
 
-        private void recieveCallback(IAsyncResult ar)
+        private void receiveCallback(IAsyncResult ar)
         {
-            log($"Data from Client: {id} recieved.");
+            log($"Data from Client: {id} received.");
 
             try
             {
@@ -453,8 +454,8 @@ public class ATclient
                             byte[] temp = package.readBuffer.Clone() as byte[];
 
                             //invoke the event
-                            //temp is the recieved data!
-                            recievingData?.Invoke(this.id, temp);
+                            //temp is the received data!
+                            receivingData?.Invoke(this.id, temp);
 
                             //free memory
                             package.Dispose();
@@ -465,24 +466,24 @@ public class ATclient
                     if (package.readBuffer == null)
                     //new package
                     {
-                        package.socket.BeginReceive(package.sizeBuffer, 0, package.sizeBuffer.Length, SocketFlags.None, new AsyncCallback(recieveCallback), package);
+                        package.socket.BeginReceive(package.sizeBuffer, 0, package.sizeBuffer.Length, SocketFlags.None, new AsyncCallback(receiveCallback), package);
                     }
                     else
                     //read rest of the bytelength
                     {
                         int readsize = (ATserver.BUFFER_SIZE > size) ? size : ATserver.BUFFER_SIZE;
-                        package.socket.BeginReceive(package.readBuffer, package.readOffset, readsize, SocketFlags.None, new AsyncCallback(recieveCallback), package);
+                        package.socket.BeginReceive(package.readBuffer, package.readOffset, readsize, SocketFlags.None, new AsyncCallback(receiveCallback), package);
                     }
                 }
                 else
                 {
-                    log("Error recieving Message! ReadBytes < 0.");
+                    log("Error receiving Message! ReadBytes < 0.");
                     closeClient();
                 }
             }
             catch
             {
-                log("Error recieving Message!");
+                log("Error receiving Message!");
                 closeClient();
             }
         }
@@ -498,7 +499,7 @@ public class ATclient
         }
         #endregion
 
-        #region Send / Recieve Data
+        #region Send / Receive Data
 
         public void sendData(byte[] data)
         {
@@ -513,7 +514,7 @@ public class ATclient
             }
             catch
             {
-                log("Error sending Message to the Client: " + this.id);
+                log("Error sending message to the Client: " + this.id);
                 closeClient();
             }
         }
@@ -529,7 +530,7 @@ public class ATclient
             }
             catch
             {
-                log("Failed sending Message!");
+                log("Failed sending message!");
                 closeClient();
             }
         }

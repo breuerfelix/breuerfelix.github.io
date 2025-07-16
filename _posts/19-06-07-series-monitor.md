@@ -8,17 +8,17 @@ redirect_from:
   - /projects/series-monitor
 ---
 
-I needed to learn Java for my university, so I decided to build a small gui-application for practical experience.
+I needed to learn Java for my university, so I decided to build a small GUI application for practical experience.
 
-The GUI of this tool is made with JavaFX. I did all the styles via [Scene-Builder](http://gluonhq.com/products/scene-builder/) because it seemed to be the easiest solution since I am not really a good designer.
+The GUI of this tool is made with JavaFX. I did all the styles via [Scene-Builder](http://gluonhq.com/products/scene-builder/) because it seemed to be the easiest solution, since I am not really a good designer.
 
-Another big extension I used is [Selenium Webdriver](https://www.seleniumhq.org/projects/webdriver/). It is really helpful for scraping the internet.
+Another big extension I used is [Selenium WebDriver](https://www.seleniumhq.org/projects/webdriver/). It is really helpful for scraping the internet.
 
-For my purposes it's really 'ugly' if a browser pops up everytime you press 'Refresh' to see if another Episode of your Series are out. Therefore I decided to use a headless browser called [HTML-UnitDriver](https://github.com/SeleniumHQ/htmlunit-driver).
+For my purposes, it's really 'ugly' if a browser pops up every time you press 'Refresh' to see if another episode of your series is out. Therefore, I decided to use a headless browser called [HTML-UnitDriver](https://github.com/SeleniumHQ/htmlunit-driver).
 
-With it's help it was kinda easy to check for updates in the background so the user won't notice any of this work.
+With its help, it was kind of easy to check for updates in the background so the user won't notice any of this work.
 
-To store the user progress when closing the application I used a simple json-file-database. Due it's simplicity this fits perfect into my little project.
+To store the user progress when closing the application, I used a simple JSON file database. Due to its simplicity, this fits perfectly into my little project.
 
 ## Code
 

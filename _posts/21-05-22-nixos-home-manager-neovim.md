@@ -7,10 +7,10 @@ tags: nixos home-manager neovim nightly
 category: blog
 ---
 
-I recently switched to [NixOS](https://nixos.org/) with [Home-Manager](https://github.com/nix-community/home-manager) and wanted to try out [Neovim](https://github.com/neovim/neovim) Nightly aka Neovim 5.0.  
-What is different on my setup? I will show you how to ditch all Plugin-Managers out there and use one Nix function to fetch all Neovim plugins from git. It will also keep them up-to-date everytime you rebuild your system.
+I recently switched to [NixOS](https://nixos.org/) with [Home-Manager](https://github.com/nix-community/home-manager) and wanted to try out [Neovim](https://github.com/neovim/neovim) Nightly, aka Neovim 5.0.  
+What is different about my setup? I will show you how to ditch all plugin managers and use one Nix function to fetch all Neovim plugins from git. It will also keep them up to date every time you rebuild your system.
 
-I assume you already have Home-Manager installed on your system. Install Neovim Nightly:
+I assume you already have Home-Manager installed on your system. To install Neovim Nightly:
 ```nix
 nixpkgs.overlays = [
   (import (builtins.fetchTarball {
@@ -24,12 +24,12 @@ programs.neovim = {
 };
 ```
 
-Below is an example configuration of my custom Plugin-Manager.  
+Below is an example configuration of my custom plugin manager.  
 I tried adding comments to every important line.  
-The function `pluginGit` creates a Nix Vim plugin with a builtin function called `buildVimPluginFrom2Nix`.
+The function `pluginGit` creates a Nix Vim plugin with a built-in function called `buildVimPluginFrom2Nix`.
 This function is a wrapper for almost every Vim plugin that you will find in the official NixPkgs.  
-The downside of using the package from NixPkgs is, that your plugins only update when the package updates. Usually Vim Plugin-Managers always fetch the plugins from git, unless you specified a commit.  
-This is also possible with my function. The first parameter is a commit, tag or branch. The `plugin` function is a wrapper around `pluginGit`, which defaults to `HEAD`. This will always point to the latest commit on the Repo.
+The downside of using the package from NixPkgs is that your plugins only update when the package updates. Usually, Vim plugin managers always fetch the plugins from git, unless you specify a commit.  
+This is also possible with my function. The first parameter is a commit, tag, or branch. The `plugin` function is a wrapper around `pluginGit`, which defaults to `HEAD`. This will always point to the latest commit on the repo.
 
 ```nix
 { config, pkgs, lib, vimUtils, ... }:
@@ -51,8 +51,8 @@ in {
     enable = true;
     package = pkgs.neovim-nightly;
 
-    # read in the vim config from filesystem
-    # this enables syntaxhighlighting when editing those
+    # read in the vim config from the filesystem
+    # this enables syntax highlighting when editing those
     extraConfig = builtins.concatStringsSep "\n" [
       (lib.strings.fileContents ./base.vim)
       (lib.strings.fileContents ./plugins.vim)
@@ -72,8 +72,8 @@ in {
       # used to compile tree-sitter grammar
       tree-sitter
 
-      # installs different langauge servers for neovim-lsp
-      # have a look on the link below to figure out the ones for your languages
+      # installs different language servers for neovim-lsp
+      # have a look at the link below to figure out the ones for your languages
       # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
@@ -100,4 +100,4 @@ in {
 }
 ```
 
-Let me know what you think in the comments below! I am open for new enhancements :)
+Let me know what you think in the comments below! I am open to new enhancements :)

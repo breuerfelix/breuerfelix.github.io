@@ -7,8 +7,8 @@ tags: javascript magic dots three spread operator typescript
 category: blog
 ---
 
-The so called spread / rest operator scares a lot of people switching to JavaScript.  
-This should be a self exaplaining code snippet:<!--more-->
+The so-called spread/rest operator scares a lot of people switching to JavaScript.  
+This should be a self-explaining code snippet:<!--more-->
 ```javascript
 const obj1 = { key1: 1, key2: 2 };
 const obj2 = { ...obj1, key3: 3 };
