@@ -26,7 +26,7 @@ The `# lua` comment is important since it enables lua syntax highlighting for th
 programs.neovim = {
   # ...
   plugins = [ pkgs.vimPlugins.lazy-nvim ];
-  extraLuaConfig = 
+  extraLuaConfig =
     # lua
     ''
       require("lazy").setup({
