@@ -7,7 +7,7 @@ tags: python api inspect dynamic
 category: tutorial
 ---
 
-Imagine the following situation: There is a fancy, large, often changed Python API which is used sequentially and you wanna expose it to your favorite users via pretty user interface.
+Imagine the following situation: There is a fancy, large, often-changed Python API which is used sequentially and you want to expose it to your favorite users via a pretty user interface.
 ```python
 class FancyAPI:
     def cleans_room(self, room: str):
@@ -20,13 +20,13 @@ class FancyAPI:
 ```
 <!--more-->
 
-You could create a window where the user can select the function he wants to execute. Based on this function you also create a modal so the user can input the size and flavor or the desired room as inputs for the function.  
-For every function you need to program a new modal because the inputs and types are different.  
-If these functions get more parameters or the type will change the modals have to get updated by you.
+You could create a window where the user can select the function they want to execute. Based on this function, you also create a modal so the user can input the size and flavor or the desired room as inputs for the function.  
+For every function, you need to program a new modal because the inputs and types are different.  
+If these functions get more parameters or the type changes, the modals have to be updated by you.
 
-This is really easy if you only got 2 functions. Now imagine such an API class with 50 functions each containing 6 parameters. I would not want to maintain that.
+This is really easy if you only have 2 functions. Now imagine such an API class with 50 functions, each containing 6 parameters. I would not want to maintain that.
 
-I want to show you how to extract all needed information to build a dynamic view based on the given class.
+I want to show you how to extract all the needed information to build a dynamic view based on the given class.
 
 ```python
 # inspect is a default python package
@@ -40,14 +40,14 @@ real_functions = []
 # dir() function loops over all functions of that class
 for func in dir(instance_to_inspect):
 
-    # ignore all internal python functions
+    # ignore all internal Python functions
     if func.startswith('__') and func.endswith('__'):
         continue
 
     # this is a 'real' implemented function
     real_functions.append(func)
 
-# actions represent all api functions the user can use
+# actions represent all API functions the user can use
 actions = []
 
 for func in real_functions:
@@ -89,7 +89,7 @@ for func in real_functions:
 actions
 ```
 
-In our example the variable `actions` does now contain a json-like dict which looks like the following:
+In our example, the variable `actions` now contains a JSON-like dict which looks like the following:
 ```json
 [{
     "functionName": "cleans_room",
@@ -123,7 +123,7 @@ I will not go into detail because this would be out of the scope of this little 
 
 ![sample function screenshot](/assets/images/sample_function.png)
 
-In the last step we have to read out the users configuration and call each function dynamically based on the function name.  
+In the last step, we have to read out the user's configuration and call each function dynamically based on the function name.  
 Arguments are passed via parameter name.
 
 ```python
@@ -151,7 +151,7 @@ for job in jobs:
 
 This use case is a little special because we can ignore return values and nested functions.
 
-I still think it is really handy because right now even people who are not able to write python code can interact with a library through the browser for example.
+I still think it is really handy because right now even people who are not able to write Python code can interact with a library through the browser, for example.
 
 And you know what is the best?  
-If the API changes you just have to re-run the script and everything is up-to-date!
+If the API changes, you just have to re-run the script and everything is up-to-date!

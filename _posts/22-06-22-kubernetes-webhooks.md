@@ -7,11 +7,11 @@ tags: kubernetes admission mutating webhook simple minimal example cert-manager
 category: blog
 ---
 
-__tl;dr:__ Check out [this](https://github.com/breuerfelix/juicefs-volume-hook) GitHub Repository for a minimal example.  
+__tl;dr:__ Check out [this](https://github.com/breuerfelix/juicefs-volume-hook) GitHub repository for a minimal example.  
 
-I haven't found any minimal example for a working Kubernetes admission webhook made with kubebuilder so here is mine.  
+I haven't found any minimal example of a working Kubernetes admission webhook made with Kubebuilder, so here is mine.  
 This example just annotates all created Pods with a nice message.  
-A lot of code commands and code with comments, as always!  
+A lot of code, commands, and comments, as always!  
 
 ## Bootstrap
 
@@ -24,14 +24,14 @@ kubebuilder init --domain github.com --repo github.com/breuerfelix/pod-webhook
 ```
 
 I didn't manage to generate valid configuration files with `controller-gen` when only using webhooks without writing a controller.  
-Also I don't like `kustomize`, which kubebuilder is using when generating the manifests so let us get rid of all the boilerplate code.  
-The `Makefile` won't make sense either anymore. Dump it and write your own if needed.  
+Also, I don't like `kustomize`, which Kubebuilder uses when generating the manifests, so let's get rid of all the boilerplate code.  
+The `Makefile` won't make sense anymore either. Dump it and write your own if needed.  
 
 ```bash
 rm -rf config hack Makefile
 ```
 
-We do not need leader election for a minimal example (you can also remove all kubebuilder comments since we don't use the generator anyways).  
+We do not need leader election for a minimal example (you can also remove all Kubebuilder comments since we don't use the generator anyway).  
 
 ```diff
 diff --git a/main.go b/new_main.go
@@ -41,27 +41,27 @@ index 9052d2a..18780eb 100644
 @@ -46,13 +46,9 @@ func init() {
  
  func main() {
- 	var metricsAddr string
+  var metricsAddr string
 -	var enableLeaderElection bool
- 	var probeAddr string
- 	flag.StringVar(&metricsAddr, "metrics-bind-address", ":8080", "The address the metric endpoint binds to.")
- 	flag.StringVar(&probeAddr, "health-probe-bind-address", ":8081", "The address the probe endpoint binds to.")
+  var probeAddr string
+  flag.StringVar(&metricsAddr, "metrics-bind-address", ":8080", "The address the metric endpoint binds to.")
+  flag.StringVar(&probeAddr, "health-probe-bind-address", ":8081", "The address the probe endpoint binds to.")
 -	flag.BoolVar(&enableLeaderElection, "leader-elect", false,
 -		"Enable leader election for controller manager. "+
 -			"Enabling this will ensure there is only one active controller manager.")
- 	opts := zap.Options{
- 		Development: true,
- 	}
+  opts := zap.Options{
+    Development: true,
+  }
 @@ -66,8 +62,7 @@ func main() {
- 		MetricsBindAddress:     metricsAddr,
- 		Port:                   9443,
- 		HealthProbeBindAddress: probeAddr,
+    MetricsBindAddress:     metricsAddr,
+    Port:                   9443,
+    HealthProbeBindAddress: probeAddr,
 -		LeaderElection:         enableLeaderElection,
 -		LeaderElectionID:       "ed15f5f0.github.com",
 +		LeaderElection:         false,
- 	})
- 	if err != nil {
- 		setupLog.Error(err, "unable to start manager")
+  })
+  if err != nil {
+    setupLog.Error(err, "unable to start manager")
 ```
 
 `go run .` should successfully build and run the project.  
@@ -88,7 +88,8 @@ index 456533d..b53359f 100644
 ## Implement the Webhook
 
 The [Kubebuilder Book](https://book.kubebuilder.io/reference/webhook-for-core-types.html) references the [following example](https://github.com/kubernetes-sigs/controller-runtime/tree/master/examples/builtins) on GitHub.  
-We are going to strip these files and integrate them into our bootstraped kubebuilder project.  
+
+We are going to strip these files and integrate them into our bootstrapped Kubebuilder project.  
 
 Create a file called `webhook.go`:
 
@@ -96,41 +97,41 @@ Create a file called `webhook.go`:
 package main
 
 import (
-	"context"
-	"encoding/json"
-	"net/http"
+  "context"
+  "encoding/json"
+  "net/http"
 
-	corev1 "k8s.io/api/core/v1"
-	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/webhook/admission"
+  corev1 "k8s.io/api/core/v1"
+  "sigs.k8s.io/controller-runtime/pkg/client"
+  "sigs.k8s.io/controller-runtime/pkg/webhook/admission"
 )
 
 type podAnnotator struct {
-	Client  client.Client
-	decoder *admission.Decoder
+  Client  client.Client
+  decoder *admission.Decoder
 }
 
 func (a *podAnnotator) Handle(ctx context.Context, req admission.Request) admission.Response {
-	pod := &corev1.Pod{}
-	if err := a.decoder.Decode(req, pod); err != nil {
-		return admission.Errored(http.StatusBadRequest, err)
-	}
+  pod := &corev1.Pod{}
+  if err := a.decoder.Decode(req, pod); err != nil {
+    return admission.Errored(http.StatusBadRequest, err)
+  }
 
-	// mutating code start
-	pod.Annotations["welcome-message"] = "i mutated you but that is okay"
-	// mutating code end
+  // mutating code start
+  pod.Annotations["welcome-message"] = "i mutated you but that is okay"
+  // mutating code end
 
-	marshaledPod, err := json.Marshal(pod)
-	if err != nil {
-		return admission.Errored(http.StatusInternalServerError, err)
-	}
+  marshaledPod, err := json.Marshal(pod)
+  if err != nil {
+    return admission.Errored(http.StatusInternalServerError, err)
+  }
 
-	return admission.PatchResponseFromRaw(req.Object.Raw, marshaledPod)
+  return admission.PatchResponseFromRaw(req.Object.Raw, marshaledPod)
 }
 
 func (a *podAnnotator) InjectDecoder(d *admission.Decoder) error {
-	a.decoder = d
-	return nil
+  a.decoder = d
+  return nil
 }
 ```
 
@@ -142,34 +143,34 @@ index 8db76b2..48544b3 100644
 --- a/old_main.go
 +++ b/main.go
 @@ -12,6 +12,7 @@ import (
- 	ctrl "sigs.k8s.io/controller-runtime"
- 	"sigs.k8s.io/controller-runtime/pkg/healthz"
- 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
+  ctrl "sigs.k8s.io/controller-runtime"
+  "sigs.k8s.io/controller-runtime/pkg/healthz"
+  "sigs.k8s.io/controller-runtime/pkg/log/zap"
 +	"sigs.k8s.io/controller-runtime/pkg/webhook"
  )
  
  var (
 @@ -48,6 +49,8 @@ func main() {
- 		os.Exit(1)
- 	}
+    os.Exit(1)
+  }
  
 +	mgr.GetWebhookServer().Register("/mutate-pod", &webhook.Admission{Handler: &podAnnotator{Client: mgr.GetClient()}})
 +
- 	if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {
- 		setupLog.Error(err, "unable to set up health check")
- 		os.Exit(1)
+  if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {
+    setupLog.Error(err, "unable to set up health check")
+    os.Exit(1)
 ```
 
-If you run the project via `go run .` now, it says that it is missing certificates. CERTIFICATES?? yes ... but wait, you won't see any certificate here, I promise!  
+If you run the project via `go run .` now, it says that it is missing certificates. CERTIFICATES?? Yes ... but wait, you won't see any certificate here, I promise!  
 Just make sure that it builds without errors and you should be fine.  
 
 ## Deploy
 
-Kubernetes is not able to call webhooks which are insecure and not protected via HTTPS.  
+Kubernetes is not able to call webhooks that are insecure and not protected via HTTPS.  
 To handle this, we are going to use [cert-manager](https://cert-manager.io/docs/) and let it handle all that nasty stuff.  
-Refer to [this](https://cert-manager.io/docs/installation/) guide for the installation of cert-manager, I recommend using Helm.  
+Refer to [this](https://cert-manager.io/docs/installation/) guide for the installation of cert-manager; I recommend using Helm.  
 
-First of all, let us create a namespace for all our stuff:
+First of all, let's create a namespace for all our stuff:
 
 ```bash
 kubectl create namespace pod-greeter
@@ -197,7 +198,7 @@ spec:
   # remember the secretName
   secretName: pod-greeter-tls
   dnsNames:
-    # IMPORTANT: format is the following namespace.service-name.svc
+    # IMPORTANT: format is the following: namespace.service-name.svc
     - pod-greeter.pod-greeter.svc
   issuerRef:
     name: selfsigned
@@ -225,7 +226,8 @@ spec:
 ```
 
 Create a `Deployment` that matches the selector in our `Service`.  
-Also make sure that the `secretName` matches the one in `Certificate`.  
+
+Also, make sure that the `secretName` matches the one in `Certificate`.  
 Cert-manager automatically creates a `Secret` that contains the generated certificates so we can mount them in our pod.  
 
 ```yaml
@@ -278,8 +280,8 @@ spec:
             optional: false
 ```
 
-As the last step we can finally create our `MutatingWebhookConfiguration` to tell Kubernetes that it should call the correct endpoint of our controller.  
-Due to the cert-manager annotation, all certificates are going to be injected in this webhook configuration at runtime by cert-manager.  
+As the last step, we can finally create our `MutatingWebhookConfiguration` to tell Kubernetes that it should call the correct endpoint of our controller.  
+Due to the cert-manager annotation, all certificates are going to be injected into this webhook configuration at runtime by cert-manager.  
 I told you that you won't see any certs here!  
 
 ```yaml
@@ -315,7 +317,7 @@ webhooks:
   sideEffects: None
 ```
 
-You are done! Let us test it out by creating a simple pod:
+You are done! Let's test it out by creating a simple pod:
 
 ```yaml
 apiVersion: v1
@@ -339,12 +341,12 @@ kubectl get pods
 ## Development
 
 I figured out two possible scenarios to develop a mutating webhook:
-* start a `minikube` or `kind` locally, deploy the controller, and test it
-* use `clientConfig.url` in the `MutatingWebhookConfiguration` with `ngrok` (or alternatives) to tunnel your local instance into a remote cluster
+* Start a `minikube` or `kind` locally, deploy the controller, and test it
+* Use `clientConfig.url` in the `MutatingWebhookConfiguration` with `ngrok` (or alternatives) to tunnel your local instance into a remote cluster
 
-The second option is the easiest for me, since I don't have to redeploy the application on every change and also I don't have to clutter my computer with a local kubernetes cluster.  
+The second option is the easiest for me, since I don't have to redeploy the application on every change and also I don't have to clutter my computer with a local Kubernetes cluster.  
 
-Currently there is no option to start the kubebuilder webhook server without tls certificates. First, let us create self signed certificates for our webhook server:
+Currently, there is no option to start the Kubebuilder webhook server without TLS certificates. First, let's create self-signed certificates for our webhook server:
 
 ```bash
 mkdir hack certs
@@ -416,14 +418,14 @@ Start the server for developing:
 go run main.go --cert-dir certs --key-name server.key --cert-name server.crt
 ```
 
-Now we need to tunnel the localhost server to the public. `ngrok` only tunnels tls traffic in their paid plan so I decided to use [localtunnel](https://github.com/localtunnel/localtunnel).  
+Now we need to tunnel the localhost server to the public. `ngrok` only tunnels TLS traffic in their paid plan, so I decided to use [localtunnel](https://github.com/localtunnel/localtunnel).  
 `localtunnel` tries to get the subdomain called `webhook-development` if it is available. If this is not the case, you have to substitute your subdomain in the `MutatingWebhookConfiguration`.
 
 ```bash
 npx localtunnel --port 9443 --local-https --local-ca certs/ca.crt --local-cert certs/server.crt --local-key certs/server.key --subdomain webhook-development
 ```
 
-Finally we can create a `MutatingWebhookConfiguration` for our development setup. Don't forget to delete it after you are done.
+Finally, we can create a `MutatingWebhookConfiguration` for our development setup. Don't forget to delete it after you are done.
 
 ```yaml
 ---
@@ -453,4 +455,3 @@ webhooks:
 ```
 
 Success! You should now get traffic on your local machine when updating or creating a new `Pod`.
-

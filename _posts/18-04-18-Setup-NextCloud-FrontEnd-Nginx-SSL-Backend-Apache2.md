@@ -7,22 +7,22 @@ tags: nextcloud server ubuntu16.04 setup apache2 nginx reverseproxy ssl linux
 category: tutorial
 ---
 
-In the next few chapters we gonna setup a [NextCloud](https://nextcloud.com) Server from scratch.  
-There are a lot of tutorials out there already covering this topic, but in our case we gonna use [Nginx](http://nginx.org) to serve the SSL-Certificates and proxy the connection to an [Apache2](https://httpd.apache.org) service which is serving NextCloud.  
+In the next few chapters, we're going to set up a [NextCloud](https://nextcloud.com) server from scratch.  
+There are a lot of tutorials out there already covering this topic, but in our case, we're going to use [Nginx](http://nginx.org) to serve the SSL certificates and proxy the connection to an [Apache2](https://httpd.apache.org) service which is serving NextCloud.  
 You can either use an existing Nginx configuration or follow the guide and deploy a new one.<!--more-->
 
-The Linux-Distribution doesn't really matter if you are a little familiar with it, but we going to use [Ubuntu Server 16.04 LTS](https://ubuntu.com/download/server).  
-For the purposes of this tutorial we gonna set up NextCloud under the Domain __"https://cloud.example.com/"__.  
-Even though this is a step by step tutorial, it is always possible to skip some parts if you already configured them.
+The Linux distribution doesn't really matter if you are a little familiar with it, but we're going to use [Ubuntu Server 16.04 LTS](https://ubuntu.com/download/server).  
+For the purposes of this tutorial, we're going to set up NextCloud under the domain __"https://cloud.example.com/"__.  
+Even though this is a step-by-step tutorial, it is always possible to skip some parts if you have already configured them.
 
 # Installing NextCloud
 There are two ways of installing NextCloud.  
-The first one is the fully automated option using 'snap' packages.  
-I don't recommend doing it this way because you don't have control over everything you wanna do.  
-Especially in a custom setup like ours, it is always better to do everything by yourself.
+The first is the fully automated option using 'snap' packages.  
+I don't recommend doing it this way because you don't have control over everything you want to do.  
+Especially in a custom setup like ours, it is always better to do everything yourself.
 
 ## 'snap' Install
-Anyways, if you are a lazy person and want to take that risk... Lets's go!  
+Anyway, if you are a lazy person and want to take that risk... let's go!  
 If not already installed, install the `snap` package manager:
 ```bash
 $ sudo apt-get install snapd
@@ -37,8 +37,8 @@ $ sudo nextcloud.manual-install replace_with_admin_username replace_with_admin_p
 ```
 
 ## Manual Install
-In this chapter we are going through the installation step by step.  
-First of all we need to install all dependencies. Don't be scared... these are a lot but only small ones.
+In this chapter, we are going through the installation step by step.  
+First of all, we need to install all dependencies. Don't be scared... there are a lot, but they're only small ones.
 ```bash
 $ sudo apt-get update
 $ sudo apt-get upgrade
@@ -47,11 +47,11 @@ $ sudo apt-get install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbs
 $ sudo apt-get install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
 ```
 ### SQL Database
-NextCloud is recommending [MariaDB](https://mariadb.org) as the database software so let's install and configure it:
+NextCloud recommends [MariaDB](https://mariadb.org) as the database software, so let's install and configure it:
 ```bash
 $ sudo apt-get install mariadb-server php-mysql
 ```
-MariaDB won't set up any password for the `root` user. It is only possible to access the database via `sudo` command so we gonna ignore that for this tutorial.  
+MariaDB won't set up any password for the `root` user. It is only possible to access the database via the `sudo` command, so we're going to ignore that for this tutorial.  
 Enter the database:
 ```bash
 $ sudo mysql -u root
@@ -64,7 +64,7 @@ Create a user for NextCloud:
 ```sql
 # CREATE USER 'replace_with_username'@'localhost' IDENTIFIED BY 'replace_with_password';
 ```
-Last step is to give the newly created user all privilegies for the new database:
+The last step is to give the newly created user all privileges for the new database:
 ```sql
 # GRANT ALL PRIVILEGES ON nextcloud.* TO 'replace_with_username'@'localhost';
 # FLUSH PRIVILEGES;
@@ -78,24 +78,24 @@ Download NextCloud-13 Files:
 $ cd /var/www
 $ sudo wget https://download.nextcloud.com/server/releases/latest-13.tar.bz2 -O nextcloud-13-latest.tar.bz2
 ```
-Extract the archiv:
+Extract the archive:
 ```bash
 $ sudo tar -xvjf nextcloud-13-latest.tar.bz2
 ```
-Grant the permissions recursivly and remove the downloaded archiv:
+Grant the permissions recursively and remove the downloaded archive:
 ```bash
 $ sudo chown -R www-data:www-data nextcloud
 $ sudo rm nextcloud-13-latest.tar.bz2
 ```
 
 # Configuring
-The order in configuring all parts is irrelevant but if we do it in my way, we can test each step more efficiently.
+The order in configuring all parts is irrelevant, but if we do it my way, we can test each step more efficiently.
 
 ## Apache2
-We will configure Apache to handle only localhost connections via http traffic.  
-It will serve NextCloud on the backend. This is really comfortable because we don't have to worry about Https-Traffic or SSL-Certs over here.
+We will configure Apache to handle only localhost connections via HTTP traffic.  
+It will serve NextCloud on the backend. This is really convenient because we don't have to worry about HTTPS traffic or SSL certificates here.
 
-First of all we have to make sure the Apache service isn't listening on port 80 or 443. Nginx will do that in the future.  
+First of all, we have to make sure the Apache service isn't listening on port 80 or 443. Nginx will do that in the future.  
 We will change these ports to 8080 or 4443.
 Edit the __/etc/apache2/ports.conf__ for listening on another port:  
 ```bash
@@ -105,7 +105,7 @@ $ sudo vi ports.conf
 Change `Listen 80` to `Listen 8080`.  
 Save and close the File.
 
-Now we gonna create a new Virtual-Host file for NextCloud:
+Now we're going to create a new Virtual-Host file for NextCloud:
 ```bash
 $ cd /etc/apache2/sites-available
 $ sudo touch nextcloud.conf
@@ -147,8 +147,8 @@ $ sudo service apache2 restart
 ```
 
 ## Nginx
-Nginx will be our 'Connection-Resolver'. Whenever an http or https request is made to our server, Nginx will decide what to do with it.  
-We are going to set up a Server-Block, listening on port 443 and url "https://cloud.example.com/", for the https-reverse-proxy to our NextCloud Apache service.  
+Nginx will be our 'Connection-Resolver'. Whenever an HTTP or HTTPS request is made to our server, Nginx will decide what to do with it.  
+We are going to set up a Server-Block, listening on port 443 and the URL "https://cloud.example.com/", for the HTTPS reverse proxy to our NextCloud Apache service.  
 If you want to see some more useful Server-Block examples, [Click Here!](/tutorial/Nginx-Server-Blocks.html)
 
 Install Nginx:
@@ -219,8 +219,8 @@ $ sudo service nginx restart
 
 ### SSL-Certificates
 There are a lot of tutorials out there covering that topic.  
-You can either use self-signed certificates or let Let's Enctypt handle that for you.
-We will roughly go through this chapter but if you want to have more overview just look at [Digital Ocean's Article](https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04) about setting up Nginx with Let's Encrypt.
+You can either use self-signed certificates or let Let's Encrypt handle that for you.
+We will roughly go through this chapter, but if you want to have more details just look at [Digital Ocean's Article](https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04) about setting up Nginx with Let's Encrypt.
 
 Install Certbot:
 ```bash
@@ -229,35 +229,35 @@ $ sudo apt-get update
 $ sudo apt-get install python-certbot-nginx
 ```
 Make sure your Nginx configuration works and is set up with the correct `server_name`.  
-Certbot will scan all of Nginx's server blocks and searches for your domain name. The certificates then will be added to that configuration file automaticly.
+Certbot will scan all of Nginx's server blocks and search for your domain name. The certificates will then be added to that configuration file automatically.
 
-Obtaining cerificates:
+Obtaining certificates:
 ```bash
 $ sudo certbot --nginx -d cloud.example.com
 ```
-During this process we will be asked if Certbot should also redirect all Http traffic to Https.  
-I recommend doing it on your own for example by checking out my [Server-Block Examples](/tutorial/Nginx-Server-Blocks.html).  
-Otherwise just press '2' and Certbot will handle that for us.
+During this process, we will be asked if Certbot should also redirect all HTTP traffic to HTTPS.  
+I recommend doing it on your own, for example by checking out my [Server-Block Examples](/tutorial/Nginx-Server-Blocks.html).  
+Otherwise, just press '2' and Certbot will handle that for us.
 
 #### Renewing Certificates
-To renew the certificates when they are expired we can simply type:
+To renew the certificates when they expire, we can simply type:
 ```bash
 $ sudo certbot renew
 ```
-As a lazy person I would highly suggest to set up a `crontab job` which runs this command every month.
+As a lazy person, I would highly suggest setting up a `crontab` job which runs this command every month.
 
 ### Optimizing SSL Nginx Settings
 
-There is a really good guide how to customize your Nginx SSL-Settings to score an 'A+' on several Testsites.  
-This step is optional and can be done later on if you are interested in that kind of stuff.  
+There is a really good guide on how to customize your Nginx SSL settings to score an 'A+' on several test sites.  
+This step is optional and can be done later if you are interested in that kind of stuff.  
 [Useful Server-Blocks](/tutorial/Nginx-Server-Blocks.html)  
 [External Arcticle](https://bjornjohansen.no/optimizing-https-nginx)
 
 ## Nextcloud
 You can already access NextCloud via your domain, but it will be a little bit buggy.  
-NextCloud still thinks that it's been hosted on `127.0.0.1`. This will break some forwarding.
+NextCloud still thinks that it's being hosted on `127.0.0.1`. This will break some forwarding.
 
-To change these settings we have to edit the `config.php`file of NextCloud.  
+To change these settings, we have to edit the `config.php` file of NextCloud.  
 Open __/var/www/nextcloud/config/config.php__:
 ```bash
 $ cd /var/www/nextcloud/config
@@ -280,5 +280,5 @@ array (
 Save and close the file.
 
 Browse to __https://cloud.example.com/__ and finish the guided setup.  
-You have to enter the admin account details you want to use and the SQL user, password and database name we created in the tutorial.  
-After submitting these infos NextCloud is ready to use.
+You have to enter the admin account details you want to use and the SQL user, password, and database name we created in the tutorial.  
+After submitting this information, NextCloud is ready to use.

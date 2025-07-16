@@ -7,9 +7,9 @@ tags: latex minted tectonic workaround python pygments pygmentize
 category: tutorial
 ---
 
-`--shell-escape` does not work with [Tectonic](https://github.com/tectonic-typesetting/tectonic) as seen in [this Issue](https://github.com/tectonic-typesetting/tectonic/issues/38). Good News! Until [this Pull Request](https://github.com/tectonic-typesetting/tectonic/pull/708) is merged, i got a little workaround for you to at least use Minted, the best Syntax Highlighting LaTeX Library out there!
+`--shell-escape` does not work with [Tectonic](https://github.com/tectonic-typesetting/tectonic) as seen in [this Issue](https://github.com/tectonic-typesetting/tectonic/issues/38). Good news! Until [this Pull Request](https://github.com/tectonic-typesetting/tectonic/pull/708) is merged, I have a little workaround for you to at least use Minted, the best syntax highlighting LaTeX library out there!
 
-Create a folder called `snippetes` in your LaTeX project root folder.  
+Create a folder called `snippets` in your LaTeX project root folder.  
 Minted uses some fixed LaTeX statements for all its languages.  
 Create a file called `minted.tex` with the following content:
 ```tex
@@ -118,7 +118,7 @@ Import it in your `main.tex` file (where you also import other packages):
 ```tex
 \input{snippets/minted.tex}
 ```
-The first lines of this file are packages which you might comment in or out (depending on if you already imported them in your `main.tex` file).
+The first lines of this file are packages which you might comment in or out (depending on whether you already imported them in your `main.tex` file).
 
 Create a file called `minted.py` in your project root with the following content:
 ```python
@@ -145,18 +145,18 @@ if __name__ == '__main__':
 Install Python and `pygmentize`:  
 `pip install pygmentize`
 
-Run `python minted.py` before running `tectonic`. You can just create a `run.sh` which executes both for example.
+Run `python minted.py` before running `tectonic`. You can just create a `run.sh` which executes both, for example.
 ```bash
 rm -rf gen/
 python minted.py
 tectonic main.tex
 ```
 
-If you want syntax-highlighted code just create a new file in the `snippets` folder, for example `snippets/snippet1.py`:
+If you want syntax-highlighted code, just create a new file in the `snippets` folder, for example `snippets/snippet1.py`:
 ```python
 print('hello world')
 ```
-Import this snippet in your LaTeX document (it requires `\usepackage{import}` aswell):
+Import this snippet in your LaTeX document (it requires `\usepackage{import}` as well):
 ```tex
 This is my highlighted snippet called 'snippet1.py':
 \import{gen/}{snippet1}
@@ -164,11 +164,11 @@ This is my highlighted snippet called 'snippet1.py':
 You can now create as many snippets in this folder as you wish.  
 Just compile your LaTeX file with `run.sh` now!
 
-Uhh and don't forget to add `gen` and `_minted-main` to your `.gitignore` :)
+Oh, and don't forget to add `gen` and `_minted-main` to your `.gitignore` :)
 
 ## Labels and Captions
 
-If you want to label your code snippet just use it like this:
+If you want to label your code snippet, just use it like this:
 ```tex
 \begin{figure}
     \import{gen/}{example}
@@ -179,8 +179,8 @@ If you want to label your code snippet just use it like this:
 
 ## Additional Code Options
 
-Change variable `OPTIONS` in the `minted.py` to add options to `fancyvrb`.  
-Concat multiple options with `,`.  
+Change the variable `OPTIONS` in the `minted.py` to add options to `fancyvrb`.  
+Concatenate multiple options with `,`.  
 An example to draw a frame around code snippets would be:
 ```python
 OPTIONS = 'frame=single'

@@ -9,9 +9,9 @@ category: blog
 __tl;dr:__ Check out [this](https://github.com/breuerfelix/feovim) GitHub Repository for an example.  
 
 You may already know that I manage my Neovim with Nix since I wrote [some articles](/blog/nixos-home-manager-neovim) in the past about my current setup.  
-Recently I got really upset about my neovim startup time. It was too slow ... it is always to slow!  
-Nix always loads all plugins at startup. There is a lazy loading feature but this is not as mature as [lazy.nvim](https://github.com/folke/lazy.nvim).  
-New sidequest unlocked. __Lazy.nvim with plugins managed by nix.__  
+Recently, I got really upset about my Neovim startup time. It was too slow ... it is always too slow!  
+Nix always loads all plugins at startup. There is a lazy loading feature, but it is not as mature as [lazy.nvim](https://github.com/folke/lazy.nvim).  
+New sidequest unlocked: __Lazy.nvim with plugins managed by Nix.__  
 
 > Let's have a look on the world wide web, someone already did that!
 >
@@ -19,8 +19,8 @@ New sidequest unlocked. __Lazy.nvim with plugins managed by nix.__
 
 No one did it... well at least no one wrote about it.
 
-First add the lazy.nvim plugin as the only plugin that is managed by nix and configure it.  
-The `# lua` comment is important since it enables lua syntax highlighting for the string inside a nix file.
+First, add the lazy.nvim plugin as the only plugin that is managed by Nix and configure it.  
+The `# lua` comment is important since it enables Lua syntax highlighting for the string inside a Nix file.
 
 ```nix
 programs.neovim = {
@@ -44,8 +44,8 @@ programs.neovim = {
 };
 ```
 
-According to the [PluginSpec](https://lazy.folke.io/spec) we can install plugins from a local path with the `dir` parameter. Lets leverage this to manage the plugin source with nix and lazy loading with lazy.nvim.  
-As an example we will install `nvim-cmp` with all dependencies.
+According to the [PluginSpec](https://lazy.folke.io/spec), we can install plugins from a local path with the `dir` parameter. Let's leverage this to manage the plugin source with Nix and lazy loading with lazy.nvim.  
+As an example, we will install `nvim-cmp` with all dependencies.
 
 ```nix
 programs.neovim = {
@@ -110,8 +110,8 @@ programs.neovim = {
 };
 ```
 
-Et voila, now you can update your plugins via nix and lazy load via lazy.nvim.  
-I split up the lazy config into different files so my neovim config stays clean and won't get messy. Just have a look at the repository I linked in the top.
+Et voilà, now you can update your plugins via Nix and lazy load via lazy.nvim.  
+I split up the lazy config into different files so my Neovim config stays clean and won't get messy. Just have a look at the repository I linked at the top.
 
-[Read this](/blog/nixos-home-manager-neovim) to learn how to install plugins that are not present in the nix package repository.  
-[Read this](/blog/treesitter-grammars-nix) to learn how to install treesitter grammars with nix aswell.  
+[Read this](/blog/nixos-home-manager-neovim) to learn how to install plugins that are not present in the Nix package repository.  
+[Read this](/blog/treesitter-grammars-nix) to learn how to install Treesitter grammars with Nix as well.

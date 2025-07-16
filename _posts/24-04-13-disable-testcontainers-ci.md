@@ -6,10 +6,10 @@ tags: testcontainers kotlin springboot cicd pipeline
 category: blog
 ---
 
-[Testcontainers](https://testcontainers.com/) is a great tool for local development and testing in order to spin up containers that mimick the actual environment to test against. It has frameworks for almost every programming language for easy to use integration.  
-Sadly, it uses Docker under the hood and [does not want to support other container runtimes](https://github.com/testcontainers/testcontainers-java/issues/1135#issuecomment-453757407) like kubernetes. Since many GitLab Runners are hosted inside a Kubernetes cluster or do not want to expose the Docker socket for security reasons, testcontainers does not work anymore and tests fail in the pipeline.  
-You [cannot disable testcontainers when docker is not present](https://github.com/testcontainers/testcontainers-java/issues/2833) because it will disable the whole test and not just the container initialization.  
-Thats when a real engineer is needed and ChatGPT has to stay at home...
+[Testcontainers](https://testcontainers.com/) is a great tool for local development and testing, allowing you to spin up containers that mimic the actual environment to test against. It has frameworks for almost every programming language for easy integration.  
+Sadly, it uses Docker under the hood and [does not want to support other container runtimes](https://github.com/testcontainers/testcontainers-java/issues/1135#issuecomment-453757407) like Kubernetes. Since many GitLab Runners are hosted inside a Kubernetes cluster or do not want to expose the Docker socket for security reasons, Testcontainers does not work anymore and tests fail in the pipeline.  
+You [cannot disable Testcontainers when Docker is not present](https://github.com/testcontainers/testcontainers-java/issues/2833) because it will disable the whole test and not just the container initialization.  
+That's when a real engineer is needed and ChatGPT has to stay at home...
 
 # JDBC
 
@@ -23,7 +23,7 @@ spring:
     password: "testing"
 ```
 
-First we need to create another profile that is not using the testcontainers integration. Create a file called `application-ci.yaml`:
+First, we need to create another profile that is not using the Testcontainers integration. Create a file called `application-ci.yaml`:
 ```yaml
 spring:
   flyway.enabled: true
@@ -42,7 +42,7 @@ Usually your tests look like this:
 class SomeTest() {}
 ```
 
-The profile `test` is hardcoded here. Lets implement a resolver that changes the active profile based on an environment variable:
+The profile `test` is hardcoded here. Let's implement a resolver that changes the active profile based on an environment variable:
 ```kotlin
 import org.springframework.test.context.ActiveProfilesResolver
 class ProfileResolver : ActiveProfilesResolver {
@@ -56,11 +56,11 @@ class ProfileResolver : ActiveProfilesResolver {
 }
 ```
 
-This function returns `local` if the `PROFILE` environment variable is not set. Otherwhise it returns the value of the variable.  
+This function returns `local` if the `PROFILE` environment variable is not set. Otherwise, it returns the value of the variable.  
 The resolver can be used like this:
 ```kotlin
 @DataJpaTest
-// instead of hard coding the profile we use a resolver here
+// instead of hardcoding the profile we use a resolver here
 @ActiveProfiles(resolver = ProfileResolver::class)
 class SomeTest() {}
 ```
@@ -79,12 +79,12 @@ test:
 
 # Testcontainers API
 
-Sometimes you directly use the Testcontainers API inside the code to create containers and use them.  
+Sometimes you use the Testcontainers API directly in the code to create containers and use them.  
 Here is a basic example:
 ```kotlin
 @SpringBootTest
 @Testcontainers
-@ActiveProfile("test")
+@ActiveProfiles("test")
 class SomeIntegrationTest() {
     // your tests are here ...
 
@@ -107,8 +107,8 @@ class SomeIntegrationTest() {
 ```
 
 We cannot solve this simply by switching the active profile.  
-In the first step you need to implement the resolver from [JDBC](#jdbc) section to be able to switch profiles on demand.  
-Now lets create a `TestConfiguration` that will handle the container creation __only__ when the `local` profile is active:
+In the first step, you need to implement the resolver from the [JDBC](#jdbc) section to be able to switch profiles on demand.  
+Now let's create a `TestConfiguration` that will handle the container creation __only__ when the `local` profile is active:
 ```kotlin
 @TestConfiguration
 // IMPORTANT: this configuration only runs when "local" profile is active
@@ -130,7 +130,7 @@ class ContainerConfiguration() {
 }
 ```
 
-In the last step use the resolver and configuration in our test case:
+In the last step, use the resolver and configuration in your test case:
 ```kotlin
 @SpringBootTest
 @ActiveProfiles(resolver = ProfileResolver::class)
@@ -141,4 +141,4 @@ class AccountBlockingStartedConsumerIntegrationTest() {
 }
 ```
 
-If the `PROFILE` environment variable is set to `local` or empty, the container will be created, if it is set to something else, the container won't be started since the configuration won't be applied. Make sure to set a correct URL to a running instance in the different `application-<profile>.yaml`. Maybe just use GitLab Services to create the container.
+If the `PROFILE` environment variable is set to `local` or empty, the container will be created. If it is set to something else, the container won't be started since the configuration won't be applied. Make sure to set a correct URL to a running instance in the different `application-<profile>.yaml` files. Maybe just use GitLab Services to create the container.
