@@ -10,13 +10,13 @@ const setUtterancesTheme = theme => {
   );
 };
 
-const setMixcloudTheme = theme => {
+const setIframeTheme = theme => {
   const oldTheme = theme == 'light' ? 'dark' : 'light';
   const selection = document.getElementsByTagName('iframe');
   const iframes = Array.prototype.slice.call(selection);
 
   iframes.forEach(iframe => {
-    if (!iframe.src.match(/mixcloud/g)) {
+    if (!iframe.src.match(/mixcloud|itch/g)) {
       return;
     }
 
@@ -29,7 +29,7 @@ const initTheme = theme => {
   localStorage.setItem('theme', theme);
   body.setAttribute('data-theme', theme);
   setUtterancesTheme(theme);
-  setMixcloudTheme(theme);
+  setIframeTheme(theme);
 };
 
 
