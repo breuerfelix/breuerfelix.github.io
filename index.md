@@ -28,42 +28,22 @@ Now take a step back, relax, and have fun exploring!
 [ReactJs GraphQL Authentication](https://github.com/breuerfelix/react-graphql-authentication) - Authentication template with JWT, ReactJS and GraphQL  
 [Honey Bee](https://github.com/breuerfelix/honey-bee) - Calculation of Homing Vectors which simulate how Bees orientate themselves  
 [Async Socket TCP](https://github.com/breuerfelix/Async-Socket-TCP) - TCP client and server written in C\# for Web- or MMORPG-Server  
-[Series Monitor](https://github.com/breuerfelix/Series-Monitor) - JavaFX project to track your series progression and inform you about the latest episodes  
+[Series Monitor](https://github.com/breuerfelix/Series-Monitor) - JavaFX project to track your series progression and inform you about the latest episodes
 
 ### Reference Projects
 
 [yoga-amelie.de](https://yoga-amelie.de) - Created and hosted a landing page for my girlfriend  
 [Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)  
 [danielkueffler.de](https://danielkueffler.de) - Bootstrapped and hosted a personal influencer website with Ghost  
-[DasWerkHaus Online Shop](https://daswerkhaus.com) - Set up a Shopify webshop  
+[DasWerkHaus Online Shop](https://daswerkhaus.com) - Set up a Shopify webshop
 
 ### Skills
 
-- Customer contact
-- Programming Languages
-  - JavaScript, TypeScript, Python, Bash
-  - Golang, C#, Kotlin, Java, C++, C
-- Developer Operations
-  - Kubernetes, Gardener, Kubebuilder
-  - Flux, GitOps
-  - Pulumi, Terraform
-  - Git, Docker, Docker-Compose
-  - Unix, Virtual Machines, Container
-  - GitHub Actions, GitLab CI, Concourse CI
-- Developer Experience
-  - Open Policy Agent
-  - Nix
-- Full-Stack
-  - ReactJS, Next.js
-  - Svelte, Sapper
-  - Mithril, Angular
-  - GraphQL, REST
-  - NodeJS, ExpressJS
-  - MongoDB, CouchDB, SQL
-  - Webpack, npm
-  - HTML, CSS, SASS
-  - Internet of Things
-  - Yocto, Bitbake
-  - Mender, OTA
-- Automated testing / web scraping with Selenium
-- Reverse engineering APIs
+<div class="skills-grid">
+{% for skill in site.data.skills %}
+  <div class="skill-badge">
+    <i class="{{ skill.icon }}"></i>
+    <span>{{ skill.name }}</span>
+  </div>
+{% endfor %}
+</div>
