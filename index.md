@@ -32,10 +32,10 @@ Now take a step back, relax, and have fun exploring!
 
 ### Reference Projects
 
-[yoga-amelie.de](https://yoga-amelie.de) - Created and hosted a landing page for my girlfriend  
-[Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)  
 [danielkueffler.de](https://danielkueffler.de) - Bootstrapped and hosted a personal influencer website with Ghost  
-[DasWerkHaus Online Shop](https://daswerkhaus.com) - Set up a Shopify webshop
+[yoga.elfri.ch](https://yoga.elfri.ch) - Created and hosted a landing page for my girlfriend  
+[DasWerkHaus Online Shop](https://daswerkhaus.com) - Set up a Shopify webshop  
+[Twitch Highlights](https://www.youtube.com/channel/UC0M8qvpFLG_QoimeBih_6nA) - Automated YouTube channel by [highzer](https://github.com/breuerfelix/highzer)
 
 ### Skills
 
