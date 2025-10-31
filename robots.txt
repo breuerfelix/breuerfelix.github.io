@@ -1,0 +1,5 @@
+# robots.txt generated from source
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

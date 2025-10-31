@@ -71,6 +71,28 @@ layout: compress
 
     </main>
 
+    <!-- Breadcrumbs JSON-LD for posts -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ '/' | absolute_url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ page.title | jsonify }},
+            "item": {{ page.url | absolute_url | jsonify }}
+          }
+        ]
+      }
+    </script>
+
     {% if page.modified %}
       <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
     {% endif %}

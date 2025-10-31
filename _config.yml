@@ -4,7 +4,9 @@ description: >- # site description
   learning by doing
 lang: en-US # default lang
 timezone: Europe/Berlin # set your timezone
-#image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+# Default image used for social previews (Open Graph/Twitter)
+image: /assets/img/avatar.jpg
+logo: /assets/img/avatar.jpg
 mode: light # default theme "dark" | "light"
 # used for utterance
 repo: breuerfelix/breuerfelix.github.io
@@ -32,6 +34,19 @@ author:
   twitch: scriptworld
   youtube: scriptworld
   linkedin: breuerf
+
+# Social profiles for structured data (used by jekyll-seo-tag)
+social:
+  name: Felix Breuer
+  links:
+    - https://github.com/breuerfelix
+    - https://twitter.com/felix_breuer
+    - https://www.linkedin.com/in/felix-breuer-5b70b3179/
+    - https://www.youtube.com/scriptworld
+
+# Twitter username for cards (used by jekyll-seo-tag)
+twitter:
+  username: felix_breuer
 
 # URL settings
 url: "https://breuer.dev"
@@ -94,3 +109,4 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-seo-tag
