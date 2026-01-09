@@ -3,11 +3,13 @@ layout: about
 comments: false
 ---
 
-I am Felix, a **Cloud Platform Engineer** living in Cologne _(Germany)_ and born 1994 in Aachen.
+I am Felix, a **Senior Cloud Platform Engineer** living in Bonn _(Germany)_ and born 1994 in Aachen.
 
 After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com),
 I spent some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de).
-Currently, I enjoy working full-time as a Cloud Platform Engineer at [inovex](https://www.inovex.de/en).
+After University I worked as a Cloud Platform Engineer at [inovex](https://www.inovex.de) doing Cloud, Kubernetes and Developer Experience stuff for multiple clients.
+Currently, I enjoy working full-time as a Cloud Engineer at [STACKIT](https://stackit.com) on our Kubernetes Engine.
+If you want to know more about my professional career, check out my [LinkedIn](https://www.linkedin.com/in/breuerf/) page.
 
 Trying out new technologies is one of the things I love most in my spare time.  
 I also enjoy solving challenging bouldering problems and strumming the guitar.  
@@ -30,7 +32,7 @@ Now take a step back, relax, and have fun exploring!
 [Async Socket TCP](https://github.com/breuerfelix/Async-Socket-TCP) - TCP client and server written in C\# for Web- or MMORPG-Server  
 [Series Monitor](https://github.com/breuerfelix/Series-Monitor) - JavaFX project to track your series progression and inform you about the latest episodes
 
-### Reference Projects
+### Freelance / Side Projects
 
 [danielkueffler.de](https://danielkueffler.de) - Bootstrapped and hosted a personal influencer website with Ghost  
 [yoga.elfri.ch](https://yoga.elfri.ch) - Created and hosted a landing page for my girlfriend  
