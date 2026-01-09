@@ -8,8 +8,7 @@ I am Felix, a **Senior Cloud Platform Engineer** living in Bonn _(Germany)_ and 
 After finishing my apprenticeship in Mechatronics at [Schwarze Robitec](https://www.schwarze-robitec.com),
 I spent some time working as a Software Developer in different companies while studying Computer Science at the [University of Cologne](https://www.th-koeln.de).
 After University I worked as a Cloud Platform Engineer at [inovex](https://www.inovex.de) doing Cloud, Kubernetes and Developer Experience stuff for multiple clients.
-Currently, I enjoy working full-time as a Cloud Engineer at [STACKIT](https://stackit.com) on our Kubernetes Engine.
-
+Currently, I enjoy working full-time as a Cloud Engineer at [STACKIT](https://stackit.com) on our Kubernetes Engine.  
 If you want to know more about my professional career, check out my [LinkedIn](https://www.linkedin.com/in/breuerf/) page.
 
 Trying out new technologies is one of the things I love most in my spare time.  
