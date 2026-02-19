@@ -17,3 +17,7 @@
 - title: ideas
   url: /ideas
   external: false
+
+- title: photos
+  url: https://photos.felixbreuer.me
+  external: true
