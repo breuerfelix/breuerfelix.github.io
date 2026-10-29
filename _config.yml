@@ -76,6 +76,7 @@ jekyll_compose:
 # theme: klise
 sass:
   style: compressed
+  sourcemap: never
 
 include:
   - _redirects

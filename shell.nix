@@ -1,7 +1,6 @@
 with (import <nixpkgs> {});
 mkShell {
   buildInputs = [
-    ruby
-    jekyll
+    ruby_3_4
   ];
 }

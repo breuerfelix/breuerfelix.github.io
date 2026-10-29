@@ -1,0 +1,56 @@
+name: Build and deploy Pages
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.9'
+          bundler-cache: true
+      - name: Build site
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+      - name: Check generated site
+        run: |
+          test -s _site/index.html
+          test -s _site/404.html
+          test -s _site/assets/css/style.css
+          test -s _site/assets/search.json
+          test -s _site/feed.xml
+          test -s _site/sitemap.xml
+          test -s _site/redirects.json
+          test -s _site/blog/kubernetes-webhooks.html
+          test -s _site/projects/react-graphql-auth.html
+          grep -q 'https://breuer.dev/blog/kubernetes-webhooks' _site/sitemap.xml
+          ruby -rjson -e 'abort "redirect changed" unless JSON.parse(File.read("_site/redirects.json"))["/projects/react-graphql-auth"] == "https://breuer.dev/blog/react-graphql-auth"'
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4
