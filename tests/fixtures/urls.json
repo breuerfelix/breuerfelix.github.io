@@ -55,5 +55,144 @@
     "/projects/react-graphql-auth": "https://breuer.dev/blog/react-graphql-auth",
     "/projects/series-monitor": "https://breuer.dev/blog/series-monitor",
     "/projects/king-bot": "https://breuer.dev/blog/king-bot"
+  },
+  "canonicals": {
+    "404.html": "https://breuer.dev/404",
+    "archive.html": "https://breuer.dev/archive",
+    "blog.html": "https://breuer.dev/blog",
+    "blog/NuGet-Package-Handling.html": "https://breuer.dev/blog/NuGet-Package-Handling",
+    "blog/adfree-instagram.html": "https://breuer.dev/blog/adfree-instagram",
+    "blog/async-tcp.html": "https://breuer.dev/blog/async-tcp",
+    "blog/automated-youtube-channel.html": "https://breuer.dev/blog/automated-youtube-channel",
+    "blog/disable-testcontainers-ci.html": "https://breuer.dev/blog/disable-testcontainers-ci",
+    "blog/donate-cpu.html": "https://breuer.dev/blog/donate-cpu",
+    "blog/javascripts-magic-dots.html": "https://breuer.dev/blog/javascripts-magic-dots",
+    "blog/king-bot.html": "https://breuer.dev/blog/king-bot",
+    "blog/kubernetes-webhooks.html": "https://breuer.dev/blog/kubernetes-webhooks",
+    "blog/las-vegas.html": "https://breuer.dev/blog/las-vegas",
+    "blog/linux-monitor-hotplug.html": "https://breuer.dev/blog/linux-monitor-hotplug",
+    "blog/macos-productivity.html": "https://breuer.dev/blog/macos-productivity",
+    "blog/mass-replace-gitlab.html": "https://breuer.dev/blog/mass-replace-gitlab",
+    "blog/mono-to-stereo.html": "https://breuer.dev/blog/mono-to-stereo",
+    "blog/nix-lazy-neovim.html": "https://breuer.dev/blog/nix-lazy-neovim",
+    "blog/nixos-home-manager-neovim.html": "https://breuer.dev/blog/nixos-home-manager-neovim",
+    "blog/react-graphql-auth.html": "https://breuer.dev/blog/react-graphql-auth",
+    "blog/scheduled-overprovisioning.html": "https://breuer.dev/blog/scheduled-overprovisioning",
+    "blog/series-monitor.html": "https://breuer.dev/blog/series-monitor",
+    "blog/split-keyboards.html": "https://breuer.dev/blog/split-keyboards",
+    "blog/top-neovim-plugins.html": "https://breuer.dev/blog/top-neovim-plugins",
+    "blog/treesitter-grammars-nix.html": "https://breuer.dev/blog/treesitter-grammars-nix",
+    "games.html": "https://breuer.dev/games",
+    "ideas.html": "https://breuer.dev/ideas",
+    "ideas/kube-ssh-proxy.html": "https://breuer.dev/ideas/kube-ssh-proxy",
+    "ideas/location-stats.html": "https://breuer.dev/ideas/location-stats",
+    "ideas/news-tone.html": "https://breuer.dev/ideas/news-tone",
+    "ideas/phantom.html": "https://breuer.dev/ideas/phantom",
+    "ideas/reprogrammer.html": "https://breuer.dev/ideas/reprogrammer",
+    "ideas/s3-music.html": "https://breuer.dev/ideas/s3-music",
+    "ideas/stairway-stats.html": "https://breuer.dev/ideas/stairway-stats",
+    "index.html": "https://breuer.dev/",
+    "music.html": "https://breuer.dev/music",
+    "projects/async-tcp.html": "https://breuer.dev/blog/async-tcp",
+    "projects/king-bot.html": "https://breuer.dev/blog/king-bot",
+    "projects/react-graphql-auth.html": "https://breuer.dev/blog/react-graphql-auth",
+    "projects/series-monitor.html": "https://breuer.dev/blog/series-monitor",
+    "tags.html": "https://breuer.dev/tags",
+    "tutorial/Custom-Linux-Commands.html": "https://breuer.dev/tutorial/Custom-Linux-Commands",
+    "tutorial/Nginx-Server-Blocks.html": "https://breuer.dev/tutorial/Nginx-Server-Blocks",
+    "tutorial/React-Hot-Loader-Express.html": "https://breuer.dev/tutorial/React-Hot-Loader-Express",
+    "tutorial/Setup-NextCloud-FrontEnd-Nginx-SSL-Backend-Apache2.html": "https://breuer.dev/tutorial/Setup-NextCloud-FrontEnd-Nginx-SSL-Backend-Apache2",
+    "tutorial/inspect-python-api.html": "https://breuer.dev/tutorial/inspect-python-api",
+    "tutorial/react-native-expo.io.html": "https://breuer.dev/tutorial/react-native-expo.io",
+    "tutorial/system-exe-high-cpu.html": "https://breuer.dev/tutorial/system-exe-high-cpu",
+    "tutorial/tectonic-minted.html": "https://breuer.dev/tutorial/tectonic-minted"
+  },
+  "sitemap_urls": [
+    "https://breuer.dev/",
+    "https://breuer.dev/archive",
+    "https://breuer.dev/blog",
+    "https://breuer.dev/blog/NuGet-Package-Handling",
+    "https://breuer.dev/blog/adfree-instagram",
+    "https://breuer.dev/blog/async-tcp",
+    "https://breuer.dev/blog/automated-youtube-channel",
+    "https://breuer.dev/blog/disable-testcontainers-ci",
+    "https://breuer.dev/blog/donate-cpu",
+    "https://breuer.dev/blog/javascripts-magic-dots",
+    "https://breuer.dev/blog/king-bot",
+    "https://breuer.dev/blog/kubernetes-webhooks",
+    "https://breuer.dev/blog/las-vegas",
+    "https://breuer.dev/blog/linux-monitor-hotplug",
+    "https://breuer.dev/blog/macos-productivity",
+    "https://breuer.dev/blog/mass-replace-gitlab",
+    "https://breuer.dev/blog/mono-to-stereo",
+    "https://breuer.dev/blog/nix-lazy-neovim",
+    "https://breuer.dev/blog/nixos-home-manager-neovim",
+    "https://breuer.dev/blog/react-graphql-auth",
+    "https://breuer.dev/blog/scheduled-overprovisioning",
+    "https://breuer.dev/blog/series-monitor",
+    "https://breuer.dev/blog/split-keyboards",
+    "https://breuer.dev/blog/top-neovim-plugins",
+    "https://breuer.dev/blog/treesitter-grammars-nix",
+    "https://breuer.dev/games",
+    "https://breuer.dev/ideas",
+    "https://breuer.dev/ideas/kube-ssh-proxy",
+    "https://breuer.dev/ideas/location-stats",
+    "https://breuer.dev/ideas/news-tone",
+    "https://breuer.dev/ideas/phantom",
+    "https://breuer.dev/ideas/reprogrammer",
+    "https://breuer.dev/ideas/s3-music",
+    "https://breuer.dev/ideas/stairway-stats",
+    "https://breuer.dev/music",
+    "https://breuer.dev/tags",
+    "https://breuer.dev/tutorial/Custom-Linux-Commands",
+    "https://breuer.dev/tutorial/Nginx-Server-Blocks",
+    "https://breuer.dev/tutorial/React-Hot-Loader-Express",
+    "https://breuer.dev/tutorial/Setup-NextCloud-FrontEnd-Nginx-SSL-Backend-Apache2",
+    "https://breuer.dev/tutorial/inspect-python-api",
+    "https://breuer.dev/tutorial/react-native-expo.io",
+    "https://breuer.dev/tutorial/system-exe-high-cpu",
+    "https://breuer.dev/tutorial/tectonic-minted"
+  ],
+  "feed_entries": {
+    "https://breuer.dev/blog/mono-to-stereo": {
+      "id": "https://breuer.dev/blog/mono-to-stereo",
+      "title": "Convert Mono Input to Stereo on MacOS"
+    },
+    "https://breuer.dev/blog/nix-lazy-neovim": {
+      "id": "https://breuer.dev/blog/nix-lazy-neovim",
+      "title": "Neovim with Nix and Lazy.nvim"
+    },
+    "https://breuer.dev/blog/scheduled-overprovisioning": {
+      "id": "https://breuer.dev/blog/scheduled-overprovisioning",
+      "title": "Simple Kubernetes scheduled Overprovisioning"
+    },
+    "https://breuer.dev/blog/treesitter-grammars-nix": {
+      "id": "https://breuer.dev/blog/treesitter-grammars-nix",
+      "title": "Neovim Treesitter Grammars with Nix and lazy.nvim"
+    },
+    "https://breuer.dev/blog/disable-testcontainers-ci": {
+      "id": "https://breuer.dev/blog/disable-testcontainers-ci",
+      "title": "Disable Testcontainers in Spring Boot when running in CI / CD Pipeline"
+    },
+    "https://breuer.dev/blog/mass-replace-gitlab": {
+      "id": "https://breuer.dev/blog/mass-replace-gitlab",
+      "title": "Search and Replace across all Repositories in a GitLab Instance"
+    },
+    "https://breuer.dev/blog/macos-productivity": {
+      "id": "https://breuer.dev/blog/macos-productivity",
+      "title": "Enhancing your Workflow: Must-Have Applications for Power Users on MacOS"
+    },
+    "https://breuer.dev/blog/split-keyboards": {
+      "id": "https://breuer.dev/blog/split-keyboards",
+      "title": "Revolutionizing Typing: The Matrix Split Keyboard Layout"
+    },
+    "https://breuer.dev/blog/kubernetes-webhooks": {
+      "id": "https://breuer.dev/blog/kubernetes-webhooks",
+      "title": "Simple Kubernetes Mutating Admission Webhook"
+    },
+    "https://breuer.dev/blog/las-vegas": {
+      "id": "https://breuer.dev/blog/las-vegas",
+      "title": "Things to know before getting poor in Las Vegas"
+    }
   }
 }

@@ -39,3 +39,16 @@ locked development dependency. External analytics, comments, and embed services
 are mocked; integration messages and URL parameters are checked. Fixtures, test
 dependencies, reports, and development scripts are excluded from published output.
 The workflow runs the same checks before uploading the production artifact.
+
+## Browser styles and publishing
+
+The supported UI is tested against current Chromium and WebKit. Standard CSS
+properties replace obsolete IE, Opera, and prefixed duplicates. Safari-specific
+text sizing, font smoothing, image dragging, and search decorations remain because
+they still express active behavior rather than an alternative legacy code path.
+Only site content and runtime assets are published: Nix, Renovate, Node/test files,
+project documentation, and agent instructions are excluded from the site artifact.
+
+The heading-anchor include is locally adapted for accessible link names. The old
+compression layout and Simple-Jekyll-Search library have been removed; no legacy
+implementations run alongside the current code.

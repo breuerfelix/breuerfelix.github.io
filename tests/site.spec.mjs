@@ -59,6 +59,7 @@ test('navigation buttons work with keyboard and Escape', async ({ page }) => {
     await menu.focus();
     await page.keyboard.press('Enter');
     await expect(menu).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.getByRole('link', { name: 'RSS feed', exact: true })).toBeVisible();
     await expect(page.locator('.wrapper')).toHaveClass(/blurry/);
     await page.keyboard.press('Escape');
     await expect(menu).toHaveAttribute('aria-expanded', 'false');
@@ -133,6 +134,7 @@ test('search reports index loading failures explicitly', async ({ page }) => {
 test('TOC preserves heading text and targets headings with nested IDs', async ({ page }) => {
   await page.goto('/test-fixture');
   await expect(page.locator('.toc a')).toHaveCount(3);
+  await expect(page.locator('.anchor-head').first()).toHaveAccessibleName('Link to Inline code and emphasis & escaped <T>');
   await expect(page.locator('.toc a').first()).toHaveText('Inline code and emphasis & escaped <T>');
   expect(await page.locator('.toc a').evaluateAll(links => links.every(link => /^H[23]$/.test(document.getElementById(decodeURIComponent(link.hash.slice(1))).tagName)))).toBe(true);
 });
@@ -233,6 +235,7 @@ test('skills icons and active fonts are served locally', async ({ page, request 
     await expect(icon).toHaveCSS('width', '16px');
     await expect(icon).toHaveCSS('flex-grow', '0');
   }
+  await expect(page.locator('.author-avatar-wrapper a')).toHaveAttribute('href', '/');
   const icons = await page.locator('.skill-icon').evaluateAll(icons => icons.map(icon => getComputedStyle(icon).maskImage));
   for (const icon of new Set(icons)) {
     expect(icon).toContain('/assets/icons/skills/');

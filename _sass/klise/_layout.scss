@@ -5,7 +5,6 @@
 .navbar {
   height: auto;
   max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
-  max-width: -webkit-calc(#{$wide-size} - (#{$spacing-full} * 2));
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -26,8 +25,6 @@
   }
 
   user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
 
   #mode {
     float: left;
@@ -35,7 +32,6 @@
     top: 6px;
     position: relative;
     clear: both;
-    -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
     opacity: 0.7;
     z-index: 1;
@@ -44,7 +40,6 @@
       opacity: 1;
     }
     &:active {
-      -webkit-transform: scale(0.9, 0.9);
       transform: scale(0.9, 0.9);
     }
     .mode-moon {
@@ -165,7 +160,6 @@
         }
       }
       &:active {
-        -webkit-transform: scale(0.9, 0.9);
         transform: scale(0.9, 0.9);
       }
     }
@@ -178,7 +172,6 @@
     .trigger.is-open {
       position: fixed;
       animation: 0.2s ease-in forwards fadein;
-      -webkit-animation: 0.2s ease-in forwards fadein;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -227,9 +220,6 @@
     border-radius: 100%;
     user-select: none;
     background-color: $black;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    -webkit-animation: 0.5s ease-in forwards fadein;
     animation: 0.5s ease-in forwards fadein;
     opacity: 1;
   }
@@ -237,9 +227,6 @@
   .author-avatar {
     transition: 0.6s;
     &:hover {
-      -ms-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -webkit-transform: scale(1.2);
       transform: scale(1.2);
     }
   }
@@ -303,7 +290,7 @@
       color: $text-base-color;
 
       &:hover,
-      &focus {
+      &:focus-visible {
         color: $black;
       }
     }
@@ -342,13 +329,6 @@
     }
   }
 
-  .footer_copyright {
-    font-size: $small-font-size - 1;
-    margin-top: 3px;
-    display: block;
-    color: $gray;
-    opacity: 0.8;
-  }
 }
 
 .not-found {
@@ -398,7 +378,7 @@
     border-radius: 5px;
     padding: 10px 10px 10px 35px;
     color: $text-base-color;
-    -webkit-appearance: none;
+    appearance: none;
     font-size: $base-font-size;
     background-color: rgba(128, 128, 128, 0.1);
     border: 1px solid rgba(128, 128, 128, 0.1);
@@ -406,7 +386,7 @@
       outline: 3px solid currentColor;
       outline-offset: 2px;
     }
-    &::-webkit-input-placeholder {
+    &::placeholder {
       color: #808080;
     }
     &::-webkit-search-decoration,

@@ -89,9 +89,6 @@ body[data-theme="dark"] {
       }
     }
 
-    span[itemprop="author"] {
-      border-color: $dark-light;
-    }
   }
 
   // Link
@@ -174,7 +171,7 @@ body[data-theme="dark"] {
         color: $dark-text-base-color;
 
         &:hover,
-        &focus {
+        &:focus-visible {
           color: $dark-white;
         }
       }
@@ -220,10 +217,6 @@ body[data-theme="dark"] {
     a.footer_item:not(:last-child) {
       color: $dark-white;
     }
-    .footer_copyright {
-      color: $dark-gray;
-      opacity: 1;
-    }
   }
 
   // 404 Page
@@ -246,7 +239,7 @@ body[data-theme="dark"] {
   .search-article {
     input[type="search"] {
       color: $dark-text-base-color;
-      &::-webkit-input-placeholder {
+      &::placeholder {
         color: rgba(128,128,128,0.8);
       }
     }

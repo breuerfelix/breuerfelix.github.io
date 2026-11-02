@@ -20,6 +20,14 @@ end
 posts = {}
 Dir.glob(File.join(site, '**/*.html')).each do |path|
   html = File.read(path)
+  relative_path = path.delete_prefix(site + '/')
+  if baseline.fetch('canonicals').key?(relative_path)
+    canonicals = html.scan(/<link\b([^>]+)>/).filter_map do |attributes|
+      attrs = attributes.first.scan(/([\w:-]+)="([^"]*)"/).to_h
+      CGI.unescapeHTML(attrs.fetch('href')) if attrs['rel'] == 'canonical'
+    end
+    abort "canonical changed: #{relative_path}" unless canonicals == [baseline.fetch('canonicals').fetch(relative_path)]
+  end
   html.scan(%r{<script\b[^>]*application/ld\+json[^>]*>(.*?)</script>}m).each do |match|
     data = JSON.parse(match.first)
     description = data.fetch('description')
@@ -40,6 +48,8 @@ Dir.glob(File.join(site, '**/*.html')).each do |path|
 end
 abort 'search/structured-data post count differs' unless posts.size == search.size
 sitemap = REXML::Document.new(File.read(File.join(site, 'sitemap.xml')))
+urls = REXML::XPath.match(sitemap, '//s:loc', 's' => 'http://www.sitemaps.org/schemas/sitemap/0.9').map(&:text)
+abort 'existing sitemap URLs missing' unless (baseline.fetch('sitemap_urls') - urls).empty?
 REXML::XPath.each(sitemap, '//s:url', 's' => 'http://www.sitemaps.org/schemas/sitemap/0.9') do |entry|
   post = posts[entry.elements['loc'].text]
   next unless post && post.key?('dateModified')
@@ -47,16 +57,22 @@ REXML::XPath.each(sitemap, '//s:url', 's' => 'http://www.sitemaps.org/schemas/si
 end
 feed = REXML::Document.new(File.read(File.join(site, 'feed.xml')))
 REXML::XPath.each(feed, '//a:entry', 'a' => 'http://www.w3.org/2005/Atom') do |entry|
-  post = posts[entry.elements['link'].attributes['href']]
+  link = entry.elements['link'].attributes['href']
+  if baseline.fetch('feed_entries').key?(link)
+    expected = baseline.fetch('feed_entries').fetch(link)
+    abort "feed identity changed: #{link}" unless expected == { 'id' => entry.elements['id'].text, 'title' => entry.elements['title'].text }
+  end
+  post = posts[link]
   next unless post && post.key?('dateModified')
   abort "feed update mismatch: #{entry.elements['id'].text}" unless entry.elements['updated'].text == post.fetch('dateModified')
 end
-%w[AGENTS.md package.json package-lock.json playwright.config.mjs].each do |path|
+%w[AGENTS.md shell.nix renovate.json package.json package-lock.json playwright.config.mjs].each do |path|
   abort "development file published: #{path}" if File.exist?(File.join(site, path))
 end
-puts "Site checks passed: #{baseline.fetch('html_paths').size} preserved paths, #{posts.size} posts, valid metadata, feeds and redirects."
 
 assets = JSON.parse(File.read(File.expand_path('../docs/assets-manifest.json', __dir__)))
 assets.fetch('sha256').each do |path, digest|
   abort "vendored asset changed: #{path}" unless Digest::SHA256.file(File.join(site, path)).hexdigest == digest
 end
+
+puts "Site checks passed: #{baseline.fetch('html_paths').size} preserved paths, #{posts.size} posts, valid metadata, feeds and redirects."

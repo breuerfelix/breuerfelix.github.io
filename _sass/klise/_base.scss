@@ -2,18 +2,10 @@
 
 // Reset some basic elements
 * {
-  -webkit-transition: background-color 75ms ease-in, border-color 75ms ease-in;
-  -moz-transition: background-color 75ms ease-in, border-color 75ms ease-in;
-  -ms-transition: background-color 75ms ease-in, border-color 75ms ease-in;
-  -o-transition: background-color 75ms ease-in, border-color 75ms ease-in;
   transition: background-color 75ms ease-in, border-color 75ms ease-in;
 }
 
 .notransition {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -59,9 +51,6 @@ body {
   font: $normal-weight #{$base-font-size}/#{$base-line-height} $sans-family;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
-  -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   box-sizing: border-box;
@@ -102,8 +91,6 @@ hr {
 
 // kbd tag
 kbd {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
   border: 1px solid $light;
   border-radius: 2px;
   color: $black;
@@ -148,7 +135,7 @@ ul {
   list-style: none;
   li {
     display: list-item;
-    text-align: -webkit-match-parent;
+    text-align: inherit;
   }
   li::before {
     content: "\FE63";
@@ -245,9 +232,6 @@ a {
 
     // transitions
   transition: .2s;
-  -moz-transition: .2s;
-  -webkit-transition: .2s;
-  -o-transition: .2s;
 
   &:hover {
     color: $text-link-blue;
@@ -290,7 +274,6 @@ blockquote {
 
 // Wrapper
 .wrapper {
-  max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
   max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
   position: relative;
   margin-right: auto;
@@ -300,14 +283,12 @@ blockquote {
   @extend %clearfix;
 
   @include media-query($on-mobile) {
-    max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full}));
     max-width: calc(#{$narrow-size} - (#{$spacing-full}));
     padding-right: $spacing-full - 10;
     padding-left: $spacing-full - 10;
 
     &.blurry {
       animation: 0.2s ease-in forwards blur;
-      -webkit-animation: 0.2s ease-in forwards blur;
     }
   }
 }
