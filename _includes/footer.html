@@ -38,20 +38,5 @@
   </script>
 {%- endif -%}
 {%- if page.url == '/archive' -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    const sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-      /* The library inserts results as HTML, so JSON serialization alone is insufficient. */
-      templateMiddleware: (_key, value) => String(value ?? '').replace(/[&<>"']/g, character => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;',
-      })[character]),
-    });
-  </script>
+  <script src="/assets/js/search.js" defer="defer"></script>
 {%- endif -%}
