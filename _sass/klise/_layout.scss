@@ -312,6 +312,11 @@
 
 // Footer
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px 10px;
   margin-top: 5em;
   margin-bottom: 2em;
   text-align: center;
@@ -331,7 +336,6 @@
     text-decoration: none;
 
     &:not(:last-child) {
-      margin-right: 10px;
       &:hover {
         opacity: 1;
       }
