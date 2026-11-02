@@ -1,9 +1,7 @@
 <div class="navbar" role="navigation">
   <nav class="menu">
-    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-    <label for="menu-trigger">
-      <span class="menu-icon">
-        <svg
+    <button type="button" id="menu-trigger" class="menu-icon" aria-label="Navigation" aria-expanded="false" aria-controls="site-navigation">
+        <svg aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -13,10 +11,9 @@
             d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
           />
         </svg>
-      </span>
-    </label>
-    <a id="mode">
-      <svg
+    </button>
+    <button type="button" id="mode" aria-label="Dark theme" aria-pressed="false">
+      <svg aria-hidden="true"
         class="mode-sunny"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -87,7 +84,7 @@
           style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
         />
       </svg>
-      <svg
+      <svg aria-hidden="true"
         class="mode-moon"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -158,11 +155,11 @@
           style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
         />
       </svg>
-    </a>
+    </button>
     <div class="title">
       <a class="menu-link active" href="{{ site.url }}">{{ site.title }}</a>
     </div>
-    <div class="trigger">
+    <div class="trigger" id="site-navigation">
       <div class="trigger-container">
         {%- assign url = page.url -%}
         {%- assign menus = site.data.menus -%}
@@ -186,7 +183,7 @@
           {%- endfor -%}
         {%- endif -%}
         <a class="menu-link rss" href="/feed.xml">
-          <svg
+          <svg aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="17"
             height="17"

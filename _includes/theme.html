@@ -18,6 +18,7 @@
 
     body.dataset.theme = theme;
     document.documentElement.dataset.theme = theme;
+    document.getElementById("mode")?.setAttribute("aria-pressed", String(theme === "dark"));
     syncComments();
 
     document.querySelectorAll('iframe[src*="mixcloud.com/"], iframe[src*="itch.io/"]').forEach(iframe => {

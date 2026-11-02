@@ -154,7 +154,12 @@
     .anchor-head {
       position: relative;
       opacity: 0;
-      outline: none;
+
+      &:focus-visible {
+        opacity: 1;
+        outline: 3px solid currentColor;
+        outline-offset: 2px;
+      }
 
       &::before {
         content: "#";

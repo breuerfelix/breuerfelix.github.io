@@ -16,11 +16,20 @@
 
 // Navigation
 .menu {
+  #mode,
+  .menu-icon {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+  }
+
   user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
 
-  a#mode {
+  #mode {
     float: left;
     left: 8px;
     top: 6px;
@@ -75,10 +84,6 @@
     float: right;
   }
 
-  .menu-trigger {
-    display: none;
-  }
-
   .menu-icon {
     display: none;
   }
@@ -102,7 +107,6 @@
     &.rss {
       position: relative;
       bottom: -3px;
-      outline: none;
     }
 
     @include media-query($on-mobile) {
@@ -134,7 +138,7 @@
       left: calc(50% - 100px);
     }
 
-    a#mode {
+    #mode {
       left: 10px;
       top: 12px;
     }
@@ -144,10 +148,10 @@
       position: absolute;
       right: 0;
       width: 50px;
-      height: 23px;
+      height: 50px;
+      top: 0;
       line-height: 0;
-      padding-top: 13px;
-      padding-bottom: 15px;
+      padding: 0;
       cursor: pointer;
       text-align: center;
       z-index: 1;
@@ -166,12 +170,12 @@
       }
     }
 
-    input[type="checkbox"]:not(:checked) ~ .trigger {
+    .trigger:not(.is-open) {
       clear: both;
       visibility: hidden;
     }
 
-    input[type="checkbox"]:checked ~ .trigger {
+    .trigger.is-open {
       position: fixed;
       animation: 0.2s ease-in forwards fadein;
       -webkit-animation: 0.2s ease-in forwards fadein;
@@ -394,6 +398,10 @@
     font-size: $base-font-size;
     background-color: rgba(128, 128, 128, 0.1);
     border: 1px solid rgba(128, 128, 128, 0.1);
+    &:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 2px;
+    }
     &::-webkit-input-placeholder {
       color: #808080;
     }
