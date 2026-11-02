@@ -36,7 +36,7 @@ jobs:
           test -s _site/projects/react-graphql-auth.html
           grep -q 'https://breuer.dev/blog/kubernetes-webhooks' _site/sitemap.xml
           ruby -rjson -e 'abort "redirect changed" unless JSON.parse(File.read("_site/redirects.json"))["/projects/react-graphql-auth"] == "https://breuer.dev/blog/react-graphql-auth"'
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
