@@ -26,17 +26,11 @@ To store the user progress when closing the application, I used a simple JSON fi
 
 ## Screenshots
 
-| home                                     | updating                                         |
-| ---------------------------------------- | ------------------------------------------------ |
-| ![home](/assets/series-monitor/home.png) | ![updating](/assets/series-monitor/updating.png) |
-
-
-| series in detail |
-| --- |
-| ![series](/assets/series-monitor/series.png) |
-
-| database structure |
-| --- |
-| ![database](/assets/series-monitor/database.png) |
+<div class="gallery">
+  <figure><img src="/assets/series-monitor/home.png" alt="Series Monitor home screen"><figcaption>Home</figcaption></figure>
+  <figure><img src="/assets/series-monitor/updating.png" alt="Series Monitor updating screen"><figcaption>Updating</figcaption></figure>
+  <figure><img src="/assets/series-monitor/series.png" alt="Series detail screen"><figcaption>Series in detail</figcaption></figure>
+  <figure><img src="/assets/series-monitor/database.png" alt="Database structure screen"><figcaption>Database structure</figcaption></figure>
+</div>
 
 

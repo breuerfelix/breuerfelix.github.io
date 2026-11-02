@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 // Reset some basic elements
 * {
   -webkit-transition: background-color 75ms ease-in, border-color 75ms ease-in;
@@ -19,6 +21,12 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
+  // Explicit canvas background avoids blank space below short pages in Safari.
+  background-color: $white;
+}
+
+html[data-theme="dark"] {
+  background-color: $dark-black;
 }
 
 body,

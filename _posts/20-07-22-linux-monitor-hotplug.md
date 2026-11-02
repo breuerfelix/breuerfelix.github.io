@@ -2,7 +2,7 @@
 layout: post
 title: Hotplug external Monitors on Linux
 date: 2020-07-25 11:00:00 +01:00
-modify_date: 2020-07-26 11:00:00 +01:00
+modified: 2020-07-26 11:00:00 +01:00
 tags: linux external monitor hotplug i3 windowmanager
 category: blog
 ---

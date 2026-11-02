@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 body[data-theme="dark"] {
   color: $dark-text-base-color;
   background-color: $dark-black;
@@ -253,5 +255,22 @@ body[data-theme="dark"] {
   // Avatar Wrapper
   .author-avatar-wrapper {
     border-color: $dark-white;
+  }
+
+  // Table of contents
+  .toc {
+    border-color: $dark-light;
+
+    .toc-title {
+      color: $dark-gray;
+    }
+
+    .toc-item a {
+      color: $dark-text-base-color;
+
+      &:hover {
+        color: $dark-text-link-blue;
+      }
+    }
   }
 }

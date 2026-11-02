@@ -2,7 +2,7 @@
 layout: post
 title: JavaScripts magic three dots
 date: 2020-07-26 11:00:00 +01:00
-modify_date: 2020-07-27 11:00:00 +01:00
+modified: 2020-07-27 11:00:00 +01:00
 tags: javascript magic dots three spread operator typescript
 category: blog
 ---

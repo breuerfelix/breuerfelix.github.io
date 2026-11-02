@@ -2,7 +2,7 @@
 layout: post
 title: Using Minted Syntax Highlighting with Tectonic Latex Compiler
 date: 2021-03-05 17:00:00 +01:00
-modify_date: 2021-03-06 11:00:00 +01:00
+modified: 2021-03-06 11:00:00 +01:00
 tags: latex minted tectonic workaround python pygments pygmentize
 category: tutorial
 ---

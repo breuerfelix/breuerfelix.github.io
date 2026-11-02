@@ -2,7 +2,7 @@
 layout: post
 title: Neovim Nightly on NixOS with Home-Manager and Plugins from Git
 date: 2021-05-19 11:00:00 +01:00
-modify_date: 2021-05-19 17:00:00 +01:00
+modified: 2021-05-19 17:00:00 +01:00
 tags: nixos home-manager neovim nightly
 category: blog
 ---
