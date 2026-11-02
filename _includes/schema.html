@@ -23,8 +23,8 @@
   "image": {{ social_image | absolute_url | jsonify }},
   {%- endif %}
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
-  {%- if page.modified %}
-  "dateModified": {{ page.modified | date_to_xmlschema | jsonify }},
+  {%- if page.last_modified_at %}
+  "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
   {%- endif %}
   "author": {
     "@type": "Person",

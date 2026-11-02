@@ -64,11 +64,11 @@ defaults:
 # Jekyll Compose default front matter
 jekyll_compose:
   post_default_front_matter:
-    modified:
+    last_modified_at:
     tags: []
     description:
   draft_default_front_matter:
-    modified:
+    last_modified_at:
     tags: []
     description:
 
@@ -83,6 +83,7 @@ include:
   - .htaccess
 
 exclude:
+  - docs
   - AGENTS.md
   - CNAME
   - Gemfile

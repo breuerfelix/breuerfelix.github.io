@@ -2,7 +2,7 @@
 layout: post
 title: Useful Nginx Server Blocks
 date: 2018-04-24 11:00:00 +01:00
-modified: 2018-06-22 11:00:00 +01:00
+last_modified_at: 2018-06-22 11:00:00 +01:00
 tags: linux nginx serverblocks server http https proxy ssl certificates reverseproxy
 category: tutorial
 ---

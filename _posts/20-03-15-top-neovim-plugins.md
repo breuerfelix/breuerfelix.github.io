@@ -2,7 +2,7 @@
 layout: post
 title: Top NeoVim Plugins of 2020
 date: 2020-03-12 11:00:00 +01:00
-modified: 2020-03-13 11:00:00 +01:00
+last_modified_at: 2020-03-13 11:00:00 +01:00
 tags: top 2020 neovim plugins editor ide
 category: blog
 ---

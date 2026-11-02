@@ -2,7 +2,7 @@
 layout: post
 title: Donate CPU / GPU for Cancer, COVID-19 and co.
 date: 2020-03-17 11:00:00 +01:00
-modified: 2020-03-18 11:00:00 +01:00
+last_modified_at: 2020-03-18 11:00:00 +01:00
 tags: foldingathome corona cancer covid19 rosetta boinc donate cpu
 category: blog
 ---

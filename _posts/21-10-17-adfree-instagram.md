@@ -2,7 +2,7 @@
 layout: post
 title: How to remove / block ADS on Instagram
 date: 2021-10-17 17:00:00 +01:00
-modified: 2021-10-17 11:00:00 +01:00
+last_modified_at: 2021-10-17 11:00:00 +01:00
 tags: instagram remove ads adfree block adblock app
 category: blog
 ---
