@@ -45,8 +45,8 @@ Now take a step back, relax, and have fun exploring!
 <div class="skills-grid">
 {% for skill in site.data.skills %}
   <div class="skill-badge">
-    <i class="{{ skill.icon }}"></i>
-    <span>{{ skill.name }}</span>
+    <span class="skill-icon" style="--skill-icon: url('/assets/icons/skills/{{ skill.icon }}.svg')" aria-hidden="true"></span>
+    <span class="skill-name">{{ skill.name }}</span>
   </div>
 {% endfor %}
 </div>

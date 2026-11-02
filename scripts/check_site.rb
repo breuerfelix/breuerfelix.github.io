@@ -1,5 +1,6 @@
 require 'json'
 require 'cgi'
+require 'digest'
 require 'rexml/document'
 require 'rexml/xpath'
 
@@ -54,3 +55,8 @@ end
   abort "development file published: #{path}" if File.exist?(File.join(site, path))
 end
 puts "Site checks passed: #{baseline.fetch('html_paths').size} preserved paths, #{posts.size} posts, valid metadata, feeds and redirects."
+
+assets = JSON.parse(File.read(File.expand_path('../docs/assets-manifest.json', __dir__)))
+assets.fetch('sha256').each do |path, digest|
+  abort "vendored asset changed: #{path}" unless Digest::SHA256.file(File.join(site, path)).hexdigest == digest
+end

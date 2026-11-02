@@ -1,0 +1,31 @@
+{
+  "devicon_version": "v2.18.0",
+  "sha256": {
+    "assets/fonts/licenses/Roboto-Apache-2.0.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "assets/fonts/licenses/Ubuntu-Font-License.txt": "2f0015108d68627bd788d313f529c21ff4da2c2c42a5e1f3883acc83480f9002",
+    "assets/fonts/roboto-bold.woff2": "1d5b7c64458f4af91dcfee0354be47adde1f739b5aded03a7ab6068a1bb6ca97",
+    "assets/fonts/roboto-regular.woff2": "3e253b66056519aa065b00a453bac37ac5ed8f3e6fe7b542e93a9dcdcc11d0bc",
+    "assets/fonts/ubuntu-mono-regular.woff2": "d12493452a845c32b4e0db25c16142e7645e9cb80f00511e53c5760794c9cf94",
+    "assets/icons/skills/LICENSE.txt": "121194741d4a915b9f5890fdd6dd95121f9b1f816517c792358d72d7c838d664",
+    "assets/icons/skills/csharp-plain.svg": "ccb93dc80b4fbd7363158d520c948ba798f843eb77ece519d06ae1b92058a8b3",
+    "assets/icons/skills/docker-plain.svg": "d1a89aff773fa3e6bab3df98a3d9d685f5f9ddf4af9ec60ce5dc83ea8a83804a",
+    "assets/icons/skills/fastapi-plain.svg": "7ef41f6a363b00ff595e6d0b933c025c92cbfae29dc1df24b2f6eb8b476ee486",
+    "assets/icons/skills/gardener-plain.svg": "9883e174f785eb91e39f5893519d06f8c5fd27b4ac89354e4c66f3be570177cb",
+    "assets/icons/skills/git-plain.svg": "8eb1056ff397a173e8000c89ecb443783019ad081f7dc4ecdb9ce5a3b1cc86c3",
+    "assets/icons/skills/github-original.svg": "45262793de6292206a895ed63593cdb1eaed82074173f7f4b5bdb3e427ca805a",
+    "assets/icons/skills/gitlab-plain.svg": "94cd56f0de7de346b40e522e62224df9ca7babdb3c00c171adc3098ecaf73851",
+    "assets/icons/skills/go-original-wordmark.svg": "d0400ee3d76ee43fa45e84a3b38b5710a9674969eb71af9d5bb59ed7916a3225",
+    "assets/icons/skills/graphql-plain.svg": "1fafe03a1f77be5a1c25c20db6e52f292ed8ae5a9b2536f807ee2a3d2e78d3d3",
+    "assets/icons/skills/javascript-plain.svg": "7aeba12131be6a9c4bf781171d850939c0b1356d63b42f3d4a3b43e187f94e46",
+    "assets/icons/skills/kotlin-plain.svg": "2ee1a71cacd67b1f6b6c5c319cac744c1597b7a5ea2afb7f82c350b9b282504a",
+    "assets/icons/skills/kubernetes-plain.svg": "8253c15339196bd566a300530323df4af91f781458e511b6446b57dcef387e85",
+    "assets/icons/skills/linux-plain.svg": "f262932ac85eed81a79b47184b52210c83d6edb09408f50245ef285435f86f8b",
+    "assets/icons/skills/nixos-plain.svg": "f965fcf8a5961737f44e4aedab25ca6a7816baf847dc2a83aed173c141d86683",
+    "assets/icons/skills/nodejs-plain.svg": "652001afa92b10923ed00ac62121f242d0be85772d48f71c29cf825b2bb2f88c",
+    "assets/icons/skills/pulumi-plain.svg": "1de3cfd7e42c39032c5e508a0502ae32209afc4f995df12597c07ba47dcc1071",
+    "assets/icons/skills/python-plain.svg": "5b2abd125bf9cb2ac6b0b9f0cdbcc9c8005886fa974d26f2b3438b831b6d8365",
+    "assets/icons/skills/react-original.svg": "5825b649c8c04dec13ecf01d0182401bd0ec71789d2fa06224866d882cd1515f",
+    "assets/icons/skills/terraform-plain.svg": "db2776ac07651b31ce6e505dc6cd7eac07dd45de84586b128433fd718b3c7b4f",
+    "assets/icons/skills/typescript-plain.svg": "dbdda8a49cf4f4eac68ebea33bd532644d1dfb94142a6ed3f2c7a619605b8116"
+  }
+}

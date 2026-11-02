@@ -219,3 +219,26 @@ test('inline line comments preserve following JavaScript statements', async ({ p
   await page.goto('/test-fixture');
   expect(await page.evaluate(() => [window.beforeComment, window.afterComment])).toEqual([true, true]);
 });
+
+test('skills icons and active fonts are served locally', async ({ page, request }) => {
+  const externalVisualRequests = [];
+  page.on('request', request => {
+    const url = new URL(request.url());
+    if (url.hostname === 'fonts.gstatic.com' || url.href.includes('devicon')) externalVisualRequests.push(url.href);
+  });
+  await page.goto('/');
+  await page.evaluate(() => document.fonts.ready);
+  await expect(page.locator('.skill-icon')).toHaveCount(23);
+  for (const icon of await page.locator('.skill-icon').all()) {
+    await expect(icon).toHaveCSS('width', '16px');
+    await expect(icon).toHaveCSS('flex-grow', '0');
+  }
+  const icons = await page.locator('.skill-icon').evaluateAll(icons => icons.map(icon => getComputedStyle(icon).maskImage));
+  for (const icon of new Set(icons)) {
+    expect(icon).toContain('/assets/icons/skills/');
+    const url = icon.match(/url\("?([^"\)]+)"?\)/)[1];
+    expect((await request.get(url)).ok()).toBe(true);
+  }
+  expect(externalVisualRequests).toEqual([]);
+  expect(await page.evaluate(() => document.fonts.check('16px Roboto'))).toBe(true);
+});
