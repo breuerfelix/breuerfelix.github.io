@@ -1,4 +1,5 @@
 ---
+description: "Examples of JavaScript spread and rest syntax for combining arrays, copying objects, and working with function arguments."
 layout: post
 title: JavaScripts magic three dots
 date: 2020-07-26 11:00:00 +01:00

@@ -1,4 +1,5 @@
 ---
+description: "Automatically enable and disable external monitors on Linux with xrandr and an i3 window manager setup."
 layout: post
 title: Hotplug external Monitors on Linux
 date: 2020-07-25 11:00:00 +01:00

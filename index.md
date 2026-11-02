@@ -1,4 +1,5 @@
 ---
+description: "Felix Breuer is a cloud platform engineer in Bonn, sharing projects and practical guides on Kubernetes, Nix, Neovim, and software development."
 layout: about
 comments: false
 ---

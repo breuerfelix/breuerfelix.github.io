@@ -1,4 +1,5 @@
 ---
+description: "Block Instagram ads by using its web app with a mobile ad blocker instead of the native application."
 layout: post
 title: How to remove / block ADS on Instagram
 date: 2021-10-17 17:00:00 +01:00

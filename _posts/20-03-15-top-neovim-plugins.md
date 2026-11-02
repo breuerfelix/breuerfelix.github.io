@@ -1,4 +1,5 @@
 ---
+description: "Explore the plugins and configuration choices in my 2020 Neovim setup, including editing and Git integration."
 layout: post
 title: Top NeoVim Plugins of 2020
 date: 2020-03-12 11:00:00 +01:00

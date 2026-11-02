@@ -1,4 +1,5 @@
 ---
+description: "Examples of Nginx server blocks for reverse proxies, HTTPS, and serving applications on a Linux server."
 layout: post
 title: Useful Nginx Server Blocks
 date: 2018-04-24 11:00:00 +01:00

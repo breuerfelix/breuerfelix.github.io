@@ -1,3 +1,8 @@
+---
+title: "A portable Neovim configuration with Nix"
+description: "Draft notes on packaging and running a portable Neovim configuration with Nix flakes."
+---
+
 __tl;dr:__ just run MY NeoVim! Try this: `nix run github:breuerfelix/feovim# .`
 
 Link to my Neovim Distribution: https://github.com/breuerfelix/feovim

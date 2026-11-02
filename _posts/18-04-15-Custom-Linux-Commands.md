@@ -1,4 +1,5 @@
 ---
+description: "Create custom Linux shell commands and aliases for repetitive Jekyll, Git, and system administration tasks."
 layout: post
 title: Create custom Linux Commands
 date: 2018-04-15 09:00:00 +01:00

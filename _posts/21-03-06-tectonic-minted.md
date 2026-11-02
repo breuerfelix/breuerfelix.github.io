@@ -1,4 +1,5 @@
 ---
+description: "Use Minted syntax highlighting with the Tectonic LaTeX compiler and configure the required external highlighting tools."
 layout: post
 title: Using Minted Syntax Highlighting with Tectonic Latex Compiler
 date: 2021-03-05 17:00:00 +01:00

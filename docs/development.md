@@ -11,6 +11,11 @@ bundle exec jekyll serve --livereload
 
 ## Article metadata
 
+Every page, post, and draft must have an explicit plain-text `description` in front matter.
+That same text is used in HTML/social metadata, JSON-LD, and the search index.
+A missing description is a source error caught by the site checks; it is not replaced
+with a site tagline or generated excerpt.
+
 Use `last_modified_at` for a recorded article update. This single field drives
 JSON-LD, the visible update label, RSS entry updates, and sitemap modification dates.
 Preserve the timestamp and timezone when editing metadata. Leave the field absent

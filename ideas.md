@@ -1,4 +1,5 @@
 ---
+description: "Unimplemented software and side-project ideas, with concept descriptions generated from my notes."
 layout: page
 title: Inside my Mind
 ---

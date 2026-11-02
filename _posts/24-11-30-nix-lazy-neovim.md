@@ -1,4 +1,5 @@
 ---
+description: "Combine Nix-managed Neovim plugins with lazy.nvim to keep a portable configuration and lazy-load plugins."
 layout: post
 title: Neovim with Nix and Lazy.nvim
 date: 2024-11-30 09:00:00 +01:00

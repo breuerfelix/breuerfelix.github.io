@@ -1,4 +1,5 @@
 ---
+description: "Build an asynchronous TCP socket server and client in C# that can communicate with multiple clients."
 layout: post
 title: Async TCP Socket Server/Client in C#
 date: 2018-04-17 22:15:00 +01:00

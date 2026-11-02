@@ -1,4 +1,5 @@
 ---
+description: "Practical guides and project notes on cloud infrastructure, Kubernetes, Nix, Neovim, and software development."
 layout: page
 title: Readings I haven't found on the Internet
 ---

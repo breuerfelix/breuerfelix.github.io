@@ -1,4 +1,5 @@
 ---
+description: "Explore split keyboards, matrix key layouts, thumb keys, and ergonomic choices for programming and everyday typing."
 layout: post
 title: "Revolutionizing Typing: The Matrix Split Keyboard Layout"
 date: 2023-09-28 11:00:00 +01:00

@@ -1,4 +1,5 @@
 ---
+description: "Donate spare CPU and GPU capacity to research projects such as Folding@home using existing computers and servers."
 layout: post
 title: Donate CPU / GPU for Cancer, COVID-19 and co.
 date: 2020-03-17 11:00:00 +01:00

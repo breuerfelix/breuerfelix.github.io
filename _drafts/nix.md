@@ -1,3 +1,8 @@
+---
+title: "NixOS and Home Manager notes"
+description: "Draft notes on NixOS, Home Manager, desktop environments, and managing a system configuration in Git."
+---
+
 - use home-manager
 - put it in configuration -> do not let him manager himself
 

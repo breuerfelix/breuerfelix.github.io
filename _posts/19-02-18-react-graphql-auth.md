@@ -1,4 +1,5 @@
 ---
+description: "Build an authentication example with React, GraphQL, and JSON Web Tokens, including API and client state management."
 layout: post
 title: Authentication with ReactJS and GraphQL via JsonWebToken
 date: 2019-02-18 12:00:00 +01:00

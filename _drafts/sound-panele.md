@@ -1,3 +1,9 @@
+---
+title: "Schallabsorber für die Arbeitsecke"
+description: "Notizen zu Schallabsorbern im Arbeitszimmer, Klebeversuchen und der Montage an der Wand."
+lang: de-DE
+---
+
 # sound panale
 
 TODO: bilder !

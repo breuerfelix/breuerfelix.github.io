@@ -1,4 +1,5 @@
 ---
+description: "Track progress through TV series with a JavaFX desktop application, Selenium, and a local JSON database."
 layout: post
 title: "Project: Series-Monitor - Track your Series progress"
 date: 2019-06-07 09:00:00 +01:00

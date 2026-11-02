@@ -1,4 +1,5 @@
 ---
+description: "Automate a YouTube channel with software that manages its content and publishing workflow."
 layout: post
 title: How to automate a YouTube Channel
 date: 2021-03-07 11:00:00 +01:00

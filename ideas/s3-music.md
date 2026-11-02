@@ -1,4 +1,5 @@
 ---
+description: "Project idea for sharing music and DJ mixes with S3 storage and alternative streaming payment models."
 layout: post
 short: HarmoniWave
 title: Share Music with an Innovative Monetization approach

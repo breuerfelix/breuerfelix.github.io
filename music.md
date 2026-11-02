@@ -1,4 +1,5 @@
 ---
+description: "Listen to my DJ mixes on Mixcloud, including Possession the Crowd, Boiling the Room, and Deep Vocal House."
 title: Listen to my Mixes
 permalink: /music
 layout: page

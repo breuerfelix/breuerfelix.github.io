@@ -1,4 +1,5 @@
 ---
+description: "Search and replace text across GitLab repositories to update container registry references at scale."
 layout: post
 title: Search and Replace across all Repositories in a GitLab Instance
 date: 2024-03-23 09:00:00 +01:00

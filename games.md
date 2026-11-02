@@ -1,4 +1,5 @@
 ---
+description: "Explore my game development work, including NPC Survivor on itch.io."
 title: I also code Games
 permalink: /games
 layout: page

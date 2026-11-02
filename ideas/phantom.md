@@ -1,4 +1,5 @@
 ---
+description: "Project idea for a static blogging CMS using S3 storage, encrypted credentials, and Ghost-compatible themes."
 layout: post
 short: Phantom
 title: The Backend-Free Solution for Seamless Blogging

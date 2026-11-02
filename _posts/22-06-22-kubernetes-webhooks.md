@@ -1,4 +1,5 @@
 ---
+description: "Build and deploy a minimal Kubernetes mutating admission webhook with Kubebuilder, TLS certificates, and local development support."
 layout: post
 title: Simple Kubernetes Mutating Admission Webhook
 date: 2022-06-22 11:00:00 +01:00

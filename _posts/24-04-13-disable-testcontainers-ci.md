@@ -1,4 +1,5 @@
 ---
+description: "Disable Testcontainers in Spring Boot when running tests in a CI/CD environment without the required container runtime."
 layout: post
 title: Disable Testcontainers in Spring Boot when running in CI / CD Pipeline
 date: 2024-04-13 09:00:00 +01:00

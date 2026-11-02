@@ -198,6 +198,9 @@ test('JSON-LD, RSS and sitemap share one recorded update date', async ({ page, r
   await page.goto('/test-fixture');
   const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
   expect(data.headline).toBe('Audit C++ <T> & "quotes"');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', data.description);
+  await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', data.description);
+  await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'breuer.dev');
   expect(data.image).toBe('https://breuer.dev/assets/img/avatar.jpg');
   const feed = await (await request.get('/feed.xml')).text();
   const sitemap = await (await request.get('/sitemap.xml')).text();

@@ -1,4 +1,5 @@
 require 'json'
+require 'cgi'
 require 'rexml/document'
 require 'rexml/xpath'
 
@@ -20,6 +21,18 @@ Dir.glob(File.join(site, '**/*.html')).each do |path|
   html = File.read(path)
   html.scan(%r{<script\b[^>]*application/ld\+json[^>]*>(.*?)</script>}m).each do |match|
     data = JSON.parse(match.first)
+    description = data.fetch('description')
+    abort "missing description: #{path}" unless description.is_a?(String) && !description.empty?
+    metadata = {}
+    html.scan(/<meta\b([^>]+)>/).each do |attributes|
+      attrs = attributes.first.scan(/([\w:-]+)="([^"]*)"/).to_h
+      key = attrs['name'] || attrs['property']
+      metadata[key] = CGI.unescapeHTML(attrs.fetch('content')) if key && attrs.key?('content')
+    end
+    %w[description og:description twitter:description].each do |key|
+      abort "description mismatch: #{path} #{key}" unless metadata.fetch(key) == description
+    end
+    abort "incorrect site name: #{path}" unless metadata.fetch('og:site_name') == 'breuer.dev'
     next unless data.fetch('@type') == 'BlogPosting'
     posts[data.fetch('mainEntityOfPage').fetch('@id')] = data
   end

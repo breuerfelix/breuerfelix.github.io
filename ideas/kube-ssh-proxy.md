@@ -1,4 +1,5 @@
 ---
+description: "Project idea for a kubectl plugin that creates SSH proxy tunnels through Kubernetes nodes."
 layout: post
 short: KubeSSHProxy
 title: Kubernetes Node SSH Proxy Plugin - Tunnel your Node with ease
