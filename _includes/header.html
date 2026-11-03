@@ -58,9 +58,15 @@
   {%- endif -%}
   {% if page.usemathjax %}
   <script>
-    window.MathJax = { tex: { tags: 'ams' } };
+    window.MathJax = {
+      tex: { tags: 'ams' },
+      output: {
+        displayOverflow: 'linebreak',
+        fontPath: {{ site.mathjax.font_path | jsonify }}
+      }
+    };
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+  <script defer src="{{ site.mathjax.source }}/tex-chtml.js"></script>
   {% endif %}
   {% include schema.html %}
 </head>

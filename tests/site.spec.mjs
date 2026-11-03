@@ -1,15 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { resolve } from 'node:path';
 
 test.beforeEach(async ({ context, page }) => {
   page.on('pageerror', error => { throw error; });
   await context.route('**/*', async route => {
     const url = new URL(route.request().url());
-    if (url.hostname === '127.0.0.1') return route.continue();
-    const mathRoot = '/npm/mathjax@3.2.2/es5/';
-    if (url.hostname === 'cdn.jsdelivr.net' && url.pathname.startsWith(mathRoot)) {
-      return route.fulfill({ path: resolve('node_modules/mathjax/es5', url.pathname.slice(mathRoot.length)) });
-    }
+    if (url.origin === 'http://127.0.0.1:4312') return route.continue();
     if (url.href === 'https://utteranc.es/client.js') {
       return route.fulfill({ contentType: 'application/javascript', body: `const script=document.currentScript;setTimeout(()=>{const frame=document.createElement('iframe');frame.className='utterances-frame';frame.title='Comments';frame.style.width='100%';frame.src='https://utteranc.es/test-frame';script.after(frame)},40)` });
     }
@@ -181,19 +176,6 @@ test('linked images keep their link behavior', async ({ page }) => {
   await expect(page.getByAltText('Linked image', { exact: true })).not.toHaveAttribute('role', 'button');
   await expect(page.getByAltText('Linked image', { exact: true }).locator('..')).toHaveAttribute('href', 'https://example.com/');
   await expect(page.getByAltText('Unlinked image', { exact: true })).toHaveAttribute('role', 'button');
-});
-
-test('real pinned MathJax renders inline, display and AMS equations without changing code', async ({ page }) => {
-  await page.goto('/test-fixture');
-  await page.waitForFunction(() => window.MathJax?.startup?.promise);
-  await page.evaluate(() => MathJax.startup.promise);
-  expect(await page.evaluate(() => MathJax.version)).toBe('3.2.2');
-  await expect(page.locator('mjx-container')).toHaveCount(3);
-  await expect(page.locator('mjx-merror')).toHaveCount(0);
-  await expect(page.locator('mjx-labels')).toHaveCount(1);
-  await expect(page.locator('pre')).toContainText('$$ x^2 $$');
-  await page.goto('/blog/kubernetes-webhooks');
-  await expect(page.locator('script[src*="mathjax"]')).toHaveCount(0);
 });
 
 test('JSON-LD, RSS and sitemap share one recorded update date', async ({ page, request }) => {

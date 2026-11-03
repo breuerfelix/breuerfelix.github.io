@@ -8,13 +8,24 @@ const root = resolve('.');
 const temporary = await mkdtemp(join(tmpdir(), 'breuer-site-tests-'));
 const source = join(temporary, 'source');
 const output = join(temporary, 'site');
+const origin = 'http://127.0.0.1:4312';
+const { devDependencies } = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
+const mathAssets = ['mathjax', '@mathjax/mathjax-newcm-font'].map(name => ({
+  prefix: `/test-assets/npm/${name}@${devDependencies[name]}/`,
+  directory: resolve(root, 'node_modules', name)
+}));
 const excluded = new Set(['.git', 'node_modules', '_site', '.jekyll-cache', '.jekyll-metadata', '.lighthouseci', '.lighthouse-site', 'test-results', 'playwright-report', 'lighthouse-reports']);
 await cp(root, source, { recursive: true, filter: path => !excluded.has(path.slice(root.length + 1).split(sep)[0]) });
 const now = Temporal.Now.instant();
-const fixture = (await readFile(join(root, 'tests/fixtures/article.md'), 'utf8'))
-  .replace('TEST_PUBLISHED_AT', now.subtract({ hours: 24 }).toString({ fractionalSecondDigits: 3 }))
-  .replace('TEST_MODIFIED_AT', now.toString({ fractionalSecondDigits: 3 }));
-await writeFile(join(source, '_posts/2000-01-01-regression.md'), fixture);
+for (const name of ['article', 'math']) {
+  const fixture = (await readFile(join(root, `tests/fixtures/${name}.md`), 'utf8'))
+    .replace('TEST_PUBLISHED_AT', now.subtract({ hours: 24 }).toString({ fractionalSecondDigits: 3 }))
+    .replace('TEST_MODIFIED_AT', now.toString({ fractionalSecondDigits: 3 }));
+  await writeFile(join(source, `_posts/2000-01-01-${name}.md`), fixture);
+}
+// Keep production versions and paths; mirror locked CDN bytes without browser routing.
+const config = await readFile(join(source, '_config.yml'), 'utf8');
+await writeFile(join(source, '_config.yml'), config.replaceAll('https://cdn.jsdelivr.net/npm/', `${origin}/test-assets/npm/`));
 const build = spawnSync('bundle', ['exec', 'jekyll', 'build', '--trace', '--source', source, '--destination', output], {
   cwd: root, env: { ...process.env, JEKYLL_ENV: 'production', BUNDLE_GEMFILE: join(root, 'Gemfile') }, stdio: 'inherit'
 });
@@ -25,6 +36,14 @@ const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 
 createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://127.0.0.1').pathname);
+    const mathAsset = mathAssets.find(asset => pathname.startsWith(asset.prefix));
+    if (mathAsset) {
+      const assetFile = resolve(mathAsset.directory, pathname.slice(mathAsset.prefix.length));
+      if (!assetFile.startsWith(mathAsset.directory + sep)) { response.writeHead(403).end(); return; }
+      const asset = await readFile(assetFile);
+      response.writeHead(200, { 'Content-Type': types[extname(assetFile)] }).end(asset);
+      return;
+    }
     let file = resolve(output, '.' + pathname);
     if (!file.startsWith(output + sep) && file !== output) { response.writeHead(403).end(); return; }
     if (pathname === '/feed.xml') {
