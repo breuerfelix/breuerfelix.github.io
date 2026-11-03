@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=24"
+    "node": ">=26"
   },
   "scripts": {
     "test": "playwright test",
@@ -12,7 +12,7 @@
     "lighthouse:check": "LIGHTHOUSE_SITE=_site node scripts/lighthouse.mjs"
   },
   "devDependencies": {
-    "@lhci/cli": "0.15.1",
+    "@lhci/cli": "0.16.0",
     "@playwright/test": "1.64.1",
     "mathjax": "4.1.3"
   }
