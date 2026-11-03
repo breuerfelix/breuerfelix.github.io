@@ -1,4 +1,5 @@
 ---
+description: "A collection of macOS applications and workflow tools for customizing a productive development environment."
 layout: post
 title: "Enhancing your Workflow: Must-Have Applications for Power Users on MacOS"
 date: 2023-11-03 09:00:00 +01:00

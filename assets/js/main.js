@@ -1,18 +1,26 @@
 (() => {
-  // Theme switch
-  const lamp = document.getElementById('mode');
+  const trigger = document.getElementById("menu-trigger");
+  const navigation = document.getElementById("site-navigation");
+  const content = document.querySelector(".wrapper");
 
-  lamp.addEventListener('click', () =>
-    window.initTheme(localStorage.getItem('theme') == 'light' ? 'dark' : 'light')
+  const setMenuOpen = (open) => {
+    trigger.setAttribute("aria-expanded", String(open));
+    navigation.classList.toggle("is-open", open);
+    content.classList.toggle("blurry", open);
+  };
+
+  trigger.addEventListener("click", () =>
+    setMenuOpen(trigger.getAttribute("aria-expanded") !== "true")
   );
-
-  // Blur the content when the menu is open
-  const cbox = document.getElementById('menu-trigger');
-
-  cbox.addEventListener('change', function () {
-    const area = document.querySelector('.wrapper');
-    this.checked
-      ? area.classList.add('blurry')
-      : area.classList.remove('blurry');
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || trigger.getAttribute("aria-expanded") !== "true") return;
+    setMenuOpen(false);
+    trigger.focus();
+  });
+  window.matchMedia("(min-width: 769px)").addEventListener("change", (event) => {
+    if (event.matches) setMenuOpen(false);
   });
 })();

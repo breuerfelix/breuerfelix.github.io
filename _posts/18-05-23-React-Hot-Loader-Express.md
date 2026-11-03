@@ -1,8 +1,9 @@
 ---
+description: "Configure React Hot Loader 4 with Express 4, Webpack 4, and ES6 for a React development environment."
 layout: post
 title: React.js with ES6 & Webpack 4 => React-Hot-Loader 4 as Middleware with Express 4
 date: 2018-05-23 11:00:00 +01:00
-modify_date: 2018-05-25 11:00:00 +01:00
+last_modified_at: 2018-05-25 11:00:00 +01:00
 tags: javascript js node express server client react react-hot-loader middleware es6
 category: tutorial
 ---

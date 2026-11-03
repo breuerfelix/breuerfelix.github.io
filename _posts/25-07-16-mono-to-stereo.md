@@ -1,4 +1,5 @@
 ---
+description: "Convert mono microphone input to stereo on macOS with BlackHole, Python, sounddevice, and NumPy."
 layout: post
 title: Convert Mono Input to Stereo on MacOS
 date: 2025-07-16 09:00:00 +01:00

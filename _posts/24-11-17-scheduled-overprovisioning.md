@@ -1,4 +1,5 @@
 ---
+description: "Schedule Kubernetes overprovisioning with priority classes and placeholder workloads to make capacity available when needed."
 layout: post
 title: Simple Kubernetes scheduled Overprovisioning
 date: 2024-11-17 09:00:00 +01:00

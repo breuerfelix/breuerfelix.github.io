@@ -1,8 +1,9 @@
 ---
+description: "Automate a YouTube channel with software that manages its content and publishing workflow."
 layout: post
 title: How to automate a YouTube Channel
 date: 2021-03-07 11:00:00 +01:00
-modify_date: 2021-03-07 14:00:00 +01:00
+last_modified_at: 2021-03-07 14:00:00 +01:00
 tags: automated youtube channel twitch highlights clips
 category: blog
 ---

@@ -1,0 +1,46 @@
+<script>
+(() => {
+  const body = document.body;
+  const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const syncComments = () => {
+    document.querySelector('.utterances-frame')?.contentWindow.postMessage(
+      { type: 'set-theme', theme: `github-${body.dataset.theme}` },
+      'https://utteranc.es',
+    );
+  };
+
+  const applyTheme = () => {
+    const saved = localStorage.getItem('theme');
+    const theme = saved === 'light' || saved === 'dark'
+      ? saved
+      : colorScheme.matches ? 'dark' : 'light';
+
+    body.dataset.theme = theme;
+    document.documentElement.dataset.theme = theme;
+    document.getElementById("mode")?.setAttribute("aria-pressed", String(theme === "dark"));
+    syncComments();
+
+    document.querySelectorAll('iframe[src*="mixcloud.com/"], iframe[src*="itch.io/"]').forEach(iframe => {
+      const src = iframe.src.replace(/([?&])(light|dark)=/, `$1${theme}=`);
+      if (src !== iframe.src) iframe.src = src;
+    });
+  };
+
+  /* Apply before content is painted; synchronize embeds once they exist. */
+  applyTheme();
+  setTimeout(() => body.classList.remove('notransition'), 75);
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme();
+    document.getElementById('mode').addEventListener('click', () => {
+      localStorage.setItem('theme', body.dataset.theme === 'dark' ? 'light' : 'dark');
+      applyTheme();
+    });
+  });
+
+  colorScheme.addEventListener('change', applyTheme);
+  window.addEventListener('message', event => {
+    if (event.origin === 'https://utteranc.es') syncComments();
+  });
+})();
+</script>

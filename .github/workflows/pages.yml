@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.4.12'
@@ -24,18 +28,23 @@ jobs:
         env:
           JEKYLL_ENV: production
       - name: Check generated site
+        run: bundle exec ruby scripts/check_site.rb
+      - name: Install browser test dependencies
         run: |
-          test -s _site/index.html
-          test -s _site/404.html
-          test -s _site/assets/css/style.css
-          test -s _site/assets/search.json
-          test -s _site/feed.xml
-          test -s _site/sitemap.xml
-          test -s _site/redirects.json
-          test -s _site/blog/kubernetes-webhooks.html
-          test -s _site/projects/react-graphql-auth.html
-          grep -q 'https://breuer.dev/blog/kubernetes-webhooks' _site/sitemap.xml
-          ruby -rjson -e 'abort "redirect changed" unless JSON.parse(File.read("_site/redirects.json"))["/projects/react-graphql-auth"] == "https://breuer.dev/blog/react-graphql-auth"'
+          npm ci
+          npx playwright install --with-deps chromium webkit
+      - name: Browser regression tests
+        run: npm test
+      - name: Lighthouse score checks (mobile and desktop)
+        run: npm run lighthouse:check
+      - name: Save Lighthouse reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-reports
+          path: lighthouse-reports/
+          retention-days: 14
+          if-no-files-found: warn
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

@@ -1,4 +1,5 @@
 ---
+description: "Project idea for analyzing sentiment across news feeds to visualize changes in the tone of global news."
 layout: post
 short: NewsTone
 title: Real Time News Analysis - Track the Mood of the World

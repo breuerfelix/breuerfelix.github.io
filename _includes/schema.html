@@ -1,0 +1,53 @@
+{%- comment -%}
+  schema.org structured data (JSON-LD).
+  Emits BlogPosting for posts and WebSite for every other page.
+{%- endcomment -%}
+<script type="application/ld+json">
+{%- if page.collection == 'posts' -%}
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | absolute_url | jsonify }}
+  },
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  {%- if page.image %}
+  "image": {{ page.image | absolute_url | jsonify }},
+  {%- endif %}
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  {%- if page.last_modified_at %}
+  "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+  {%- endif %}
+  "author": {
+    "@type": "Person",
+    "name": {{ site.author.name | jsonify }},
+    "url": {{ site.url | append: site.baseurl | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.author.name | jsonify }}
+    {%- assign publisher_logo = site.author.avatar -%}
+    {%- if publisher_logo %},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ publisher_logo | absolute_url | jsonify }}
+    }
+    {%- endif %}
+  }
+}
+{%- else -%}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.title | jsonify }},
+  "url": {{ site.url | append: site.baseurl | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.author.name | jsonify }}
+  }
+}
+{%- endif -%}
+</script>

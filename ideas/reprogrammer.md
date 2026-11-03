@@ -1,4 +1,5 @@
 ---
+description: "Project idea for replaying Git repository history in Neovim and recording commit-by-commit programming videos."
 layout: post
 short: GitReplay
 title: Convert Git Repositories Commit by Commit to a Video

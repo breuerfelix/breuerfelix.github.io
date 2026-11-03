@@ -1,4 +1,5 @@
 ---
+description: "Project idea for tracking office stair use and estimating its effects on exercise, energy use, and costs."
 layout: post
 short: GreenStride
 title: Track Stairway usage in your Office and save Electricity

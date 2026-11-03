@@ -1,4 +1,5 @@
 ---
+description: "Project notes and documentation links for KingBot, a Selenium-based automation tool for Travian Kingdoms."
 layout: post
 title: "Project: KingBot - Automate Travian Kingdoms"
 date: 2019-10-10 22:15:00 +01:00

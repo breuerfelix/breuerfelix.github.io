@@ -4,3 +4,9 @@ _site
 .jekyll-metadata
 klise-*.gem
 .bundle
+node_modules/
+playwright-report/
+test-results/
+.lighthouseci/
+.lighthouse-site/
+lighthouse-reports/

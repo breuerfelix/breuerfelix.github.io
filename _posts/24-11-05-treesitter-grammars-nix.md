@@ -1,4 +1,5 @@
 ---
+description: "Install Neovim Treesitter grammars with Nix and make them available to a lazy.nvim-managed configuration."
 layout: post
 title: Neovim Treesitter Grammars with Nix and lazy.nvim
 date: 2024-11-05 09:00:00 +01:00

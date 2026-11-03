@@ -1,13 +1,14 @@
 ---
+description: "Build and deploy a minimal Kubernetes mutating admission webhook with Kubebuilder, TLS certificates, and local development support."
 layout: post
 title: Simple Kubernetes Mutating Admission Webhook
 date: 2022-06-22 11:00:00 +01:00
-modify_date: 2022-10-23 11:00:00 +01:00
+last_modified_at: 2022-10-23 11:00:00 +01:00
 tags: kubernetes admission mutating webhook simple minimal example cert-manager
 category: blog
 ---
 
-__tl;dr:__ Check out [this](https://github.com/breuerfelix/juicefs-volume-hook) GitHub repository for a minimal example.  
+__tl;dr:__ Check out the [juicefs-volume-hook repository](https://github.com/breuerfelix/juicefs-volume-hook) on GitHub for a minimal example.
 
 I haven't found any minimal example of a working Kubernetes admission webhook made with Kubebuilder, so here is mine.  
 This example just annotates all created Pods with a nice message.  
@@ -168,7 +169,7 @@ Just make sure that it builds without errors and you should be fine.
 
 Kubernetes is not able to call webhooks that are insecure and not protected via HTTPS.  
 To handle this, we are going to use [cert-manager](https://cert-manager.io/docs/) and let it handle all that nasty stuff.  
-Refer to [this](https://cert-manager.io/docs/installation/) guide for the installation of cert-manager; I recommend using Helm.  
+Refer to the [cert-manager installation guide](https://cert-manager.io/docs/installation/); I recommend using Helm.
 
 First of all, let's create a namespace for all our stuff:
 

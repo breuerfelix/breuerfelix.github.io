@@ -1,0 +1,19 @@
+{
+  "name": "breuer-dev-site-checks",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "check:site": "bundle exec ruby scripts/check_site.rb",
+    "lighthouse": "JEKYLL_ENV=production bundle exec jekyll build --trace --destination .lighthouse-site && LIGHTHOUSE_SITE=.lighthouse-site node scripts/lighthouse.mjs",
+    "lighthouse:check": "LIGHTHOUSE_SITE=_site node scripts/lighthouse.mjs"
+  },
+  "devDependencies": {
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.64.1",
+    "mathjax": "3.2.2"
+  }
+}

@@ -1,4 +1,5 @@
 ---
+description: "Project idea for an application that tracks time spent at locations and visualizes daily activity patterns."
 layout: post
 short: LifeTrack
 title: Where have I been? - App that tracks Location Statistics

@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 body[data-theme="dark"] {
   color: $dark-text-base-color;
   background-color: $dark-black;
@@ -30,6 +32,7 @@ body[data-theme="dark"] {
   .page-content {
     a {
       color: $dark-text-link-blue;
+      text-decoration-color: currentColor;
 
       &:hover,
       &:active,
@@ -87,9 +90,6 @@ body[data-theme="dark"] {
       }
     }
 
-    span[itemprop="author"] {
-      border-color: $dark-light;
-    }
   }
 
   // Link
@@ -129,7 +129,7 @@ body[data-theme="dark"] {
   .navbar {
     border-color: $dark-light;
     .menu {
-      a#mode {
+      #mode {
         .mode-sunny {
           display: block;
         }
@@ -172,7 +172,7 @@ body[data-theme="dark"] {
         color: $dark-text-base-color;
 
         &:hover,
-        &focus {
+        &:focus-visible {
           color: $dark-white;
         }
       }
@@ -218,10 +218,6 @@ body[data-theme="dark"] {
     a.footer_item:not(:last-child) {
       color: $dark-white;
     }
-    .footer_copyright {
-      color: $dark-gray;
-      opacity: 1;
-    }
   }
 
   // 404 Page
@@ -244,7 +240,7 @@ body[data-theme="dark"] {
   .search-article {
     input[type="search"] {
       color: $dark-text-base-color;
-      &::-webkit-input-placeholder {
+      &::placeholder {
         color: rgba(128,128,128,0.8);
       }
     }
@@ -253,5 +249,22 @@ body[data-theme="dark"] {
   // Avatar Wrapper
   .author-avatar-wrapper {
     border-color: $dark-white;
+  }
+
+  // Table of contents
+  .toc {
+    border-color: $dark-light;
+
+    .toc-title {
+      color: $dark-gray;
+    }
+
+    .toc-item a {
+      color: $dark-text-base-color;
+
+      &:hover {
+        color: $dark-text-link-blue;
+      }
+    }
   }
 }

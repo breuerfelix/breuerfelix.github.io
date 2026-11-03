@@ -1,8 +1,9 @@
 ---
+description: "Inspect Python API functions and their arguments to build a user interface for an evolving API."
 layout: post
 title: How to inspect a Python API
 date: 2020-03-01 11:00:00 +01:00
-modify_date: 2020-03-02 11:00:00 +01:00
+last_modified_at: 2020-03-02 11:00:00 +01:00
 tags: python api inspect dynamic
 category: tutorial
 ---

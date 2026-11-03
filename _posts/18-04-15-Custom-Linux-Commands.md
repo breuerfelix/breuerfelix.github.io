@@ -1,8 +1,9 @@
 ---
+description: "Create custom Linux shell commands and aliases for repetitive Jekyll, Git, and system administration tasks."
 layout: post
 title: Create custom Linux Commands
 date: 2018-04-15 09:00:00 +01:00
-modify_date: 2018-04-16 22:00:00 +01:00
+last_modified_at: 2018-04-16 22:00:00 +01:00
 tags: linux bash customcommands shellscripts alias
 category: tutorial
 ---

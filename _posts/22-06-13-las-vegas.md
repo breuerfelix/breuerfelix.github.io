@@ -1,4 +1,5 @@
 ---
+description: "Practical lessons from a night in Las Vegas, including casino ATM fees, getting cash, and planning for gambling costs."
 layout: post
 title: Things to know before getting poor in Las Vegas
 date: 2022-06-12 17:00:00 +01:00
