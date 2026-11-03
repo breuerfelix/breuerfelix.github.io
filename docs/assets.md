@@ -1,4 +1,4 @@
-# Vendored visual assets
+# Visual assets
 
 Skills icons are the 20 used SVG variants from Devicon v2.18.0:
 https://github.com/devicons/devicon/tree/v2.18.0/icons
@@ -20,3 +20,15 @@ These are copies of the active font assets, without changing their design. Unuse
 Source Sans Pro faces and unused weights/styles are removed. No icon or font CDN
 request is needed at runtime. `assets-manifest.json` records the vendored file hashes;
 update the files and manifest together when deliberately refreshing these assets.
+
+The shared header preloads Roboto regular and bold before the stylesheet so both
+faces are available sooner and text can settle before the first paint.
+
+## Avatar
+
+The 70×70 avatar uses a 140×140 WebP for 2× displays, with explicit HTML dimensions.
+Regenerate it from the full-resolution photo with:
+
+```sh
+cwebp -quiet -q 80 -resize 140 140 assets/img/avatar.jpg -o assets/img/avatar.webp
+```

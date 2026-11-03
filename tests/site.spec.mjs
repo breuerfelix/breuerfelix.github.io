@@ -222,7 +222,7 @@ test('inline line comments preserve following JavaScript statements', async ({ p
   expect(await page.evaluate(() => [window.beforeComment, window.afterComment])).toEqual([true, true]);
 });
 
-test('skills icons and active fonts are served locally', async ({ page, request }) => {
+test('skills icons, fonts and avatar render locally without distortion', async ({ page, request }) => {
   const externalVisualRequests = [];
   page.on('request', request => {
     const url = new URL(request.url());
@@ -236,6 +236,12 @@ test('skills icons and active fonts are served locally', async ({ page, request 
     await expect(icon).toHaveCSS('flex-grow', '0');
   }
   await expect(page.locator('.author-avatar-wrapper a')).toHaveAttribute('href', '/');
+  const avatar = await page.locator('.author-avatar').evaluate(async image => {
+    await image.decode();
+    const bounds = image.getBoundingClientRect();
+    return { displayedRatio: bounds.width / bounds.height, naturalRatio: image.naturalWidth / image.naturalHeight };
+  });
+  expect(avatar.displayedRatio).toBeCloseTo(avatar.naturalRatio, 5);
   const icons = await page.locator('.skill-icon').evaluateAll(icons => icons.map(icon => getComputedStyle(icon).maskImage));
   for (const icon of new Set(icons)) {
     expect(icon).toContain('/assets/icons/skills/');

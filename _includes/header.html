@@ -26,6 +26,8 @@
   {% endif %}
   {% feed_meta %}
   <link rel="icon" href="/favicon.ico" />
+  <link rel="preload" href="/assets/fonts/roboto-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href="/assets/fonts/roboto-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   {%- if jekyll.environment == "production" and site.umami and site.umami.url
   and site.umami.id -%}
