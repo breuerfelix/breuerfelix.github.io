@@ -23,7 +23,8 @@ when no update date is known; do not introduce aliases for older field names.
 
 ## Regression checks
 
-Node.js 24 or newer is used for browser and Lighthouse checks, not to build the site.
+Node.js 26 or newer is used for browser and Lighthouse checks, not to build the site.
+CI uses Node.js 26. Regression fixtures use its native Temporal API for timestamps.
 
 ```sh
 npm ci
