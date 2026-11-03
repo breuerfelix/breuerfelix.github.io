@@ -2,15 +2,20 @@
 
 ## development
 
-Use the Ruby version in `.ruby-version` and Bundler 2.7.2. CI reads `.ruby-version` directly. `nix-shell` supplies Ruby 3.4; Bundler installs the Jekyll version in `Gemfile.lock`.
+Use Ruby 4.0 and Bundler 4. `.ruby-version` pins Ruby for CI and version managers;
+`Gemfile.lock` pins Bundler and gems. `nix-shell` reads the Ruby series from
+`.ruby-version`; its patch release follows your nixpkgs. Use a Ruby version manager
+when you need the exact CI patch release. Bundler installs its locked version
+automatically when you run `bundle install`.
 
 ```bash
 nix-shell
-gem install bundler -v 2.7.2 --no-document
 bundle install
 JEKYLL_ENV=production bundle exec jekyll build
 bundle exec jekyll serve --drafts --incremental
 ```
+
+See [development checks](docs/development.md) for browser and Lighthouse setup.
 
 ## publishing
 
