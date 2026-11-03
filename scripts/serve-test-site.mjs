@@ -10,10 +10,10 @@ const source = join(temporary, 'source');
 const output = join(temporary, 'site');
 const excluded = new Set(['.git', 'node_modules', '_site', '.jekyll-cache', '.jekyll-metadata', '.lighthouseci', '.lighthouse-site', 'test-results', 'playwright-report', 'lighthouse-reports']);
 await cp(root, source, { recursive: true, filter: path => !excluded.has(path.slice(root.length + 1).split(sep)[0]) });
-const now = new Date();
+const now = Temporal.Now.instant();
 const fixture = (await readFile(join(root, 'tests/fixtures/article.md'), 'utf8'))
-  .replace('TEST_PUBLISHED_AT', new Date(now - 86_400_000).toISOString())
-  .replace('TEST_MODIFIED_AT', now.toISOString());
+  .replace('TEST_PUBLISHED_AT', now.subtract({ hours: 24 }).toString({ fractionalSecondDigits: 3 }))
+  .replace('TEST_MODIFIED_AT', now.toString({ fractionalSecondDigits: 3 }));
 await writeFile(join(source, '_posts/2000-01-01-regression.md'), fixture);
 const build = spawnSync('bundle', ['exec', 'jekyll', 'build', '--trace', '--source', source, '--destination', output], {
   cwd: root, env: { ...process.env, JEKYLL_ENV: 'production', BUNDLE_GEMFILE: join(root, 'Gemfile') }, stdio: 'inherit'
