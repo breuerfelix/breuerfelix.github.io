@@ -50,11 +50,17 @@ npm run check:site -- .lighthouse-site
 ```
 
 This builds the production site into `.lighthouse-site/`, independently of a
-running Jekyll preview, and audits the home page, archive, two articles
-(including a gallery), music, and games in mobile and desktop profiles. Each URL
-runs five times. Every category's median must be **96 or higher**: performance,
-accessibility, best practices, and SEO. A score of 95 fails. Thresholds and URLs
-live in `lighthouserc.cjs`; raise `minScore` there when tightening the gate.
+running Jekyll preview, and audits five representative pages: the home page,
+archive, two articles (including a gallery), and games, in mobile and desktop
+profiles. Each URL runs five times. The default minimum median is **100** for
+performance, accessibility, best practices, and SEO. A median of 99 fails a 100-point gate.
+Thresholds and URLs live in `lighthouserc.cjs`.
+
+Music is excluded from Lighthouse because its automatic Mixcloud players trigger
+third-party cookie audits. Games remains included, with one explicit exception:
+its best-practices median must be **96 or higher** because of itch.io cookie
+warnings. Its other categories still require 100. Browser regression tests still
+cover both pages, including embed sizing and theme synchronization.
 
 Lighthouse CI and Playwright's Chromium are locked in `package-lock.json`.
 The audited OS color preference is fixed to light on every host; browser regression
