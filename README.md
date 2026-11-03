@@ -2,7 +2,7 @@
 
 ## development
 
-Use Ruby 3.4.9 and Bundler 2.7.2. `nix-shell` supplies Ruby 3.4; Bundler installs the Jekyll version in `Gemfile.lock`.
+Use the Ruby version in `.ruby-version` and Bundler 2.7.2. CI reads `.ruby-version` directly. `nix-shell` supplies Ruby 3.4; Bundler installs the Jekyll version in `Gemfile.lock`.
 
 ```bash
 nix-shell
