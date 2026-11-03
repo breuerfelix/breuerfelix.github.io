@@ -90,7 +90,9 @@
 
   a {
     color: $text-link-blue;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 0.15em;
     &[target="_blank"]::after {
       content: " \2197";
       font-size: $small-font-size;

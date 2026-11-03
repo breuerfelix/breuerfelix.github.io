@@ -4,7 +4,8 @@ require 'digest'
 require 'rexml/document'
 require 'rexml/xpath'
 
-site = File.expand_path('../_site', __dir__)
+abort 'usage: ruby scripts/check_site.rb [site-directory]' if ARGV.length > 1
+site = ARGV.empty? ? File.expand_path('../_site', __dir__) : File.expand_path(ARGV.fetch(0))
 baseline = JSON.parse(File.read(File.expand_path('../tests/fixtures/urls.json', __dir__)))
 baseline.fetch('html_paths').each { |path| abort "missing page: #{path}" unless File.size?(File.join(site, path)) }
 %w[assets/css/style.css assets/js/main.js assets/js/lightbox.js assets/js/search.js feed.xml sitemap.xml redirects.json].each do |path|
@@ -66,7 +67,7 @@ REXML::XPath.each(feed, '//a:entry', 'a' => 'http://www.w3.org/2005/Atom') do |e
   next unless post && post.key?('dateModified')
   abort "feed update mismatch: #{entry.elements['id'].text}" unless entry.elements['updated'].text == post.fetch('dateModified')
 end
-%w[AGENTS.md shell.nix renovate.json package.json package-lock.json playwright.config.mjs].each do |path|
+%w[AGENTS.md shell.nix renovate.json package.json package-lock.json playwright.config.mjs lighthouserc.cjs lighthouse-reports .lighthouseci .lighthouse-site].each do |path|
   abort "development file published: #{path}" if File.exist?(File.join(site, path))
 end
 

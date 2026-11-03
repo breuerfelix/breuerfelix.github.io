@@ -7,3 +7,6 @@ klise-*.gem
 node_modules/
 playwright-report/
 test-results/
+.lighthouseci/
+.lighthouse-site/
+lighthouse-reports/

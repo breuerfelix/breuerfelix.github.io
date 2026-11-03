@@ -32,6 +32,7 @@ body[data-theme="dark"] {
   .page-content {
     a {
       color: $dark-text-link-blue;
+      text-decoration-color: currentColor;
 
       &:hover,
       &:active,

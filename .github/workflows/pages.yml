@@ -35,6 +35,16 @@ jobs:
           npx playwright install --with-deps chromium webkit
       - name: Browser regression tests
         run: npm test
+      - name: Lighthouse score checks (mobile and desktop)
+        run: npm run lighthouse:check
+      - name: Save Lighthouse reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-reports
+          path: lighthouse-reports/
+          retention-days: 14
+          if-no-files-found: warn
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

@@ -23,7 +23,7 @@ when no update date is known; do not introduce aliases for older field names.
 
 ## Regression checks
 
-Node.js 24 or newer is used only for browser tests, not to build the site.
+Node.js 24 or newer is used for browser and Lighthouse checks, not to build the site.
 
 ```sh
 npm ci
@@ -39,6 +39,41 @@ locked development dependency. External analytics, comments, and embed services
 are mocked; integration messages and URL parameters are checked. Fixtures, test
 dependencies, reports, and development scripts are excluded from published output.
 The workflow runs the same checks before uploading the production artifact.
+
+## Lighthouse score checks
+
+After installing the dependencies and browsers above, run:
+
+```sh
+npm run lighthouse
+npm run check:site -- .lighthouse-site
+```
+
+This builds the production site into `.lighthouse-site/`, independently of a
+running Jekyll preview, and audits the home page, archive, two articles
+(including a gallery), music, and games in mobile and desktop profiles. Each URL
+runs five times. Every category's median must be **96 or higher**: performance,
+accessibility, best practices, and SEO. A score of 95 fails. Thresholds and URLs
+live in `lighthouserc.cjs`; raise `minScore` there when tightening the gate.
+
+Lighthouse CI and Playwright's Chromium are locked in `package-lock.json`.
+The audited OS color preference is fixed to light on every host; browser regression
+tests separately cover OS and saved light/dark preferences and theme synchronization.
+These checks use the actual production output and real external services, without
+the browser test mocks. Lighthouse CI's static server uses generated `.html` paths;
+canonical URLs stay unchanged. These checks measure a local server, not deployed CDN/TLS
+behavior or field Core Web Vitals. Hardware, network, and third-party responses
+can still affect scores; compare the same profile and inspect failing audits.
+
+HTML and JSON reports for every run, plus assertion results, are saved under
+`lighthouse-reports/mobile/` and `lighthouse-reports/desktop/`, even when a score
+fails. CI retains these as a `lighthouse-reports` artifact for 14 days and blocks
+deployment on failure. Nothing is uploaded to Lighthouse's public storage.
+Reports and audit dependencies are excluded from the published site.
+
+CI uses `npm run lighthouse:check` to audit the production `_site` already built
+and checked earlier in the job. Use `npm run lighthouse` locally to build fresh
+output before measuring.
 
 ## Browser styles and publishing
 

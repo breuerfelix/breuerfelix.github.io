@@ -23,15 +23,15 @@ To store the user progress when closing the application, I used a simple JSON fi
 
 ## Code
 
-[Click here](https://github.com/breuerfelix/Series-Monitor) to see the repository and code on GitHub.com!
+Browse the [Series Monitor source code](https://github.com/breuerfelix/Series-Monitor) on GitHub.
 
 ## Screenshots
 
 <div class="gallery">
-  <figure><img src="/assets/series-monitor/home.png" alt="Series Monitor home screen"><figcaption>Home</figcaption></figure>
-  <figure><img src="/assets/series-monitor/updating.png" alt="Series Monitor updating screen"><figcaption>Updating</figcaption></figure>
-  <figure><img src="/assets/series-monitor/series.png" alt="Series detail screen"><figcaption>Series in detail</figcaption></figure>
-  <figure><img src="/assets/series-monitor/database.png" alt="Database structure screen"><figcaption>Database structure</figcaption></figure>
+  <figure><img src="/assets/series-monitor/home.png" alt="Series Monitor home screen" width="532" height="1030" loading="lazy" decoding="async"><figcaption>Home</figcaption></figure>
+  <figure><img src="/assets/series-monitor/updating.png" alt="Series Monitor updating screen" width="536" height="1032" loading="lazy" decoding="async"><figcaption>Updating</figcaption></figure>
+  <figure><img src="/assets/series-monitor/series.png" alt="Series detail screen" width="1538" height="1030" loading="lazy" decoding="async"><figcaption>Series in detail</figcaption></figure>
+  <figure><img src="/assets/series-monitor/database.png" alt="Database structure screen" width="2444" height="1778" loading="lazy" decoding="async"><figcaption>Database structure</figcaption></figure>
 </div>
 
 
