@@ -1,5 +1,5 @@
 require 'json'
-require 'cgi'
+require 'cgi/escape'
 require 'digest'
 require 'rexml/document'
 require 'rexml/xpath'

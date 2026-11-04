@@ -1,6 +1,10 @@
 # Development
 
-Use Ruby from `.ruby-version` and Bundler from `Gemfile.lock`.
+Use Ruby 4.0 from `.ruby-version` and Bundler 4 from `Gemfile.lock`. CI and Ruby
+version managers use the exact Ruby pin. `nix-shell` derives the Ruby series from
+that same file, with the patch release supplied by your nixpkgs. Update nixpkgs if
+the selected Ruby package is unavailable. `bundle install` automatically installs
+the Bundler version recorded in the lockfile; no separate Bundler pin is needed.
 
 ```sh
 nix-shell
@@ -8,6 +12,9 @@ bundle install
 JEKYLL_ENV=production bundle exec jekyll build --trace
 bundle exec jekyll serve --livereload
 ```
+
+Ruby 4 provides HTML escaping through `cgi/escape`. The generated-site checker
+requires that API directly and does not need the full `cgi` gem.
 
 ## Article metadata
 
