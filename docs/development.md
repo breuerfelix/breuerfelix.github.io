@@ -35,33 +35,10 @@ npm test
 ```
 
 Tests cover Chromium and WebKit at desktop and mobile widths. A temporary site
-contains separate article and math fixtures, with real MathJax 4.1.3 scripts,
-speech-worker resources, dynamic font data, and WOFF2 files supplied by locked
-development dependencies. MathJax and its New Computer Modern font package are
-pinned in `package.json` and the CDN URLs in `_config.yml`; update them together.
-The test server changes only the CDN origin and serves those exact package paths
-from `node_modules`. Math tests run without browser request interception because
-it breaks immediately revoked blob workers in WebKit
-([Playwright #33794](https://github.com/microsoft/playwright/issues/33794)).
-Tests await asynchronous startup and check speech labels, keyboard exploration,
-mobile equation wrapping, lazy font loading, and unchanged code samples.
-Other site tests mock external analytics, comments, and embeds; integration
-messages and URL parameters are checked. Fixtures, test
+contains an article fixture. Tests mock external analytics, comments, and embeds;
+integration messages and URL parameters are checked. Fixtures, test
 dependencies, reports, and development scripts are excluded from published output.
 The workflow runs the same checks before uploading the production artifact.
-
-## Math rendering
-
-Set `usemathjax: true` in front matter only on pages that contain math. Kramdown
-turns inline `$$...$$` into `\(...\)` and block `$$` expressions into `\[...\]`.
-AMS environments retain automatic equation numbering. Fenced and inline code
-remain literal, and single dollar signs do not start math.
-
-MathJax 4 uses New Computer Modern with font data loaded on demand, its default
-speech/Braille labels and keyboard explorer, and automatic inline line breaking.
-Displayed equations use `displayOverflow: 'linebreak'` to fit narrow content
-without shrinking the text. Display breaks are calculated at initial typesetting;
-they are not recalculated on viewport resize. Pages without math load no MathJax.
 
 ## Lighthouse score checks
 

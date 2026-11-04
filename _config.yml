@@ -49,11 +49,6 @@ highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
 
-# Keep runtime and font versions aligned with package.json.
-mathjax:
-  source: https://cdn.jsdelivr.net/npm/mathjax@4.1.3
-  font_path: https://cdn.jsdelivr.net/npm/@mathjax/%%FONT%%-font@4.1.3
-
 # Default front matter
 defaults:
   - scope:

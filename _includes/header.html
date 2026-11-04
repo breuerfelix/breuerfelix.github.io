@@ -56,17 +56,5 @@
     fathom("trackPageview");
   </script>
   {%- endif -%}
-  {% if page.usemathjax %}
-  <script>
-    window.MathJax = {
-      tex: { tags: 'ams' },
-      output: {
-        displayOverflow: 'linebreak',
-        fontPath: {{ site.mathjax.font_path | jsonify }}
-      }
-    };
-  </script>
-  <script defer src="{{ site.mathjax.source }}/tex-chtml.js"></script>
-  {% endif %}
   {% include schema.html %}
 </head>
