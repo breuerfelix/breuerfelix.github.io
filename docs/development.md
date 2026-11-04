@@ -42,9 +42,8 @@ npm test
 ```
 
 Tests cover Chromium and WebKit at desktop and mobile widths. A temporary site
-contains the regression article, with real MathJax 3.2.2 assets supplied by the
-locked development dependency. External analytics, comments, and embed services
-are mocked; integration messages and URL parameters are checked. Fixtures, test
+contains an article fixture. Tests mock external analytics, comments, and embeds;
+integration messages and URL parameters are checked. Fixtures, test
 dependencies, reports, and development scripts are excluded from published output.
 The workflow runs the same checks before uploading the production artifact.
 

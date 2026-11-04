@@ -14,7 +14,7 @@ const now = Temporal.Now.instant();
 const fixture = (await readFile(join(root, 'tests/fixtures/article.md'), 'utf8'))
   .replace('TEST_PUBLISHED_AT', now.subtract({ hours: 24 }).toString({ fractionalSecondDigits: 3 }))
   .replace('TEST_MODIFIED_AT', now.toString({ fractionalSecondDigits: 3 }));
-await writeFile(join(source, '_posts/2000-01-01-regression.md'), fixture);
+await writeFile(join(source, '_posts/2000-01-01-article.md'), fixture);
 const build = spawnSync('bundle', ['exec', 'jekyll', 'build', '--trace', '--source', source, '--destination', output], {
   cwd: root, env: { ...process.env, JEKYLL_ENV: 'production', BUNDLE_GEMFILE: join(root, 'Gemfile') }, stdio: 'inherit'
 });
