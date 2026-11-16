@@ -2,5 +2,24 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "automerge": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["ruby", "node", "jekyll"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["actions/configure-pages", "actions/deploy-pages"],
+      "automerge": false
+    },
+    {
+      "matchPackageNames": ["@lhci/cli"],
+      "matchCurrentVersion": "/^0\\./",
+      "matchUpdateTypes": ["minor"],
+      "automerge": false
+    }
   ]
 }
