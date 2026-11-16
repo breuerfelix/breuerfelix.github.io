@@ -1,0 +1,53 @@
+name: Merge Dependabot updates
+
+on:
+  workflow_run:
+    workflows: [Build and deploy Pages]
+    types: [completed]
+
+permissions: {}
+
+jobs:
+  merge:
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      github.event.workflow_run.pull_requests[0].number
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    outputs:
+      merged: ${{ steps.merge.outputs.merged }}
+    steps:
+      - name: Merge the tested Dependabot PR
+        id: merge
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+          TESTED_HEAD: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          pr_endpoint="repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER"
+          eligible=$(gh api "$pr_endpoint" --jq '
+            .state == "open" and .base.ref == "master" and .user.login == "dependabot[bot]"
+          ')
+          [[ "$eligible" == true ]] || exit 0
+
+          gh api --method PUT "$pr_endpoint/merge" \
+            -f sha="$TESTED_HEAD" -f merge_method=squash --jq '.merged' | grep -qx true
+          echo 'merged=true' >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: merge
+    if: needs.merge.outputs.merged == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Dispatch Pages on master
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref master
