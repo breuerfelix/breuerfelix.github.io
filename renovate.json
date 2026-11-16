@@ -6,7 +6,7 @@
   "automerge": true,
   "packageRules": [
     {
-      "matchPackageNames": ["ruby", "node", "jekyll"],
+      "matchDepNames": ["ruby", "node", "jekyll"],
       "matchUpdateTypes": ["major"],
       "automerge": false
     },
